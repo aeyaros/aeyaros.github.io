@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Andrew Yaros New Website Design Test</title>
+	<meta name="viewport"
+	      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<meta name="description" content="Personal website of Andrew Ethan Yaros with portfolio, résumé, and work examples.">
+	<style>
+		:root {
+			--edgePadding: 10vw; /* padding between content and edge */
+		}
+
+		body {
+			margin: 0;
+
+			color: white;
+			background-color: #333333;
+			font-family: sans-serif;
+		}
+
+		.fixedBackground {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+		}
+
+		.tempbutton {
+			display: inline-block;
+			border: 1px solid white;
+			background: black;
+			text-align: center;
+			border-radius: 20px;
+			padding: 10px;
+			margin: 10px 0;
+		}
+
+        /* ===================== */
+        /* TITLE AND DESCRIPTION */
+
+		/* contains title text and description */
+		#titleBox {
+			width: 100%;
+			height: 100vh;
+
+			background-color: #888888;
+            background-image: url("title.jpg");
+			background-blend-mode: color-burn;
+
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;
+			align-items: stretch;
+			/* needs to be stretch; items inside need padding without having to be resized to 100% since this screws stuff up, so instead we stretch them using flexbox and then apply padding */
+		}
+
+		/* items inside the title flex container */
+		.titleItem {
+			/* padding between items and edge  */
+			padding: 0 var(--edgePadding);
+		}
+
+		/* contains a couple of title words */
+		#titleText {
+			font-size: 9vw;
+			text-transform: uppercase;
+
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: space-between;
+
+		}
+
+		/* contains several description items */
+		#description {
+			font-size: 2.35vw;
+			text-transform: uppercase;
+
+			display: flex;
+			flex-flow: row nowrap;
+
+			justify-content: space-between;
+		}
+
+		/* at small widths, make the text vertical */
+		@media screen and (max-width: 512px) {
+			#titleText {
+				flex-flow: column nowrap;
+				justify-content: center;
+				align-items: center;
+
+				font-size: 16vw;
+			}
+
+			#lastName {
+				font-size: 21vw;
+			}
+
+			#description {
+				flex-flow: column nowrap;
+				font-size: 5vw;
+				justify-content: center;
+				align-items: center;
+				padding-top: 3vh;
+			}
+
+			#description span {
+				padding: 1vw 0;
+			}
+
+        }
+
+        /* ======================== */
+		/* MODULES FOR EACH PROJECT */
+
+		/* outer container for a module */
+		.module {
+			padding: 10vh 0;
+		}
+
+        /* title text for a module */
+		.moduleTitle {
+			font-size: 30pt;
+			text-transform: capitalize;
+			padding: 0 var(--edgePadding);
+		}
+
+        /* full width image for a module */
+        .moduleImage {
+            width: 100%;
+            height: 50vh;
+            background-color: #444444;
+	        margin: 32px 0;
+            box-shadow: inset 0 0 5vw rgba(0, 0, 0, 0.75);
+        }
+
+        /* text box for a module */
+		.moduleText {
+			font-size: 15pt;
+			line-height: 25pt;
+            padding: 0 var(--edgePadding);
+		}
+
+		/* ====== */
+		/* FOOTER */
+
+		#footer {
+			width: 100%;
+			background-color: black;
+			padding: 5vh 0;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<!-- TITLE AND DESCRIPTION -->
+	<div id="titleBox" class="fixedBackground">
+		<div class="titleItem" id="titleText">
+			<span>Andrew</span> <span id="lastName">Yaros</span>
+		</div>
+
+		<div class="titleItem" id="description">
+			<span>BS&nbsp;Computer&nbsp;Science</span>
+			<span>Drexel&nbsp;University</span>
+			<span>Class&nbsp;of&nbsp;2019</span>
+		</div>
+	</div>
+
+	<!-- INTRO MODULE -->
+	<div class="module">
+		<div class="moduleText">
+			<div class="tempbutton">Resume downlaod button</div>
+			<div class="tempbutton">Architectural portfolio downlaod button</div>
+
+		</div>
+	</div>
+
+	<!-- MODULE NUMBER ONE -->
+	<div class="module">
+		<div class="moduleTitle">Title of the first module</div>
+		<div class="moduleImage fixedBackground"
+			style='background-image: url("normal.jpg")'></div>
+
+		<div class="moduleText">
+			Culpa architecto facilis in ad voluptatem ratione explicabo quam. Nihil possimus vel laboriosam molestiae pariatur vel aut eveniet. Asperiores accusamus dolores autem ex. Quibusdam et eos facere. Sint rem labore veniam excepturi et eum vel. Laboriosam error vero est.
+		</div>
+	</div>
+
+	<!-- MODULE NUMBER TWO -->
+	<div class="module">
+		<div class="moduleTitle">Title of the second module</div>
+		<div class="moduleImage fixedBackground"
+		     style='background-image: url("square.jpg")'></div>
+
+		<div class="moduleText">
+			Et sapiente tenetur amet voluptatum possimus repellendus est. Id aut mollitia dolorem labore rem aut sunt. Ut earum eaque odio in et harum nihil. Et minus et quia rerum est.
+		</div>
+	</div>
+
+	<!-- MODULE NUMBER THREE -->
+	<div class="module">
+		<div class="moduleTitle">Title of the third module</div>
+		<div class="moduleImage fixedBackground"
+		     style='background-image: url("wide.jpg")'></div>
+
+		<div class="moduleText">
+			Est et totam nam cumque facilis neque non sunt. Commodi voluptatem necessitatibus molestiae illum quo cumque. A odio officia delectus voluptatem mollitia repudiandae corporis sint. Impedit et molestias id deserunt fuga minima libero et. Eveniet qui laudantium aut. Non ut molestias et dolorem minus ab repellat.
+		</div>
+	</div>
+
+	<!-- MODULE NUMBER FOUR -->
+	<div class="module">
+		<div class="moduleTitle">Title of the fourth module</div>
+		<div class="moduleImage fixedBackground"
+		     style='background-image: url("tall.jpg")'></div>
+
+		<div class="moduleText">
+			Fugit ex iste itaque et. Unde pariatur occaecati ut labore quo qui. Sint veniam rerum qui molestiae omnis. Cupiditate ducimus rerum incidunt provident molestiae est. Voluptate natus ea pariatur.
+		</div>
+	</div>
+
+	<!-- MODULE NUMBER FIVE -->
+	<div class="module">
+		<div class="moduleTitle">Title of the fifth module</div>
+		<div class="moduleImage fixedBackground"
+		     style='background-image: url("sunset.jpg")'></div>
+
+		<div class="moduleText">
+			Ut corrupti sit facilis maiores. Fugit dolor animi quos est. Soluta doloremque ut neque maxime nihil. Tenetur non et consequatur et. Qui a officia enim eum inventore et ratione.
+		</div>
+	</div>
+
+
+	<!-- FOOTER -->
+	<div id="footer">
+		&copy;&nbsp;2020&nbsp;&ndash;&nbsp;2021 Andrew&nbsp;Yaros. ALL&nbsp;RIGHTS&nbsp;RESERVED
+	</div>
+</body>
+</html>
