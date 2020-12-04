@@ -22,7 +22,7 @@
 		.fixedBackground {
             background-repeat: no-repeat;
             background-size: cover;
-            background-position: center center;
+            background-position: center;
             background-attachment: fixed;
 		}
 
@@ -83,8 +83,8 @@
 			justify-content: space-between;
 		}
 
-		/* at small widths, make the text vertical */
-		@media screen and (max-width: 512px) {
+		/* make the title text a column for portrait orientation */
+		@media only screen and (orientation: portrait) {
 			#titleText {
 				flex-flow: column nowrap;
 				justify-content: center;
@@ -108,7 +108,21 @@
 			#description span {
 				padding: 1vw 0;
 			}
+        }
 
+		/* at small sizes, make the title text even smaller */
+        @media only screen and (max-width: 512px) and (max-height: 384px) {
+			#titleText {
+				font-size: 11vw;
+			}
+	        #lastName {
+		        font-size: 14vw;
+	        }
+
+	        #description {
+		        font-size: 3vw;
+		        line-height: 2vh;
+	        }
         }
 
         /* ======================== */
