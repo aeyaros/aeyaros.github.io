@@ -11,10 +11,38 @@
         /* ===== */
         /* FONTS */
 
-        /* Tachyon Thin */
+        /* Tachyon */
         @font-face {
             font-family: "tachyon";
             src: url("./fonts/Tachyon.otf")
+        }
+
+        /* Computer Modern serif */
+        @font-face {
+            font-family: "cmu";
+            src: url("./fonts/cmunrm.otf");
+            font-weight: normal;
+        }
+
+        /* Continuum Light */
+        @font-face {
+            font-family: "cont";
+            src: url("./fonts/contl.ttf");
+            font-weight: 200;
+        }
+
+        /* Swiss 721 roman */
+        @font-face {
+            font-family: "721";
+            src: url("./fonts/721r.otf");
+            font-weight: normal;
+        }
+
+        /* Swiss 721 bold */
+        @font-face {
+            font-family: "721";
+            src: url("./fonts/721b.otf");
+            font-weight: bold;
         }
 
         /* =================== */
@@ -22,14 +50,16 @@
 
         :root {
             --edgePadding: 10vw; /* padding between content and edge */
+            --titleTextShadow: #000000;
         }
 
         body {
             margin: 0;
 
             color: white;
-            background-color: #333333;
-            font-family: sans-serif;
+            background-color: #2e2e2e;
+            font-family: "721", sans-serif;
+	        font-size: 15pt;
         }
 
         .fixedBackground {
@@ -71,23 +101,33 @@
         /* items inside the title flex container */
         .titleItem {
             /* padding between items and edge  */
-            padding: 0 var(--edgePadding);
+            padding: .5vh var(--edgePadding);
+
+            text-shadow: 0 3px 20px var(--titleTextShadow), 0 2px 3px var(--titleTextShadow);
         }
 
         /* contains a couple of title words */
         #titleText {
-            font-size: 9vw;
+	        font-family: "tachyon", sans-serif;
+            font-size: 5.5vw;
+	        letter-spacing: 1vw;
             text-transform: uppercase;
 
             display: flex;
             flex-flow: row nowrap;
             justify-content: space-between;
+        }
 
+        /* last letters of each word in the title */
+        .lastLetter {
+	        letter-spacing: 0;
         }
 
         /* contains several description items */
         #description {
-            font-size: 2.35vw;
+	        font-family: "cmu", serif;
+            font-size: 2.2vw;
+	        letter-spacing: .1vw;
             text-transform: uppercase;
 
             display: flex;
@@ -103,16 +143,17 @@
                 justify-content: center;
                 align-items: center;
 
-                font-size: 16vw;
+                font-size: 9vw;
             }
 
             #lastName {
-                font-size: 21vw;
+                font-size: 12vw;
             }
 
             #description {
                 flex-flow: column nowrap;
                 font-size: 5vw;
+	            line-height: 5vw;
                 justify-content: center;
                 align-items: center;
                 padding-top: 3vh;
@@ -149,8 +190,11 @@
 
         /* title text for a module */
         .moduleTitle {
+	        font-family: "cont", sans-serif;
+	        text-transform: uppercase;
             font-size: 30pt;
-            text-transform: capitalize;
+	        letter-spacing: 0.1em;
+            text-shadow: 0 2px 20px var(--titleTextShadow), 0 1px 3px var(--titleTextShadow);
             padding: 0 var(--edgePadding);
         }
 
@@ -165,7 +209,6 @@
 
         /* text box for a module */
         .moduleText {
-            font-size: 15pt;
             line-height: 25pt;
             padding: 0 var(--edgePadding);
         }
@@ -185,7 +228,7 @@
 <!-- TITLE AND DESCRIPTION -->
 <div id="titleBox" class="fixedBackground">
 	<div class="titleItem" id="titleText">
-		<span>Andrew</span> <span id="lastName">Yaros</span>
+		<span>Andre<span class="lastLetter">w</span></span> <span id="lastName">Yaro<span class="lastLetter">s</span></span>
 	</div>
 
 	<div class="titleItem" id="description">
