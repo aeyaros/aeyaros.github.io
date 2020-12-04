@@ -87,9 +87,11 @@
             width: 100%;
             height: 100vh;
 
-            background-color: #888888;
-            background-image: url("./images/title.jpg");
-            background-blend-mode: color-burn;
+            background-image: url("./images/downtile-dark.gif");
+	        background-repeat: repeat;
+	        background-position: center;
+	        background-attachment: fixed;
+            box-shadow: inset 0 0 7vw rgba(0, 0, 0, 0.5);
 
             display: flex;
             flex-flow: column nowrap;
@@ -226,7 +228,7 @@
 </head>
 <body>
 <!-- TITLE AND DESCRIPTION -->
-<div id="titleBox" class="fixedBackground">
+<div id="titleBox">
 	<div class="titleItem" id="titleText">
 		<span>Andre<span class="lastLetter">w</span></span> <span id="lastName">Yaro<span class="lastLetter">s</span></span>
 	</div>
