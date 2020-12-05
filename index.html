@@ -98,11 +98,6 @@
             width: 100%;
             height: 100vh;
 
-			background-repeat: no-repeat;
-			background-position: center;
-			background-attachment: fixed;
-			background-size: cover;
-
             /* slideshow transitions */
             transition:	background 1.5s ease-out;
             -webkit-transition:	background 1.5s ease-out;
@@ -331,7 +326,7 @@
 </head>
 <body onload="start()">
 <!-- TITLE AND DESCRIPTION -->
-<div id="titleBox" onload="setInitialSlide()">
+<div id="titleBox" class="fixedBackground" onload="setInitialSlide()">
 	<div class="titleItem" id="titleText">
 		<span>Andre<span class="lastLetter">w</span></span> <span id="lastName">Yaro<span
 			class="lastLetter">s</span></span>
