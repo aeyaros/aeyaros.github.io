@@ -17,35 +17,35 @@
         /* ===== */
         /* FONTS */
 
-        /* Tachyon */
         @font-face {
+            /* Tachyon */
             font-family: "tachyon";
             src: url("./fonts/Tachyon.otf")
         }
 
-        /* Computer Modern serif */
         @font-face {
+            /* Computer Modern serif */
             font-family: "cmu";
             src: url("./fonts/cmunrm.otf");
             font-weight: normal;
         }
 
-        /* Continuum Light */
         @font-face {
+            /* Continuum Light */
             font-family: "cont";
             src: url("./fonts/contl.ttf");
             font-weight: 200;
         }
 
-        /* Swiss 721 roman */
         @font-face {
+            /* Swiss 721 roman */
             font-family: "721";
             src: url("./fonts/721r.otf");
             font-weight: normal;
         }
 
-        /* Swiss 721 bold */
         @font-face {
+            /* Swiss 721 bold */
             font-family: "721";
             src: url("./fonts/721b.otf");
             font-weight: bold;
@@ -57,8 +57,8 @@
         :root {
             --edgePadding: 10vw; /* padding between content and edge */
             --titleTextShadow: #000000;
-	        --backgroundColor: #1e1e1e;
-	        --darkerColor: #101010;
+            --backgroundColor: #1e1e1e;
+            --darkerColor: #101010;
         }
 
         body {
@@ -67,7 +67,7 @@
             color: white;
             background-color: var(--backgroundColor);
             font-family: "721", sans-serif;
-	        font-size: 15pt;
+            font-size: 15pt;
         }
 
         .fixedBackground {
@@ -95,12 +95,12 @@
             width: 100%;
             height: 100vh;
             background-color: var(--darkerColor);
-			/*
-            background-image: url("./images/title.jpg");
-	        background-repeat: no-repeat;
-	        background-position: center;
-	        background-attachment: fixed;
-	        background-size: cover;
+            /*
+			background-image: url("./images/title.jpg");
+			background-repeat: no-repeat;
+			background-position: center;
+			background-attachment: fixed;
+			background-size: cover;
 			*/
             box-shadow: inset 0 0 7vw rgba(0, 0, 0, 0.5);
             display: flex;
@@ -113,15 +113,15 @@
         .titleItem {
             /* padding between items and edge  */
             padding: .5vh var(--edgePadding);
-			/* for title and description text */
+            /* for title and description text */
             text-shadow: 0 3px 20px var(--titleTextShadow), 0 2px 3px var(--titleTextShadow);
         }
 
         /* contains a couple of title words */
         #titleText {
-	        font-family: "tachyon", sans-serif;
+            font-family: "tachyon", sans-serif;
             font-size: 5.5vw;
-	        letter-spacing: 1vw;
+            letter-spacing: 1vw;
             text-transform: uppercase;
             display: flex;
             flex-flow: row nowrap;
@@ -130,14 +130,14 @@
 
         /* last letters of each word in the title */
         .lastLetter {
-	        letter-spacing: 0;
+            letter-spacing: 0;
         }
 
         /* contains several description items */
         #description {
-	        font-family: "cmu", serif;
+            font-family: "cmu", serif;
             font-size: 2.2vw;
-	        letter-spacing: .1vw;
+            letter-spacing: .1vw;
             text-transform: uppercase;
             display: flex;
             flex-flow: row nowrap;
@@ -160,7 +160,7 @@
             #description {
                 flex-flow: column nowrap;
                 font-size: 5vw;
-	            line-height: 5vw;
+                line-height: 5vw;
                 justify-content: center;
                 align-items: center;
                 padding-top: 3vh;
@@ -197,10 +197,10 @@
 
         /* title text for a module */
         .moduleTitle {
-	        font-family: "cont", sans-serif;
-	        text-transform: uppercase;
+            font-family: "cont", sans-serif;
+            text-transform: uppercase;
             font-size: 30pt;
-	        letter-spacing: 0.1em;
+            letter-spacing: 0.1em;
             text-shadow: 0 2px 20px var(--titleTextShadow), 0 1px 3px var(--titleTextShadow);
             padding: 0 var(--edgePadding);
         }
@@ -254,7 +254,7 @@
 		var hasTouchedYet = false;
 
 		function start() {
-			window.scrollTo(0,0); //set scroll position
+			window.scrollTo(0, 0); //set scroll position
 			setDate(); //set copyright date
 
 			/* detect and adjust for mobile devices by testing whether user touched screen */
@@ -278,7 +278,8 @@
 <!-- TITLE AND DESCRIPTION -->
 <div id="titleBox">
 	<div class="titleItem" id="titleText">
-		<span>Andre<span class="lastLetter">w</span></span> <span id="lastName">Yaro<span class="lastLetter">s</span></span>
+		<span>Andre<span class="lastLetter">w</span></span> <span id="lastName">Yaro<span
+			class="lastLetter">s</span></span>
 	</div>
 
 	<div class="titleItem" id="description">
