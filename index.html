@@ -255,6 +255,7 @@
 		//has user touched a touchscreen display yet?
 		var hasTouchedYet = false;
 
+		//when window is finished loading
 		function start() {
 			window.scrollTo(0, 0); //set scroll position
 			setDate(); //set copyright date
@@ -276,7 +277,7 @@
 		}
 	</script>
 </head>
-<body>
+<body onload="start()">
 <!-- TITLE AND DESCRIPTION -->
 <div id="titleBox">
 	<div class="titleItem" id="titleText">
@@ -366,6 +367,5 @@
 <div id="footer">
 	&copy;<span id="copyrightYear">2020</span> Andrew&nbsp;Yaros. ALL&nbsp;RIGHTS&nbsp;RESERVED
 </div>
-<script>start()</script>
 </body>
 </html>
