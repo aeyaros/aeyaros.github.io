@@ -242,9 +242,7 @@
 			//determine whether to print starting year or date range
 			//print the range only if current year is after starting year
 			let dateToPrint = String(startYear);
-			if ((new Date).getFullYear() > startYear) {
-				dateToPrint = dateRange;
-			}
+			if ((new Date).getFullYear() > startYear) dateToPrint = dateRange;
 
 			//update document
 			document.getElementById("copyrightYear").innerHTML = dateToPrint;
