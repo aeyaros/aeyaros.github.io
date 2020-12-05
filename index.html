@@ -95,13 +95,14 @@
             width: 100%;
             height: 100vh;
             background-color: var(--darkerColor);
-            /*
+
 			background-image: url("./images/title.jpg");
 			background-repeat: no-repeat;
 			background-position: center;
 			background-attachment: fixed;
 			background-size: cover;
-			*/
+	        background-blend-mode: soft-light;
+
             box-shadow: inset 0 0 7vw rgba(0, 0, 0, 0.5);
             display: flex;
             flex-flow: column nowrap;
@@ -114,7 +115,7 @@
             /* padding between items and edge  */
             padding: .5vh var(--edgePadding);
             /* for title and description text */
-            text-shadow: 0 3px 20px var(--titleTextShadow), 0 2px 3px var(--titleTextShadow);
+            text-shadow: 0 .1vw 3vw var(--titleTextShadow), 0 .1vw .5vw var(--titleTextShadow);
         }
 
         /* contains a couple of title words */
