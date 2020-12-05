@@ -115,9 +115,9 @@
         /* items inside the title flex container */
         .titleItem {
             /* padding between items and edge  */
-            padding: .5vh var(--edgePadding);
+            padding: 0.5vh var(--edgePadding);
             /* for title and description text */
-            text-shadow: 0 .1vw 3vw var(--titleTextShadow), 0 .1vw .5vw var(--titleTextShadow);
+            text-shadow: 0 0.05vw 6vw var(--titleTextShadow), 0 0.1vw 3vw var(--titleTextShadow), 0 0.1vw 0.25vw var(--titleTextShadow);
         }
 
         /* contains a couple of title words */
@@ -140,7 +140,7 @@
         #description {
             font-family: "cmu", serif;
             font-size: 2.2vw;
-            letter-spacing: .1vw;
+            letter-spacing: 0.1vw;
             text-transform: uppercase;
             display: flex;
             flex-flow: row nowrap;
@@ -304,6 +304,7 @@
 			window.scrollTo(0, 0); //set scroll position
 			setDate(); //set copyright date
 
+			/* detect and adjust for mobile devices by testing whether there is a touchscreen */
 			if('ontouchstart' in document.documentElement) {
 				console.log("Detected mobile touch event. Adjusting styles.")
 				let mobileStyle = document.createElement("style");
@@ -312,21 +313,6 @@
 					+ "/* body { background-color: green; } */ ";
 				document.head.appendChild(mobileStyle);
 			}
-
-			/* detect and adjust for mobile devices by testing whether user touched screen */
-			//window.addEventListener("touchstart",
-			//	function () {
-			//		if (!hasTouchedYet) { //if not touched yet
-			//			hasTouchedYet = true; //set global variable
-			//			console.log("Detected mobile touch event. Adjusting styles.")
-			//			let mobileStyle = document.createElement("style");
-			//			mobileStyle.innerText = "/*Mobile styles:\n*/"
-			//				+ ".fixedBackground { background-attachment: scroll; }"
-			//				+ "/* body { background-color: green; } */ ";
-			//			document.head.appendChild(mobileStyle);
-			//		}
-			//	}
-			//);
 
 			//change the slide every few seconds
 			setInterval(incrementSlide, slideInterval);
