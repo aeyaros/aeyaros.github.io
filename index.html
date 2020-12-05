@@ -56,13 +56,15 @@
         :root {
             --edgePadding: 10vw; /* padding between content and edge */
             --titleTextShadow: #000000;
+	        --backgroundColor: #1e1e1e;
+	        --darkerColor: #101010;
         }
 
         body {
             margin: 0;
 
             color: white;
-            background-color: #2e2e2e;
+            background-color: var(--backgroundColor);
             font-family: "721", sans-serif;
 	        font-size: 15pt;
         }
@@ -91,29 +93,29 @@
         #titleBox {
             width: 100%;
             height: 100vh;
-            background-color: #3b3b3b;
+            background-color: var(--darkerColor);
 
-	        /*
-            background-image: url("./images/downtile-dark.gif");
-	        background-repeat: repeat;
+			/*
+            background-image: url("./images/title.jpg");
+	        background-repeat: no-repeat;
 	        background-position: center;
 	        background-attachment: fixed;
-	        */
+	        background-size: cover;
+			*/
 
             box-shadow: inset 0 0 7vw rgba(0, 0, 0, 0.5);
 
             display: flex;
             flex-flow: column nowrap;
             justify-content: center;
-            align-items: stretch;
-            /* needs to be stretch; items inside need padding without having to be resized to 100% since this screws stuff up, so instead we stretch them using flexbox and then apply padding */
+            align-items: stretch; /* needs to be stretch; items inside need padding without having to be resized to 100% since this screws stuff up, so instead we stretch them using flexbox and then apply padding */
         }
 
         /* items inside the title flex container */
         .titleItem {
             /* padding between items and edge  */
             padding: .5vh var(--edgePadding);
-
+			/* for title and description text */
             text-shadow: 0 3px 20px var(--titleTextShadow), 0 2px 3px var(--titleTextShadow);
         }
 
@@ -213,7 +215,7 @@
         .moduleImage {
             width: 100%;
             height: 50vh;
-            background-color: #444444;
+            background-color: var(--darkerColor);
             margin: 32px 0;
             box-shadow: inset 0 0 5vw rgba(0, 0, 0, 0.75);
         }
@@ -229,7 +231,7 @@
 
         #footer {
             width: 100%;
-            background-color: black;
+            background-color: var(--darkerColor);
             padding: 5vh 0;
             text-align: center;
         }
