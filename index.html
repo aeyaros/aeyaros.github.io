@@ -235,21 +235,50 @@
         }
 	</style>
 	<script>
-		const mobileAdjustments = "/*body { background-color: green; }*/ .fixedBackground { background-attachment: scroll;}";
+		//set copyright date
+		function setDate() {
+			//set starting year
+			const startYear = 2020;
 
-		/* detect and adjust for mobile devices by testing whether user touched screen */
-		var hasTouchedYet = false;
-		window.addEventListener("touchstart",
-			function () {
-				if (!hasTouchedYet) { //if not touched yet
-					hasTouchedYet = true; //set global variable
-					console.log("Detected mobile touch event. Adjusting styles.")
-					let mobileStyle = document.createElement("style");
-					mobileStyle.innerText = mobileAdjustments;
-					document.head.appendChild(mobileStyle);
-				}
+			//construct date range text from initial year to current
+			const dateRange = startYear + "&nbsp;-&nbsp;" + (new Date).getFullYear();
+
+			//determine whether to print starting year or date range
+			//print the range only if current year is after starting year
+			let dateToPrint = String(startYear);
+			if ((new Date).getFullYear() > startYear) {
+				dateToPrint = dateRange;
 			}
-		);
+
+			//update document
+			document.getElementById("copyrightYear").innerHTML = dateToPrint;
+		}
+
+		//has user touched a touchscreen display yet?
+		var hasTouchedYet = false;
+
+		function start() {
+			//set scroll position
+			window.scrollTo(0,0);
+
+			//set copyright date
+			setDate();
+
+			/* detect and adjust for mobile devices by testing whether user touched screen */
+			window.addEventListener("touchstart",
+				function () {
+					if (!hasTouchedYet) { //if not touched yet
+						hasTouchedYet = true; //set global variable
+						console.log("Detected mobile touch event. Adjusting styles.")
+						let mobileStyle = document.createElement("style");
+						mobileStyle.innerText = "/*Mobile styles:\n*/"
+							+ ".fixedBackground { background-attachment: scroll; }"
+							+ "/* body { background-color: green; } */ ";
+						document.head.appendChild(mobileStyle);
+					}
+				}
+			);
+		}
 	</script>
 </head>
 <body>
@@ -340,7 +369,8 @@
 
 <!-- FOOTER -->
 <div id="footer">
-	&copy;&nbsp;2020&nbsp;&ndash;&nbsp;2021 Andrew&nbsp;Yaros. ALL&nbsp;RIGHTS&nbsp;RESERVED
+	&copy;<span id="copyrightYear">2020</span> Andrew&nbsp;Yaros. ALL&nbsp;RIGHTS&nbsp;RESERVED
 </div>
+<script>start()</script>
 </body>
 </html>
