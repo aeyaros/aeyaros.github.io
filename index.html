@@ -304,20 +304,29 @@
 			window.scrollTo(0, 0); //set scroll position
 			setDate(); //set copyright date
 
+			if('ontouchstart' in document.documentElement) {
+				console.log("Detected mobile touch event. Adjusting styles.")
+				let mobileStyle = document.createElement("style");
+				mobileStyle.innerText = "/*Mobile styles:\n*/"
+					+ ".fixedBackground { background-attachment: scroll; }"
+					+ "/* body { background-color: green; } */ ";
+				document.head.appendChild(mobileStyle);
+			}
+
 			/* detect and adjust for mobile devices by testing whether user touched screen */
-			window.addEventListener("touchstart",
-				function () {
-					if (!hasTouchedYet) { //if not touched yet
-						hasTouchedYet = true; //set global variable
-						console.log("Detected mobile touch event. Adjusting styles.")
-						let mobileStyle = document.createElement("style");
-						mobileStyle.innerText = "/*Mobile styles:\n*/"
-							+ ".fixedBackground { background-attachment: scroll; }"
-							+ "/* body { background-color: green; } */ ";
-						document.head.appendChild(mobileStyle);
-					}
-				}
-			);
+			//window.addEventListener("touchstart",
+			//	function () {
+			//		if (!hasTouchedYet) { //if not touched yet
+			//			hasTouchedYet = true; //set global variable
+			//			console.log("Detected mobile touch event. Adjusting styles.")
+			//			let mobileStyle = document.createElement("style");
+			//			mobileStyle.innerText = "/*Mobile styles:\n*/"
+			//				+ ".fixedBackground { background-attachment: scroll; }"
+			//				+ "/* body { background-color: green; } */ ";
+			//			document.head.appendChild(mobileStyle);
+			//		}
+			//	}
+			//);
 
 			//change the slide every few seconds
 			setInterval(incrementSlide, slideInterval);
