@@ -23,34 +23,34 @@
         @font-face {
             /* Tachyon */
             font-family: "tachyon";
-            src: url("./fonts/Tachyon.otf")
+            src: url("./data/fonts/Tachyon.otf")
         }
 
         @font-face {
             /* Computer Modern serif */
             font-family: "cmu";
-            src: url("./fonts/cmunrm.otf");
+            src: url("./data/fonts/cmunrm.otf");
             font-weight: normal;
         }
 
         @font-face {
             /* Continuum Light */
             font-family: "cont";
-            src: url("./fonts/contl.ttf");
+            src: url("./data/fonts/contl.ttf");
             font-weight: 200;
         }
 
         @font-face {
             /* Swiss 721 roman */
             font-family: "721";
-            src: url("./fonts/721r.otf");
+            src: url("./data/fonts/721r.otf");
             font-weight: normal;
         }
 
         @font-face {
             /* Swiss 721 bold */
             font-family: "721";
-            src: url("./fonts/721b.otf");
+            src: url("./data/fonts/721b.otf");
             font-weight: bold;
         }
 
@@ -97,16 +97,20 @@
         #titleBox {
             width: 100%;
             height: 100vh;
-            background-color: var(--darkerColor);
 
-			background-image: url("./images/title.jpg");
 			background-repeat: no-repeat;
 			background-position: center;
 			background-attachment: fixed;
 			background-size: cover;
-	        background-blend-mode: soft-light;
 
-            box-shadow: inset 0 0 7vw rgba(0, 0, 0, 0.5);
+            /* slideshow transitions */
+            transition:	background 1.5s ease-out;
+            -webkit-transition:	background 1.5s ease-out;
+            -ms-transition:	background 1.5s ease-out;
+            -o-transition:	background 1.5s ease-out;
+            -moz-transition:	background 1.5s linear; /* not working in firefox :( */
+
+            box-shadow: inset 0 0 1vw rgba(0, 0, 0, 1);
             display: flex;
             flex-flow: column nowrap;
             justify-content: center;
@@ -235,6 +239,51 @@
         }
 	</style>
 	<script>
+		const slidesPath = "./data/images/slides/"
+		const slideFiles = [
+			"jpaint.jpg",
+			"bshroom-l2.jpg",
+			"lancaster.jpg",
+			"shell.jpg",
+			"stanford.jpg",
+			"wefa.jpg",
+			"gropius.jpg",
+			"barnes.jpg"
+		];
+		const n = slideFiles.length;
+		const slideInterval = 3000;
+
+		/* When the page is loaded: set the background image based on the current time */
+		const startingSlide = (Math.floor((new Date).getTime())) % n;
+
+		//preload images
+		var images = [];
+		/* Start preloading at the starting slide
+		Preload n images */
+		for(let i = startingSlide; i < startingSlide + n; i++) {
+			let img = new Image();
+			img.src = slidesPath + slideFiles[i % n];
+			images.push(img)
+		}
+
+		//counter variable starts at the second image; we already displayed the first
+		var slideCounter = startingSlide + 1;
+
+		function changeSlide(path) {
+			document.getElementById("titleBox").style.backgroundImage = "url('" + path + "')";
+		}
+
+		//set the initial slide
+		function setInitialSlide() {
+			changeSlide(slidesPath + slideFiles[startingSlide]);
+		}
+
+		//increment to the next slide
+		function incrementSlide() {
+			changeSlide(slidesPath + slideFiles[slideCounter % n]);
+			slideCounter += 1;
+		}
+
 		//set copyright date
 		function setDate() {
 			//set starting year
@@ -274,16 +323,19 @@
 					}
 				}
 			);
+
+			//change the slide every few seconds
+			setInterval(incrementSlide, slideInterval);
 		}
 	</script>
 </head>
 <body onload="start()">
 <!-- TITLE AND DESCRIPTION -->
-<div id="titleBox">
+<div id="titleBox" onload="setInitialSlide()">
 	<div class="titleItem" id="titleText">
 		<span>Andre<span class="lastLetter">w</span></span> <span id="lastName">Yaro<span
 			class="lastLetter">s</span></span>
-	</div>
+	</div><script>setInitialSlide()</script>
 
 	<div class="titleItem" id="description">
 		<span>BS&nbsp;Computer&nbsp;Science</span>
@@ -305,7 +357,7 @@
 <div class="module">
 	<div class="moduleTitle">Title of the first module</div>
 	<div class="moduleImage fixedBackground"
-	     style='background-image: url("./images/normal.jpg")'></div>
+	     style='background-image: url("./data/images/normal.jpg")'></div>
 
 	<div class="moduleText">
 		Culpa architecto facilis in ad voluptatem ratione explicabo quam. Nihil possimus vel laboriosam molestiae
@@ -318,7 +370,7 @@
 <div class="module">
 	<div class="moduleTitle">Title of the second module</div>
 	<div class="moduleImage fixedBackground"
-	     style='background-image: url("./images/square.jpg")'></div>
+	     style='background-image: url("./data/images/square.jpg")'></div>
 
 	<div class="moduleText">
 		Et sapiente tenetur amet voluptatum possimus repellendus est. Id aut mollitia dolorem labore rem aut sunt. Ut
@@ -330,7 +382,7 @@
 <div class="module">
 	<div class="moduleTitle">Title of the third module</div>
 	<div class="moduleImage fixedBackground"
-	     style='background-image: url("./images/wide.jpg")'></div>
+	     style='background-image: url("./data/images/wide.jpg")'></div>
 
 	<div class="moduleText">
 		Est et totam nam cumque facilis neque non sunt. Commodi voluptatem necessitatibus molestiae illum quo cumque. A
@@ -343,7 +395,7 @@
 <div class="module">
 	<div class="moduleTitle">Title of the fourth module</div>
 	<div class="moduleImage fixedBackground"
-	     style='background-image: url("./images/tall.jpg")'></div>
+	     style='background-image: url("./data/images/tall.jpg")'></div>
 
 	<div class="moduleText">
 		Fugit ex iste itaque et. Unde pariatur occaecati ut labore quo qui. Sint veniam rerum qui molestiae omnis.
@@ -355,7 +407,7 @@
 <div class="module">
 	<div class="moduleTitle">Title of the fifth module</div>
 	<div class="moduleImage fixedBackground"
-	     style='background-image: url("./images/sunset.jpg")'></div>
+	     style='background-image: url("./data/images/sunset.jpg")'></div>
 
 	<div class="moduleText">
 		Ut corrupti sit facilis maiores. Fugit dolor animi quos est. Soluta doloremque ut neque maxime nihil. Tenetur
