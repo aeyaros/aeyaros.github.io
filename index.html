@@ -234,6 +234,23 @@
             text-align: center;
         }
 	</style>
+	<script>
+		const mobileAdjustments = ".fixedBackground { background-attachment: fixed;}";
+
+		/* detect and adjust for mobile devices by testing whether user touched screen */
+		var hasTouchedYet = false;
+		window.addEventListener("touchstart",
+			function () {
+				if (!hasTouchedYet) { //if not touched yet
+					hasTouchedYet = true; //set global variable
+					console.log("Detected mobile touch event. Adjusting styles.")
+					let mobileStyle = document.createElement("style");
+					mobileStyle.innerText = mobileAdjustments;
+					document.head.appendChild(mobileStyle);
+				}
+			}
+		);
+	</script>
 </head>
 <body>
 <!-- TITLE AND DESCRIPTION -->
