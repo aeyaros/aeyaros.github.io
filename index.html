@@ -60,8 +60,14 @@
         :root {
             --edgePadding: 10vw; /* padding between content and edge */
             --titleTextShadow: #000000;
+
             --backgroundColor: #1e1e1e;
             --darkerColor: #101010;
+
+	        --buttonShadow: #000000;
+	        --buttonActive: #ff6600;
+	        --buttonText: #ffffff;
+	        --buttonInverseText: #000000;
         }
 
         body {
@@ -80,14 +86,35 @@
             background-attachment: fixed;
         }
 
-        .tempbutton {
+        .linkbutton {
+	        color: var(--buttonText);
+			text-decoration: none;
+			font-family: "cont", sans-serif;
+	        text-transform: uppercase;
+	        font-size: 17pt;
+	        letter-spacing: 0.1em;
+
             display: inline-block;
-            border: 1px solid white;
-            background: black;
+            border: 0 solid transparent;
+            background: var(--backgroundColor);
             text-align: center;
             border-radius: 20px;
-            padding: 10px;
-            margin: 10px 0;
+            padding: 15px 20px;
+	        margin: 20px;
+
+	        box-shadow: 0 5px 20px var(--buttonShadow);
+	        transition-duration: 0.1s;
+        }
+
+        .linkbutton:hover {
+	        text-decoration: none;
+            box-shadow: 0 1px 5px var(--buttonShadow);
+        }
+
+        .linkbutton:active {
+	        box-shadow: inset 0 5px 10px var(--buttonShadow);
+	        color: var(--buttonInverseText);
+	        background-color: var(--buttonActive);
         }
 
         /* ===================== */
@@ -99,11 +126,7 @@
             height: 100vh;
 
             /* slideshow transitions */
-            transition:	background 1.5s ease-out;
-            -webkit-transition:	background 1.5s ease-out;
-            -ms-transition:	background 1.5s ease-out;
-            -o-transition:	background 1.5s ease-out;
-            -moz-transition:	background 1.5s linear; /* not working in firefox :( */
+            transition: background 1.5s ease-out;
 
             box-shadow: inset 0 0 1vw rgba(0, 0, 0, 1);
             display: flex;
@@ -223,6 +246,14 @@
             padding: 0 var(--edgePadding);
         }
 
+        /* =================== */
+		/* MODULE-SPECIFIC IDS */
+        #downloadButtons {
+	        display: flex;
+	        flex-flow: row wrap;
+	        justify-content: space-evenly;
+        }
+
         /* ====== */
         /* FOOTER */
 
@@ -337,9 +368,10 @@
 <!-- INTRO MODULE -->
 <div class="module">
 	<div class="moduleText">
-		<div class="tempbutton">Resume download button</div>
-		<div class="tempbutton">Architectural portfolio download button</div>
-
+		<div id="downloadButtons">
+			<a class="linkbutton" href="">Résumé</a>
+			<a class="linkbutton" href="">Architectural Design Portfolio</a>
+		</div>
 	</div>
 </div>
 
