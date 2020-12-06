@@ -64,6 +64,10 @@
     --buttonHover: #ffffff;
     --buttonText: #ffffff;
     --buttonInverseText: #000000;
+    --scrollbarWidth: 16px;
+
+    /* firefox scrollbar color */
+    scrollbar-color: #444444 var(--backgroundColor);
 }
 
 /* disable text selection */
@@ -137,7 +141,7 @@ body {
 /* CUSTOM SCROLL BARS */
 
 ::-webkit-scrollbar {
-    width: 16px;
+    width: var(--scrollbarWidth);
 }
 
 ::-webkit-scrollbar-track {
@@ -293,13 +297,14 @@ body {
     background-color: var(--darkerColor);
     padding: 2vh 0;
     text-align: center;
+    box-shadow: 0 0 20px var(--darkerColor);
 }
 
 #footerLinks {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
-    padding-bottom: 1vh;
+    padding-bottom: 10px;
 }
 
 .footerLink {
@@ -330,4 +335,6 @@ body {
 #copyright {
     font-weight: 200;
     font-size: 12pt;
+    padding: 10px 0;
+    color: #bbbbbb;
 }
