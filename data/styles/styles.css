@@ -97,7 +97,7 @@ body {
     justify-content: space-evenly;
 }
 
-.linkbutton {
+.linkButton {
     color: var(--buttonText);
     text-decoration: none;
     font-family: "cont", sans-serif;
@@ -119,14 +119,14 @@ body {
     cursor: pointer;
 }
 
-.linkbutton:hover {
+.linkButton:hover {
     text-decoration: none;
     box-shadow: 0 1px 5px var(--buttonShadow);
     color: var(--buttonInverseText);
     background-color: var(--buttonHover);
 }
 
-.linkbutton:active {
+.linkButton:active {
     box-shadow: inset 0 5px 10px var(--buttonShadow), 0 0 30px var(--buttonActiveShadow);
     color: var(--buttonInverseText);
     background-color: var(--buttonActive);

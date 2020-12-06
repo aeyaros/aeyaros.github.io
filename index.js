@@ -16,6 +16,9 @@ const slideFiles = [
 const n = slideFiles.length;
 const slideInterval = 3000;
 
+//disable right clicks
+document.addEventListener('contextmenu', event => event.preventDefault());
+
 /* When the page is loaded: set the background image based on the current time */
 const startingSlide = (Math.floor((new Date).getTime())) % n;
 
@@ -85,7 +88,7 @@ function start() {
 			+ ".moduleImage { height: 25vh; } "
 			+ ".buttonContainer { flex-flow: column nowrap; align-items: stretch; }"
 			+ "}"
-			+ ".linkbutton:hover, .linkbutton:active { color:inherit; background-color: inherit; box-shadow: inherit; } "
+			+ ".linkButton:hover, .linkButton:active { color:inherit; background-color: inherit; box-shadow: inherit; } "
 			+ ".footerLink:hover, .footerLink:active { color:inherit; background-color: inherit; box-shadow: inherit; } "
 		;
 		document.head.appendChild(mobileStyle);
