@@ -1,0 +1,253 @@
+/* =================== */
+/* GENERAL STYLE ITEMS */
+
+:root {
+    --edgePadding: 10vw; /* padding between content and edge */
+    --titleTextShadow: #000000;
+    --backgroundColor: #1e1e1e;
+    --darkerColor: #181818;
+
+    --buttonShadow: #000000;
+    --buttonActive: #ff693c;
+    --buttonActiveShadow: rgba(255, 105, 60, 0.15);
+    --buttonHover: #ffffff;
+    --buttonText: #ffffff;
+    --buttonInverseText: #000000;
+}
+
+body {
+    margin: 0;
+
+    color: white;
+    background-color: var(--backgroundColor);
+    font-family: "721", sans-serif;
+    font-size: 12pt;
+}
+
+.fixedBackground {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.buttonContainer {
+    padding-top: 2vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.linkbutton {
+    color: var(--buttonText);
+    text-decoration: none;
+    font-family: "cont", sans-serif;
+    text-transform: uppercase;
+    font-size: 15pt;
+    letter-spacing: 0.1em;
+
+    display: inline-block;
+    border: 0 solid transparent;
+    background: var(--backgroundColor);
+    text-align: center;
+    border-radius: 20px;
+    padding: 15px 20px;
+    margin: 20px;
+
+    box-shadow: 0 5px 20px var(--buttonShadow);
+    transition-duration: 375ms;
+
+    cursor: pointer;
+}
+
+.linkbutton:hover {
+    text-decoration: none;
+    box-shadow: 0 1px 5px var(--buttonShadow);
+    color: var(--buttonInverseText);
+    background-color: var(--buttonHover);
+}
+
+.linkbutton:active {
+    box-shadow: inset 0 5px 10px var(--buttonShadow), 0 0 30px var(--buttonActiveShadow);
+    color: var(--buttonInverseText);
+    background-color: var(--buttonActive);
+}
+
+/* ===================== */
+/* TITLE AND DESCRIPTION */
+
+/* contains title text and description */
+#titleBox {
+    width: 100%;
+    height: 100vh;
+
+    /* slideshow transitions */
+    transition: background 1.5s ease-out;
+
+    /* temporary background which should be immediately changed by the javascript */
+    background-image: url("../images/please enable js.png");
+
+    box-shadow: inset 0 0 1vw rgba(0, 0, 0, 1);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: stretch; /* needs to be stretch; items inside need padding without having to be resized to 100% since this screws stuff up, so instead we stretch them using flexbox and then apply padding */
+}
+
+/* items inside the title flex container */
+.titleItem {
+    /* padding between items and edge  */
+    padding: 0.5vh var(--edgePadding);
+    /* for title and description text */
+    text-shadow: 0 0.05vw 6vw var(--titleTextShadow), 0 0.1vw 3vw var(--titleTextShadow), 0 0.1vw 0.25vw var(--titleTextShadow);
+}
+
+/* contains a couple of title words */
+#titleText {
+    font-family: "tachyon", sans-serif;
+    font-size: 5.5vw;
+    letter-spacing: 1vw;
+    text-transform: uppercase;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+/* last letters of each word in the title */
+.lastLetter {
+    letter-spacing: 0;
+}
+
+/* contains several description items */
+#description {
+    font-family: "cmu", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 2.2vw;
+    letter-spacing: 0.1vw;
+    text-transform: uppercase;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+/* make the title text a column for portrait orientation */
+@media only screen and (orientation: portrait) {
+    #titleText {
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        font-size: 9vw;
+    }
+
+    #lastName {
+        font-size: 12vw;
+    }
+
+    #description {
+        flex-flow: column nowrap;
+        font-size: 5vw;
+        line-height: 5vw;
+        justify-content: center;
+        align-items: center;
+        padding-top: 3vh;
+    }
+
+    #description span {
+        padding: 1vw 0;
+    }
+}
+
+/* at small sizes, make the title text even smaller */
+@media only screen and (max-width: 512px) and (max-height: 384px) {
+    #titleText {
+        font-size: 11vw;
+    }
+
+    #lastName {
+        font-size: 14vw;
+    }
+
+    #description {
+        font-size: 3vw;
+        line-height: 2vh;
+    }
+}
+
+/* ======================== */
+/* MODULES FOR EACH PROJECT */
+
+/* outer container for a module */
+.module {
+    padding: 6vh 0;
+}
+
+/* title text for a module */
+.moduleTitle {
+    font-family: "cmu", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    text-transform: capitalize;
+    font-size: 30pt;
+    letter-spacing: 0;
+    text-shadow: 0 2px 20px var(--titleTextShadow), 0 1px 3px var(--titleTextShadow);
+    padding: 0 var(--edgePadding);
+}
+
+/* full width image for a module */
+.moduleImage {
+    width: 100%;
+    height: 50vh;
+    background-color: var(--darkerColor);
+    margin: 32px 0;
+    box-shadow: inset 0 0 5vw rgba(0, 0, 0, 0.75);
+}
+
+/* text box for a module */
+.moduleText {
+    line-height: 25pt;
+    padding: 0 var(--edgePadding);
+}
+
+/* ====== */
+/* FOOTER */
+
+#footer {
+    width: 100%;
+    background-color: var(--darkerColor);
+    padding: 5vh 0;
+    text-align: center;
+}
+
+#footerLinks {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    padding-bottom: 20px;
+}
+
+.footerLink {
+    color: var(--buttonText);
+    font-family: "cont", serif;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin: 10px;
+    box-shadow: 0 2px 10px var(--buttonShadow);
+    cursor: pointer;
+}
+
+.footerLink:hover {
+    color: var(--buttonInverseText);
+    background-color: var(--buttonHover);
+    box-shadow: 0 1px 5px var(--buttonShadow);
+}
+
+.footerLink:active {
+    color: var(--buttonInverseText);
+    background-color: var(--buttonActive);
+    box-shadow: inset 0 5px 10px var(--buttonShadow), 0 0 20px var(--buttonActiveShadow);
+}
+
+#copyright {
+    font-weight: 200;
+    font-size: 12pt;
+}
