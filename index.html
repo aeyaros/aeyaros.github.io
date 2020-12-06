@@ -101,12 +101,12 @@
             justify-content: space-evenly;
         }
 
-        @media only screen and (max-width: 420px) {
+        /*@media only screen and (max-width: 420px) {
 	        .linkbutton {
                 display: block;
                 width: 100%;
 	        }
-        }
+        }*/
 
             .linkbutton {
 	        color: var(--buttonText);
@@ -396,7 +396,7 @@
 				let mobileStyle = document.createElement("style");
 				mobileStyle.innerText = "/*Mobile styles:\n*/"
 					+ ".fixedBackground { background-attachment: scroll; }"
-					//+ ".buttonContainer { flex-flow: column nowrap; }"
+					+ ".buttonContainer { flex-flow: column nowrap; align-items: stretch; }"
 					+ "body { font-size: 14pt; }"
 					+ "/* body { background-color: green; } */ "
 					+ "@media only screen and (orientation: portrait) {"
