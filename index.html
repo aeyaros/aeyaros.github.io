@@ -41,17 +41,24 @@
         }
 
         @font-face {
-            /* Swiss 721 roman */
+            /* Swiss 721 light - using as regular font */
             font-family: "721";
-            src: url("./data/fonts/721r.otf");
+            src: url("./data/fonts/721light.otf");
             font-weight: normal;
         }
 
         @font-face {
             /* Swiss 721 bold */
             font-family: "721";
-            src: url("./data/fonts/721b.otf");
+            src: url("./data/fonts/721bold.otf");
             font-weight: bold;
+        }
+
+        @font-face {
+            /* Swiss 721 thin - using as ligher font */
+            font-family: "721";
+            src: url("./data/fonts/721thin.otf");
+            font-weight: 200;
         }
 
         /* =================== */
@@ -76,7 +83,7 @@
             color: white;
             background-color: var(--backgroundColor);
             font-family: "721", sans-serif;
-            font-size: 15pt;
+            font-size: 12pt;
         }
 
         .fixedBackground {
@@ -110,7 +117,7 @@
 	        margin: 20px;
 
 	        box-shadow: 0 5px 20px var(--buttonShadow);
-	        transition-duration: 0.1s;
+	        transition-duration: 375ms;
         }
 
         .linkbutton:hover {
@@ -227,7 +234,7 @@
 
         /* outer container for a module */
         .module {
-            padding: 10vh 0;
+            padding: 6vh 0;
         }
 
         /* title text for a module */
@@ -294,6 +301,7 @@
         }
 
         #copyright {
+	        font-weight: 200;
 	        font-size: 12pt;
         }
 	</style>
