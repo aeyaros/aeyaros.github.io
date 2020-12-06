@@ -86,6 +86,13 @@
             background-attachment: fixed;
         }
 
+        .buttonContainer {
+	        padding-top: 2vh;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-evenly;
+        }
+
         .linkbutton {
 	        color: var(--buttonText);
 			text-decoration: none;
@@ -248,14 +255,6 @@
             padding: 0 var(--edgePadding);
         }
 
-        /* =================== */
-		/* MODULE-SPECIFIC IDS */
-        #downloadButtons {
-	        display: flex;
-	        flex-flow: row wrap;
-	        justify-content: space-evenly;
-        }
-
         /* ====== */
         /* FOOTER */
 
@@ -270,7 +269,7 @@
 			display: flex;
 	        flex-flow: row wrap;
 	        justify-content: space-evenly;
-	        padding: 20px 0;
+            padding-bottom: 20px;
         }
 
         .footerLink {
@@ -408,17 +407,18 @@
 	</div>
 </div>
 
-<!-- INTRO MODULE -->
-<div class="module">
-	<div class="moduleText">
-		<div id="downloadButtons">
-			<a class="linkbutton" href="./data/downloads/AndrewYarosResume.pdf#view=Fit&toolbar=0&navpanes=0&scrollbar=1">R&Eacute;sum&Eacute;</a>
+<div class="buttonContainer">
+	<a class="linkbutton" href="./data/downloads/AndrewYarosResume.pdf#view=Fit&toolbar=0&navpanes=0&scrollbar=1">R&Eacute;sum&Eacute;</a>
 
-			<a class="linkbutton" href="./data/downloads/AndrewYarosPortfolio.pdf#page=3&view=Fit&toolbar=0&navpanes=0&scrollbar=1">
-				Architectural Design Portfolio
-			</a>
-		</div>
-	</div>
+	<a class="linkbutton" href="https://github.com/aeyaros/">
+		GitHub
+	</a>
+
+	<a class="linkbutton" href="./data/downloads/AndrewYarosPortfolio.pdf#page=3&view=Fit&toolbar=0&navpanes=0&scrollbar=1">
+		Portfolio
+	</a>
+
+
 </div>
 
 <!-- JPaint -->
@@ -428,8 +428,10 @@
 	     style='background-image: url("./data/images/modules/jpaint.jpg")'></div>
 
 	<div class="moduleText">
-		Text<br>
-		<a class="linkbutton" target="_blank" href="https://paint.yaros.ae/">Visit project website</a>
+		JPaint is a paint program in the vein of MacPaint and Microsoft Paint. It is written in Java using the Swing framework. This was a school project for my GUIs class at Drexel University.
+		<div class="buttonContainer">
+			<a class="linkbutton" target="_blank" href="https://paint.yaros.ae/">Visit project website</a>
+		</div>
 	</div>
 </div>
 
@@ -440,8 +442,11 @@
 	     style='background-image: url("./data/images/modules/checkers.jpg")'></div>
 
 	<div class="moduleText">
-		Text<br>
-		<a class="linkbutton" target="_blank" href="./checkers.html">Visit project website</a>
+		Text
+		<div class="buttonContainer">
+			<a class="linkbutton" target="_blank" href="./checkers.html">Visit project website</a>
+		</div>
+
 	</div>
 </div>
 
@@ -452,8 +457,10 @@
 	     style='background-image: url("./data/images/modules/foodtrucks.jpg")'></div>
 
 	<div class="moduleText">
-		Text<br>
-		<a class="linkbutton" target="_blank" href="https://jffte.yaros.ae/">Visit project website</a>
+		Text
+		<div class="buttonContainer">
+			<a class="linkbutton" target="_blank" href="https://jffte.yaros.ae/">Visit project website</a>
+		</div>
 	</div>
 </div>
 
@@ -461,11 +468,12 @@
 <!-- FOOTER -->
 <div id="footer">
 	<div id="footerLinks">
-		<a class="footerLink" href="https://github.com/aeyaros/" >GitHub</a>
 		<a class="footerLink" href="https://www.linkedin.com/in/aey/" >LinkedIn</a>
 		<span class="footerLink" onclick="sendEmail()">Email</span>
 	</div>
-	<span id="copyright">&copy;<span id="copyrightYear">2020</span> Andrew&nbsp;Yaros. ALL&nbsp;RIGHTS&nbsp;RESERVED</span>
+	<div id="copyright">
+		&copy;<span id="copyrightYear">2020</span> Andrew&nbsp;Yaros. ALL&nbsp;RIGHTS&nbsp;RESERVED
+	</div>
 </div>
 </body>
 </html>
