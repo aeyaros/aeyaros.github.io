@@ -60,12 +60,12 @@
         :root {
             --edgePadding: 10vw; /* padding between content and edge */
             --titleTextShadow: #000000;
-
             --backgroundColor: #1e1e1e;
             --darkerColor: #101010;
 
 	        --buttonShadow: #000000;
 	        --buttonActive: #ff6600;
+	        --buttonHover: #ffffff;
 	        --buttonText: #ffffff;
 	        --buttonInverseText: #000000;
         }
@@ -109,6 +109,8 @@
         .linkbutton:hover {
 	        text-decoration: none;
             box-shadow: 0 1px 5px var(--buttonShadow);
+            color: var(--buttonInverseText);
+            background-color: var(--buttonHover);
         }
 
         .linkbutton:active {
