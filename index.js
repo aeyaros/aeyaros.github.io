@@ -70,7 +70,7 @@ function isMobile() {
 
 //when window is finished loading
 function start() {
-	window.scrollTo(0, 0); //set scroll position
+	//window.scrollTo(0, 0); //reset scroll position
 	setDate(); //set copyright date
 
 	/* detect and adjust for mobile devices by testing whether there is a touchscreen */
