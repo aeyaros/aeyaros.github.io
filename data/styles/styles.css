@@ -95,6 +95,7 @@ body {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
+    padding-top: 10px;
 }
 
 .linkButton {
