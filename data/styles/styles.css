@@ -135,8 +135,7 @@ body {
     /* slideshow transitions */
     transition: background 1.5s ease-out;
 
-    /* temporary background which should be immediately changed by the javascript */
-    background-image: url("../images/please enable js.png");
+    background-color: #2a2a2a;
 
     box-shadow: inset 0 0 1vw rgba(0, 0, 0, 1);
     display: flex;
