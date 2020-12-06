@@ -115,7 +115,7 @@
 
         .linkbutton:active {
 	        box-shadow: inset 0 5px 10px var(--buttonShadow);
-	        color: var(--buttonInverseText);
+	        color: var(--buttonText);
 	        background-color: var(--buttonActive);
         }
 
@@ -289,7 +289,7 @@
         }
 
         .footerLink:active {
-            color: var(--buttonInverseText);
+            color: var(--buttonText);
             background-color: var(--buttonActive);
 
         }
@@ -376,7 +376,7 @@
 				mobileStyle.innerText = "/*Mobile styles:\n*/"
 					+ ".fixedBackground { background-attachment: scroll; }"
 					+ "/* body { background-color: green; } */ "
-					+ "@media only screen and (orientation: portrait) {";
+					+ "@media only screen and (orientation: portrait) {"
 					+ ".moduleImage { height: 25vh; } }";
 				document.head.appendChild(mobileStyle);
 			}
