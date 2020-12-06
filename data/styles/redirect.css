@@ -1,28 +1,38 @@
 /* Andrew Yaros */
 /* Style for pages with simple redirect buttons */
 @font-face {
-	font-family: 					"cmu";
-	src: 							url("../fonts/cmunrm.otf");
-	font-weight: 					normal;
-} html, body { 
-	color: 							#ffffff;
-	background-color: 				#1e1e1e;
-	font-family: 					"cmu", "Palatino Linotype", "Book Antiqua", Palatino, serif; 
-} #thelink {
-	margin: 						auto;
-	text-align: 					center;
-	padding: 						50px;
-} a, a:visited { 
-	text-decoration: 				none;
-	-webkit-transition-duration: 	0.25s;
-	transition-duration: 			0.25s;
-} a { 
-	color: 							#ffffff;
-	box-shadow: 					0 0 15px #000000;
-	padding: 						20px;
-	font-size: 						16px;
-	border-radius: 					25px;
-} a:hover { 
-	background: 					#ffffff;
-	color: 							#000000;
+    font-family: "cmu";
+    src: url("../fonts/cmunrm.otf");
+    font-weight: normal;
+}
+
+html, body {
+    color: #ffffff;
+    background-color: #1e1e1e;
+    font-family: "cmu", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+#thelink {
+    margin: auto;
+    text-align: center;
+    padding: 50px;
+}
+
+a, a:visited {
+    text-decoration: none;
+    -webkit-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+}
+
+a {
+    color: #ffffff;
+    box-shadow: 0 0 15px #000000;
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 25px;
+}
+
+a:hover {
+    background: #ffffff;
+    color: #000000;
 }

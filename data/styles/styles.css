@@ -149,6 +149,7 @@ body {
     margin-bottom: 0;
     margin-right: 1.5px; /*when text shadow changes, give spacing to avoid the arrow changing position*/
 }
+
 .thearrow { /* the svg path */
     fill: var(--buttonText);
     stroke: var(--buttonText);
