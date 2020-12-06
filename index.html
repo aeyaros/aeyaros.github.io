@@ -72,7 +72,7 @@
 
 	        --buttonShadow: #000000;
 	        --buttonActive: #ff693c;
-	        --buttonActiveShadow: rgba(255, 105, 60, 0.25);
+	        --buttonActiveShadow: rgba(255, 105, 60, 0.15);
 	        --buttonHover: #ffffff;
 	        --buttonText: #ffffff;
 	        --buttonInverseText: #000000;
@@ -242,10 +242,10 @@
 
         /* title text for a module */
         .moduleTitle {
-            font-family: "cont", sans-serif;
-            text-transform: uppercase;
+            font-family: "cmu", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+            text-transform: capitalize;
             font-size: 30pt;
-            letter-spacing: 0.1em;
+            letter-spacing: 0;
             text-shadow: 0 2px 20px var(--titleTextShadow), 0 1px 3px var(--titleTextShadow);
             padding: 0 var(--edgePadding);
         }
@@ -284,7 +284,8 @@
 
         .footerLink {
             color: var(--buttonText);
-	        font-family: "cmu", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	        font-family: "cont", serif;
+	        letter-spacing: 0.1em;
 	        text-decoration: none;
 	        text-transform: uppercase;
 	        padding: 10px 20px;
@@ -431,18 +432,22 @@
 	</div>
 </div>
 
-<div class="buttonContainer">
-	<a class="linkbutton" href="./data/downloads/AndrewYarosResume.pdf#view=Fit&toolbar=0&navpanes=0&scrollbar=1">R&Eacute;sum&Eacute;</a>
+<!-- Intro -->
+<div class="module">
+	<div class="moduleText">Please <span id="useraction">click</span> on a button below, or keep scrolling down to see a few of my projects.</div>
+	<script>if(isMobile()) document.getElementById("useraction").innerHTML = "tap";</script>
 
-	<a class="linkbutton" href="https://github.com/aeyaros/">
-		GitHub
-	</a>
+	<div class="buttonContainer">
+		<a class="linkbutton" href="./data/downloads/AndrewYarosResume.pdf#view=Fit&toolbar=0&navpanes=0&scrollbar=1">R&Eacute;sum&Eacute;</a>
 
-	<a class="linkbutton" href="./data/downloads/AndrewYarosPortfolio.pdf#page=3&view=Fit&toolbar=0&navpanes=0&scrollbar=1">
-		Portfolio
-	</a>
+		<a class="linkbutton" href="https://github.com/aeyaros/">
+			GitHub
+		</a>
 
-
+		<a class="linkbutton" href="./data/downloads/AndrewYarosPortfolio.pdf#page=3&view=Fit&toolbar=0&navpanes=0&scrollbar=1">
+			Portfolio
+		</a>
+	</div>
 </div>
 
 <!-- JPaint -->
