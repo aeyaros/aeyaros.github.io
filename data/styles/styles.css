@@ -66,6 +66,9 @@
     --buttonInverseText: #000000;
     --scrollbarWidth: 16px;
 
+    --copyrighttext: #505050;
+
+
     /* firefox scrollbar color */
     scrollbar-color: #444444 var(--backgroundColor);
 }
@@ -334,7 +337,8 @@ body {
 
 #copyright {
     font-weight: 200;
-    font-size: 12pt;
+    font-size: 10pt;
+    letter-spacing: 0.5pt;
     padding: 10px 0;
-    color: #bbbbbb;
+    color: var(--copyrighttext);
 }
