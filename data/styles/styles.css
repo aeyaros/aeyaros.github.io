@@ -1,3 +1,47 @@
+/* ===== */
+/* FONTS */
+
+@font-face {
+    /* Tachyon */
+    font-family: "tachyon";
+    src: url("../fonts/Tachyon.otf")
+}
+
+@font-face {
+    /* Computer Modern serif */
+    font-family: "cmu";
+    src: url("../fonts/cmunrm.otf");
+    font-weight: normal;
+}
+
+@font-face {
+    /* Continuum Light */
+    font-family: "cont";
+    src: url("../fonts/contl.ttf");
+    font-weight: 200;
+}
+
+@font-face {
+    /* Swiss 721 light - using as regular font */
+    font-family: "721";
+    src: url("../fonts/721light.otf");
+    font-weight: normal;
+}
+
+@font-face {
+    /* Swiss 721 bold */
+    font-family: "721";
+    src: url("../fonts/721bold.otf");
+    font-weight: bold;
+}
+
+@font-face {
+    /* Swiss 721 thin - using as ligher font */
+    font-family: "721";
+    src: url("../fonts/721thin.otf");
+    font-weight: 200;
+}
+
 /* =================== */
 /* GENERAL STYLE ITEMS */
 
