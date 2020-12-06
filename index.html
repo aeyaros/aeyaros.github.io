@@ -68,10 +68,11 @@
             --edgePadding: 10vw; /* padding between content and edge */
             --titleTextShadow: #000000;
             --backgroundColor: #1e1e1e;
-            --darkerColor: #101010;
+            --darkerColor: #181818;
 
 	        --buttonShadow: #000000;
-	        --buttonActive: #ff6600;
+	        --buttonActive: #ff693c;
+	        --buttonActiveShadow: rgba(255, 105, 60, 0.25);
 	        --buttonHover: #ffffff;
 	        --buttonText: #ffffff;
 	        --buttonInverseText: #000000;
@@ -118,6 +119,8 @@
 
 	        box-shadow: 0 5px 20px var(--buttonShadow);
 	        transition-duration: 375ms;
+
+            cursor: pointer;
         }
 
         .linkbutton:hover {
@@ -128,7 +131,7 @@
         }
 
         .linkbutton:active {
-	        box-shadow: inset 0 5px 10px var(--buttonShadow);
+	        box-shadow: inset 0 5px 10px var(--buttonShadow), 0 0 30px var(--buttonActiveShadow);
 	        color: var(--buttonInverseText);
 	        background-color: var(--buttonActive);
         }
@@ -287,17 +290,20 @@
 	        padding: 10px 20px;
 	        border-radius: 20px;
 	        margin: 10px;
+	        box-shadow: 0 2px 10px var(--buttonShadow);
+	        cursor: pointer;
         }
 
         .footerLink:hover {
 	        color: var(--buttonInverseText);
 	        background-color: var(--buttonHover);
+            box-shadow: 0 1px 5px var(--buttonShadow);
         }
 
         .footerLink:active {
             color: var(--buttonInverseText);
             background-color: var(--buttonActive);
-
+            box-shadow: inset 0 5px 10px var(--buttonShadow), 0 0 20px var(--buttonActiveShadow);
         }
 
         #copyright {
@@ -392,10 +398,16 @@
 			setInterval(incrementSlide, slideInterval);
 		}
 
-		let email = "andrew@yaros.ae";
-
 		//when email link is clicked
 		function sendEmail() {
+			let email =    "andrew@yaros.ae";
+
+			let shifted1 = "boesfx"
+
+			let shifted2 = "zbspt"
+
+			let shifted3 = "bf"
+
 			window.location ="mailto:" + email;
 		}
 	</script>
@@ -465,7 +477,7 @@
 	     style='background-image: url("./data/images/modules/foodtrucks.jpg")'></div>
 
 	<div class="moduleText">
-		This is a web application for looking up information about the various food trucks around Drexel's campus. It uses a Google Firebase database for storing data. Aside from the front-end, there is also an editor app for adding, modifying, and removing food trucks. This was a group project for a class at Drexel. JFFTE is an abbreviation for "John Fry's Food Truck Extravaganza" in reference to Drexel's president.
+		This is a web application for looking up information about the various food trucks around Drexel's campus. It uses a Google Firebase database for storing data. Aside from the front-end, there is also an editor app for adding, modifying, and removing food trucks. This was a group project for a class at Drexel. JFFTE is an abbreviation for "John Fry's Food Truck Extravaganza," in reference to Drexel's president.
 		<div class="buttonContainer">
 			<a class="linkbutton" target="_blank" href="https://jffte.yaros.ae/">Visit project website</a>
 		</div>
