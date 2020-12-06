@@ -269,7 +269,6 @@
 	<script>
 		const slidesPath = "./data/images/slides/"
 		const slideFiles = [
-			"jpaint.jpg",
 			"bshroom-l2.jpg",
 			"lancaster.jpg",
 			"shell.jpg",
@@ -329,8 +328,9 @@
 			document.getElementById("copyrightYear").innerHTML = dateToPrint;
 		}
 
-		//has user touched a touchscreen display yet?
-		var hasTouchedYet = false;
+		function isMobile() {
+			return 'ontouchstart' in document.documentElement;
+		}
 
 		//when window is finished loading
 		function start() {
@@ -338,7 +338,7 @@
 			setDate(); //set copyright date
 
 			/* detect and adjust for mobile devices by testing whether there is a touchscreen */
-			if('ontouchstart' in document.documentElement) {
+			if(isMobile()) {
 				console.log("Detected mobile touch event. Adjusting styles.")
 				let mobileStyle = document.createElement("style");
 				mobileStyle.innerText = "/*Mobile styles:\n*/"
@@ -371,73 +371,51 @@
 <div class="module">
 	<div class="moduleText">
 		<div id="downloadButtons">
-			<a class="linkbutton" href="">Résumé</a>
-			<a class="linkbutton" href="">Architectural Design Portfolio</a>
+			<a class="linkbutton" href="./data/downloads/AndrewYarosResume.pdf#view=Fit&toolbar=0&navpanes=0&scrollbar=1">R&Eacute;sum&Eacute;</a>
+
+			<a class="linkbutton" href="./data/downloads/AndrewYarosPortfolio.pdf#page=3&view=Fit&toolbar=0&navpanes=0&scrollbar=1">
+				Architectural Design Portfolio
+			</a>
 		</div>
 	</div>
 </div>
 
-<!-- MODULE NUMBER ONE -->
+<!-- JPaint -->
 <div class="module">
-	<div class="moduleTitle">Title of the first module</div>
+	<div class="moduleTitle">JPaint</div>
 	<div class="moduleImage fixedBackground"
-	     style='background-image: url("./data/images/normal.jpg")'></div>
+	     style='background-image: url("./data/images/modules/jpaint.jpg")'></div>
 
 	<div class="moduleText">
-		Culpa architecto facilis in ad voluptatem ratione explicabo quam. Nihil possimus vel laboriosam molestiae
-		pariatur vel aut eveniet. Asperiores accusamus dolores autem ex. Quibusdam et eos facere. Sint rem labore veniam
-		excepturi et eum vel. Laboriosam error vero est.
+		Text<br>
+		<a class="linkbutton" target="_blank" href="https://paint.yaros.ae/">Visit project website</a>
 	</div>
 </div>
 
-<!-- MODULE NUMBER TWO -->
+<!-- Checkers -->
 <div class="module">
-	<div class="moduleTitle">Title of the second module</div>
+	<div class="moduleTitle">Checkers Online</div>
 	<div class="moduleImage fixedBackground"
-	     style='background-image: url("./data/images/square.jpg")'></div>
+	     style='background-image: url("./data/images/modules/checkers.jpg")'></div>
 
 	<div class="moduleText">
-		Et sapiente tenetur amet voluptatum possimus repellendus est. Id aut mollitia dolorem labore rem aut sunt. Ut
-		earum eaque odio in et harum nihil. Et minus et quia rerum est.
+		Text<br>
+		<a class="linkbutton" target="_blank" href="./checkers.html">Visit project website</a>
 	</div>
 </div>
 
-<!-- MODULE NUMBER THREE -->
+<!-- JFFTE -->
 <div class="module">
-	<div class="moduleTitle">Title of the third module</div>
+	<div class="moduleTitle">J.F.F.T.E.</div>
 	<div class="moduleImage fixedBackground"
-	     style='background-image: url("./data/images/wide.jpg")'></div>
+	     style='background-image: url("./data/images/modules/foodtrucks.jpg")'></div>
 
 	<div class="moduleText">
-		Est et totam nam cumque facilis neque non sunt. Commodi voluptatem necessitatibus molestiae illum quo cumque. A
-		odio officia delectus voluptatem mollitia repudiandae corporis sint. Impedit et molestias id deserunt fuga
-		minima libero et. Eveniet qui laudantium aut. Non ut molestias et dolorem minus ab repellat.
+		Text<br>
+		<a class="linkbutton" target="_blank" href="https://jffte.yaros.ae/">Visit project website</a>
 	</div>
 </div>
 
-<!-- MODULE NUMBER FOUR -->
-<div class="module">
-	<div class="moduleTitle">Title of the fourth module</div>
-	<div class="moduleImage fixedBackground"
-	     style='background-image: url("./data/images/tall.jpg")'></div>
-
-	<div class="moduleText">
-		Fugit ex iste itaque et. Unde pariatur occaecati ut labore quo qui. Sint veniam rerum qui molestiae omnis.
-		Cupiditate ducimus rerum incidunt provident molestiae est. Voluptate natus ea pariatur.
-	</div>
-</div>
-
-<!-- MODULE NUMBER FIVE -->
-<div class="module">
-	<div class="moduleTitle">Title of the fifth module</div>
-	<div class="moduleImage fixedBackground"
-	     style='background-image: url("./data/images/sunset.jpg")'></div>
-
-	<div class="moduleText">
-		Ut corrupti sit facilis maiores. Fugit dolor animi quos est. Soluta doloremque ut neque maxime nihil. Tenetur
-		non et consequatur et. Qui a officia enim eum inventore et ratione.
-	</div>
-</div>
 
 <!-- FOOTER -->
 <div id="footer">
