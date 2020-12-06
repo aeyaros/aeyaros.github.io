@@ -79,7 +79,7 @@ body {
     margin: 0;
 
     color: white;
-    background-color: var(--backgroundColor);
+    background-color: var(--darkerColor);
     font-family: "721", sans-serif;
     font-size: 12pt;
 }
@@ -255,6 +255,8 @@ body {
 /* outer container for a module */
 .module {
     padding: 4vh 0;
+    margin: 0;
+    background-color: var(--backgroundColor);
 }
 
 /* title text for a module */
