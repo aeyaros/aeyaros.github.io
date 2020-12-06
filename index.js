@@ -1,3 +1,8 @@
+/************************
+ * JavaScript for index *
+ * page by Andrew Yaros *
+ ************************/
+
 const slidesPath = "./data/images/slides/"
 const slideFiles = [
 	"bshroom-l2.jpg",
