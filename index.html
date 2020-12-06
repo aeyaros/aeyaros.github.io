@@ -400,15 +400,19 @@
 
 		//when email link is clicked
 		function sendEmail() {
-			let email =    "andrew@yaros.ae";
+			//subtract 1 from a character code to get the previous character
+			function shiftDown(char) { return String.fromCharCode(char.charCodeAt(0) - 1); }
+			//shift a whole word downwards
+			function shiftWord(input) {
+				let output = "";
+				//shift each character in the word
+				for(let i = 0; i < input.length; i++) output += (shiftDown(input[i]));
+				return output;
+			}
 
-			let shifted1 = "boesfx"
-
-			let shifted2 = "zbspt"
-
-			let shifted3 = "bf"
-
-			window.location ="mailto:" + email;
+			let shifted = ["boesfx", "zbspt", "bf"];
+			//go to mailto link
+			window.location = "mailto:" + shiftWord(shifted[0]) + "@" + shiftWord(shifted[1]) + "." + shiftWord(shifted[2]);
 		}
 	</script>
 </head>
