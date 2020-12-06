@@ -101,7 +101,14 @@
             justify-content: space-evenly;
         }
 
-        .linkbutton {
+        @media only screen and (max-width: 400px) {
+	        .linkbutton {
+                display: block;
+                width: 100%;
+	        }
+        }
+
+            .linkbutton {
 	        color: var(--buttonText);
 			text-decoration: none;
 			font-family: "cont", sans-serif;
@@ -448,7 +455,7 @@
 		</a>
 
 		<a class="linkbutton" href="./data/downloads/AndrewYarosPortfolio.pdf#page=3&view=Fit&toolbar=0&navpanes=0&scrollbar=1">
-			Architecture&nbsp;Portfolio
+			Architecture Portfolio
 		</a>
 	</div>
 </div>
