@@ -280,6 +280,7 @@
 	        text-transform: uppercase;
 	        padding: 10px 20px;
 	        border-radius: 20px;
+	        margin: 10px;
         }
 
         .footerLink:hover {
@@ -374,7 +375,9 @@
 				let mobileStyle = document.createElement("style");
 				mobileStyle.innerText = "/*Mobile styles:\n*/"
 					+ ".fixedBackground { background-attachment: scroll; }"
-					+ "/* body { background-color: green; } */ ";
+					+ "/* body { background-color: green; } */ "
+					+ "@media only screen and (orientation: portrait) {";
+					+ ".moduleImage { height: 25vh; } }";
 				document.head.appendChild(mobileStyle);
 			}
 
