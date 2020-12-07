@@ -80,16 +80,13 @@ function start() {
 	if(isMobile()) {
 		console.log("Detected mobile touch event. Adjusting styles.")
 		let mobileStyle = document.createElement("style");
-		mobileStyle.innerText = "/* Mobile styles: */ "
-			+ "/* body { background-color: green; } */ /* for debugging */ "
-			+ ".fixedBackground { background-attachment: scroll; } "
-			+ "body { font-size: 14pt; } "
-			+ "@media only screen and (orientation: portrait) { "
-			+ ".moduleImage { height: 25vh; } "
-			+ ".buttonContainer { flex-flow: column nowrap; align-items: stretch; } "
-			+ "} "
-			+ ".linkButton:hover, .linkButton:active, .footerLink:hover, .footerLink:active, .linkButton:hover .thearrow, .linkButton:active .thearrow { all: unset; } "
-		;
+		mobileStyle.innerText = "/* body { background-color: green; } */\n" +
+			".fixedBackground { background-attachment: scroll; }\n" +
+			"body { font-size: 14pt; }\n" +
+			"@media only screen and (orientation: portrait) { .moduleImage { height: 25vh; } .buttonContainer { flex-flow: column nowrap; align-items: stretch; } }\n" +
+			".linkButton:hover, .linkButton:active { color: var(--buttonText); background-color: var(--backgroundColor); box-shadow: 0 5px 20px var(--buttonShadow); }\n" +
+			".footerLink:hover, .footerLink:active { color: var(--buttonText); background-color: var(--darkerColor); box-shadow: box-shadow: 0 2px 10px var(--buttonShadow); }\n" +
+			".linkButton:hover .thearrow, .linkButton:active .thearrow { fill: var(--buttonText); stroke: var(--buttonText); }";
 		document.head.appendChild(mobileStyle);
 	}
 
