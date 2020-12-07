@@ -18,7 +18,7 @@ const slideFiles = [
 	"stanford.jpg",
 	"wefa.jpg",
 	"gropius.jpg",
-	"rhombus.jpg"
+	"station.jpg"
 ];
 const n = slideFiles.length;
 const slideInterval = 3000;
