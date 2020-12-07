@@ -88,9 +88,8 @@ function start() {
 			+ ".moduleImage { height: 25vh; } "
 			+ ".buttonContainer { flex-flow: column nowrap; align-items: stretch; } "
 			+ "} "
-			+ ".linkButton:hover, .linkButton:active { color: inherit; background-color: inherit; box-shadow: inherit; } "
-			+ ".footerLink:hover, .footerLink:active { color: inherit; background-color: inherit; box-shadow: inherit; } "
-                        + ".linkButton:hover .thearrow, .linkButton:active .thearrow { fill: inherit; stroke: inherit; } "
+			+ ".linkButton:hover, .linkButton:active, .footerLink:hover, .footerLink:active { color: unset; background-color: unset; box-shadow: unset; } "
+			+ ".linkButton:hover .thearrow, .linkButton:active .thearrow { fill: unset; stroke: unset; } "
 		;
 		document.head.appendChild(mobileStyle);
 	}
