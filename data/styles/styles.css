@@ -320,7 +320,7 @@ body {
 #footer {
     width: 100%;
     background-color: var(--darkerColor);
-    padding: 3vh 0;
+    padding: 2vh 0;
     text-align: center;
     box-shadow: 0 0 5px var(--darkerColor);
 }
