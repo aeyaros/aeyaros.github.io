@@ -3,6 +3,21 @@
  * page by Andrew Yaros *
  ************************/
 
+function isMobile() {
+	return 'ontouchstart' in document.documentElement;
+}
+
+/* detect and adjust for mobile devices by testing whether there is a touchscreen */
+	if(isMobile()) {
+		console.log("Detected mobile touch event. Adjusting styles.")
+		let mobileStyle = document.createElement("style");
+		mobileStyle.innerText = `/* body { background-color: green; } */ .fixedBackground { background-attachment: scroll; } body { font-size: 14pt; } @media only screen and (orientation: portrait) { .moduleImage { height: 25vh; } .buttonContainer { flex-flow: column nowrap; align-items: stretch; } } .linkButton:hover, .linkButton:active { color: var(--buttonText); background-color: var(--backgroundColor); box-shadow: 0 5px 20px var(--buttonShadow); } .footerLink:hover, .footerLink:active { color: var(--buttonText); background-color: var(--darkerColor); box-shadow: box-shadow: 0 2px 10px var(--buttonShadow); } .linkButton:hover .thearrow, .linkButton:active .thearrow { fill: var(--buttonText); stroke: var(--buttonText); }`;
+		document.head.appendChild(mobileStyle);
+	}
+
+//disable right clicks
+document.addEventListener('contextmenu', event => event.preventDefault());
+
 const slidesPath = "./data/images/slides/"
 const slideFiles = [
 	"bshroom-l2.jpg",
@@ -15,9 +30,6 @@ const slideFiles = [
 ];
 const n = slideFiles.length;
 const slideInterval = 3000;
-
-//disable right clicks
-document.addEventListener('contextmenu', event => event.preventDefault());
 
 /* When the page is loaded: set the background image based on the current time */
 const startingSlide = (Math.floor((new Date).getTime())) % n;
@@ -67,22 +79,10 @@ function setDate() {
 	document.getElementById("copyrightYear").innerHTML = dateToPrint;
 }
 
-function isMobile() {
-	return 'ontouchstart' in document.documentElement;
-}
-
 //when window is finished loading
 function start() {
 	//window.scrollTo(0, 0); //reset scroll position
 	setDate(); //set copyright date
-
-	/* detect and adjust for mobile devices by testing whether there is a touchscreen */
-	if(isMobile()) {
-		console.log("Detected mobile touch event. Adjusting styles.")
-		let mobileStyle = document.createElement("style");
-		mobileStyle.innerText = `/* body { background-color: green; } */ .fixedBackground { background-attachment: scroll; } body { font-size: 14pt; } @media only screen and (orientation: portrait) { .moduleImage { height: 25vh; } .buttonContainer { flex-flow: column nowrap; align-items: stretch; } } .linkButton:hover, .linkButton:active { color: var(--buttonText); background-color: var(--backgroundColor); box-shadow: 0 5px 20px var(--buttonShadow); } .footerLink:hover, .footerLink:active { color: var(--buttonText); background-color: var(--darkerColor); box-shadow: box-shadow: 0 2px 10px var(--buttonShadow); } .linkButton:hover .thearrow, .linkButton:active .thearrow { fill: var(--buttonText); stroke: var(--buttonText); }`;
-		document.head.appendChild(mobileStyle);
-	}
 
 	//change the slide every few seconds
 	setInterval(incrementSlide, slideInterval);
