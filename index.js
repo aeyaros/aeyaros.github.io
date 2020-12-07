@@ -80,16 +80,15 @@ function start() {
 	if(isMobile()) {
 		console.log("Detected mobile touch event. Adjusting styles.")
 		let mobileStyle = document.createElement("style");
-		mobileStyle.innerText = "/*Mobile styles:\n*/"
-			+ "/* body { background-color: green; } */ /* for debugging */"
-			+ ".fixedBackground { background-attachment: scroll; }"
-			+ "body { font-size: 14pt; }"
+		mobileStyle.innerText = "/* Mobile styles: */ "
+			+ "/* body { background-color: green; } */ /* for debugging */ "
+			+ ".fixedBackground { background-attachment: scroll; } "
+			+ "body { font-size: 14pt; } "
 			+ "@media only screen and (orientation: portrait) { "
 			+ ".moduleImage { height: 25vh; } "
-			+ ".buttonContainer { flex-flow: column nowrap; align-items: stretch; }"
-			+ "}"
-			+ ".linkButton:hover, .linkButton:active { color:inherit; background-color: inherit; box-shadow: inherit; } "
-			+ ".footerLink:hover, .footerLink:active { color:inherit; background-color: inherit; box-shadow: inherit; } "
+			+ ".buttonContainer { flex-flow: column nowrap; align-items: stretch; } "
+			+ "} "
+			+ ".linkButton:hover, .linkButton:active, .footerLink:hover, .footerLink:active, .linkButton:hover .thearrow, .linkButton:active .thearrow { all: inherit; } "
 		;
 		document.head.appendChild(mobileStyle);
 	}
