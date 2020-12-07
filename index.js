@@ -88,8 +88,8 @@ function start() {
 			+ ".moduleImage { height: 25vh; } "
 			+ ".buttonContainer { flex-flow: column nowrap; align-items: stretch; } "
 			+ "} "
-			+ ".linkButton:hover, .linkButton:active { color:inherit; background-color: inherit; box-shadow: inherit; } "
-			+ ".footerLink:hover, .footerLink:active { color:inherit; background-color: inherit; box-shadow: inherit; } "
+			+ ".linkButton:hover, .linkButton:active { color: inherit; background-color: inherit; box-shadow: inherit; } "
+			+ ".footerLink:hover, .footerLink:active { color: inherit; background-color: inherit; box-shadow: inherit; } "
 		;
 		document.head.appendChild(mobileStyle);
 	}
