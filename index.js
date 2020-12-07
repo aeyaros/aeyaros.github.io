@@ -90,6 +90,7 @@ function start() {
 			+ "} "
 			+ ".linkButton:hover, .linkButton:active { color: inherit; background-color: inherit; box-shadow: inherit; } "
 			+ ".footerLink:hover, .footerLink:active { color: inherit; background-color: inherit; box-shadow: inherit; } "
+                        + ".linkButton:hover .thearrow, .linkButton:active .thearrow { fill: inherit; stroke: inherit; } "
 		;
 		document.head.appendChild(mobileStyle);
 	}
