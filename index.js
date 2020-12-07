@@ -88,7 +88,7 @@ function start() {
 			+ ".moduleImage { height: 25vh; } "
 			+ ".buttonContainer { flex-flow: column nowrap; align-items: stretch; } "
 			+ "} "
-			+ ".linkButton:hover, .linkButton:active, .footerLink:hover, .footerLink:active, .linkButton:hover .thearrow, .linkButton:active .thearrow { all: inherit; } "
+			+ ".linkButton:hover, .linkButton:active, .footerLink:hover, .footerLink:active, .linkButton:hover .thearrow, .linkButton:active .thearrow { all: unset; } "
 		;
 		document.head.appendChild(mobileStyle);
 	}
