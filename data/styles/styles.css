@@ -252,7 +252,7 @@ body {
 
     #description {
         flex-flow: column nowrap;
-        font-size: 5vw;
+        
         line-height: 5vw;
         justify-content: center;
         align-items: center;
@@ -261,6 +261,18 @@ body {
 
     #description span {
         padding: 1vw 0;
+    }
+    
+    #bs {
+        font-size: 5vw;
+    }
+    
+    #du {
+        font-size: 5.7vw;
+    }
+    
+    #cl {
+        font-size: 5vw;
     }
 }
 
