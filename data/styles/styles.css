@@ -207,7 +207,7 @@ body {
     /* padding between items and edge  */
     padding: 0.5vh var(--edgePadding);
     /* for title and description text */
-    text-shadow: 0 0 30vw var(--titleTextShadow), 0 0.05vw 20vw var(--titleTextShadow), 0 0.05vw 15vw var(--titleTextShadow), 0 0.05vw 6vw var(--titleTextShadow), 0 0.1vw 3vw var(--titleTextShadow), 0 0.1vw .75vw var(--titleTextShadow);
+    text-shadow: 0 0.05vw 6vw var(--titleTextShadow), 0 0.1vw 3vw var(--titleTextShadow), 0 0.1vw 0.25vw var(--titleTextShadow);
 }
 
 /* contains a couple of title words */
