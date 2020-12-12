@@ -65,7 +65,7 @@ function incrementSlide() {
 //set copyright date
 function setDate() {
 	//set starting year
-	const startYear = 2020;
+	const startYear = 2013;
 
 	//construct date range text from initial year to current
 	const dateRange = startYear + "&nbsp;-&nbsp;" + (new Date).getFullYear();
