@@ -68,7 +68,7 @@ function setDate() {
 	const startYear = 2013;
 
 	//construct date range text from initial year to current
-	const dateRange = startYear + "&nbsp;-&nbsp;" + (new Date).getFullYear();
+	const dateRange = "&nbsp;" + startYear + "&nbsp;-&nbsp;" + (new Date).getFullYear();
 
 	//determine whether to print starting year or date range
 	//print the range only if current year is after starting year
