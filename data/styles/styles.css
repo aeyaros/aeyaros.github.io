@@ -380,4 +380,12 @@ body {
     font-size: 9pt;
     padding: 10px 0;
     color: var(--copyrighttext);
+    margin: 10px;
+}
+
+@media only screen and (max-width: 299px) {
+    #copyright {
+        font-size: 4vw;
+    }
+
 }
