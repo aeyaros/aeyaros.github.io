@@ -185,21 +185,61 @@ body {
 /* ===================== */
 /* TITLE AND DESCRIPTION */
 
-/* contains title text and description */
+/* contains two fixed position divs:
+ * an inner div with another background image,
+ * and a content div with the actual text
+ *
+ * content div has a higher z-index so title text always shows on top of the background
+ * this is necessary because inner div is hidden to provide fading effect for transition;
+ * I cant put the text inside the inner div or it will get hidden when the opacity is changed
+ */
 #titleBox {
     width: 100%;
     height: 100vh;
 
-    /* slideshow transitions */
-    transition: background 1.5s ease-out;
+    /* slideshow transition property which I would use if firefox supported it */
+    /* transition: background 1.5s ease-out;*/
 
     background-color: #2a2a2a;
+}
 
-    box-shadow: inset 0 0 1vw rgba(0, 0, 0, 1);
+/* absolute position element inside of the title box that contains another background image.
+ * used because firefox does not support transitioning of the background image
+ */
+#titleBoxInner {
+    z-index: 1;
+
+    /* slideshow transition property */
+    opacity: 0;
+    transition: opacity 1.5s ease-out;
+}
+
+/* like titleboxinner, but is above it and has the title text */
+#titleContents {
+    z-index: 99;
+
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: stretch; /* needs to be stretch; items inside need padding without having to be resized to 100% since this screws stuff up, so instead we stretch them using flexbox and then apply padding */
+}
+
+#titleBox, #titleBoxInner {
+    box-shadow: inset 0 0 1vw rgba(0, 0, 0, 1);
+}
+
+#titleBoxInner, #titleContents {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+
+    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
 }
 
 /* items inside the title flex container */
