@@ -36,7 +36,7 @@ var innerTitleDivHidden = true;
 var images = [];
 /* Start preloading at the starting slide
 Preload n images */
-for(let i = startingSlide; i < startingSlide + n; i++) {
+for (let i = startingSlide; i < startingSlide + n; i++) {
 	let img = new Image();
 	img.src = slidesPath + slideFiles[i % n];
 	images.push(img)
@@ -45,8 +45,8 @@ for(let i = startingSlide; i < startingSlide + n; i++) {
 //change the opacity of the inner div when transitioning to a slide.
 function setInnerTitleDivOpacity(value) {
 	let corrected = Number(value);
-	if(corrected < 0) corrected = 0;
-	else if(corrected > 1) corrected = 1;
+	if (corrected < 0) corrected = 0;
+	else if (corrected > 1) corrected = 1;
 	document.getElementById("titleBoxInner").style.opacity = String(corrected);
 }
 
@@ -58,7 +58,7 @@ function changeSlide(elementID, path) {
 //set the initial slide
 function setInitialSlide() {
 	/* detect and adjust for mobile devices by testing whether there is a touchscreen */
-	if(isMobile()) {
+	if (isMobile()) {
 		console.log("Detected mobile touch event. Adjusting styles.")
 		let mobileStyle = document.createElement("style");
 		mobileStyle.innerText = `/* body { background-color: green; } */ .fixedBackground { background-attachment: scroll; } body { font-size: 14pt; } @media only screen and (orientation: portrait) { .moduleImage { height: 25vh; } .buttonContainer { flex-flow: column nowrap; align-items: stretch; } } .linkButton:hover, .linkButton:active { color: var(--buttonText); background-color: var(--backgroundColor); box-shadow: 0 5px 20px var(--buttonShadow); } .footerLink:hover, .footerLink:active { color: var(--buttonText); background-color: var(--darkerColor); box-shadow: 0 2px 10px var(--buttonShadow); } .linkButton:hover .thearrow, .linkButton:active .thearrow { fill: var(--buttonText); stroke: var(--buttonText); }`;
@@ -66,32 +66,36 @@ function setInitialSlide() {
 	}
 
 	//change background of the inner slide to the starting slide
-	changeSlide("titleBox",slidesPath + slideFiles[startingSlide]);
+	changeSlide("titleBox", slidesPath + slideFiles[startingSlide]);
 }
 
 //increment to the next slide
 function incrementSlide() {
-	//if the INNER div is HIDDEN
-		//change the INNER div background (so it is set before we transition to it)
-		//set opacity of inner div to 1
-
-	//if the INNER div is VISIBLE
-		//change the OUTER div background (so it is set before we transition to it)
-		//set opacity of the inner div to 0
-
 	//path of the image we are about to transition to
 	let pathToUse = slidesPath + slideFiles[slideCounter % n];
 
-	if(innerTitleDivHidden) {
-		changeSlide("titleBoxInner",pathToUse);
+	//if the INNER div is HIDDEN
+	if (innerTitleDivHidden) {
+		//change the INNER div background (so it is set before we transition to it)
+		changeSlide("titleBoxInner", pathToUse);
+
+		//set opacity of inner div to 1
 		setInnerTitleDivOpacity(1.0)
+
+		//update state variable
 		innerTitleDivHidden = false;
-	} else {
+	} else /* if the INNER div is VISIBLE */{
+		//change the OUTER div background (so it is set before we transition to it)
 		changeSlide("titleBox", pathToUse);
+
+		//set opacity of the inner div to 0
 		setInnerTitleDivOpacity(0);
+
+		//update state variable
 		innerTitleDivHidden = true;
 	}
 
+	//increment counter
 	slideCounter += 1;
 }
 
@@ -124,12 +128,15 @@ function start() {
 //when email link is clicked
 function sendEmail() {
 	//subtract 1 from a character code to get the previous character
-	function shiftDown(char) { return String.fromCharCode(char.charCodeAt(0) - 1); }
+	function shiftDown(char) {
+		return String.fromCharCode(char.charCodeAt(0) - 1);
+	}
+
 	//shift a whole word downwards
 	function shiftWord(input) {
 		let output = "";
 		//shift each character in the word
-		for(let i = 0; i < input.length; i++) output += (shiftDown(input[i]));
+		for (let i = 0; i < input.length; i++) output += (shiftDown(input[i]));
 		return output;
 	}
 
