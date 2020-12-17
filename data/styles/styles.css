@@ -316,22 +316,6 @@ body {
     }
 }
 
-/* at small sizes, make the title text even smaller */
-@media only screen and (max-width: 512px) and (max-height: 384px) {
-    #titleText {
-        font-size: 11vw;
-    }
-
-    #lastName {
-        font-size: 14vw;
-    }
-
-    #description {
-        font-size: 3vw;
-        line-height: 2vh;
-    }
-}
-
 /* ======================== */
 /* MODULES FOR EACH PROJECT */
 
