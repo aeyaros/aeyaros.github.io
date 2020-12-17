@@ -90,10 +90,10 @@ body {
     color: white;
     background-color: var(--darkerColor);
 
-    background-image: url("../images/isopattern.png");
+    background-image: url("../images/trianglegrid.svg");
     background-repeat: repeat;
     background-attachment: fixed;
-
+    background-size: 64px;
     font-family: "721", sans-serif;
     font-size: 12pt;
 }
