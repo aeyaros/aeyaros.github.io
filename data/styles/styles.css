@@ -22,9 +22,9 @@
 }
 
 @font-face {
-    /* Continuum Light */
-    font-family: "cont";
-    src: url("../fonts/contl.ttf");
+    /* Digital Light */
+    font-family: "digital";
+    src: url("../fonts/digitallight.otf");
     font-weight: 200;
 }
 
@@ -115,7 +115,7 @@ body {
 .linkButton {
     color: var(--buttonText);
     text-decoration: none;
-    font-family: "cont", sans-serif;
+    font-family: "digital", sans-serif;
     text-transform: uppercase;
     font-size: 13pt;
     letter-spacing: 0.1em;
@@ -373,7 +373,7 @@ body {
 .footerLink {
     color: var(--buttonText);
     background-color: var(--darkerColor);
-    font-family: "cont", serif;
+    font-family: "digital", serif;
     letter-spacing: 0.1em;
     text-decoration: none;
     text-transform: uppercase;
