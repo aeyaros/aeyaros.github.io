@@ -148,6 +148,12 @@ body {
     background-color: var(--buttonActive);
 }
 
+@media only screen and (max-width: 420px) {
+    .linkButton {
+        width: 100%;
+    }
+}
+
 /* down arrow svg */
 .downarrow { /* the svg tag */
     width: 13px;
