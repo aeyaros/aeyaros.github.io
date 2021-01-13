@@ -250,7 +250,7 @@ body {
     text-shadow: 0 0.05vw 6vw var(--titleTextShadow), 0 0.1vw 3vw var(--titleTextShadow), 0 0.1vw 0.25vw var(--titleTextShadow);
 }
 
-/* contains a couple of title words */
+/* contains title words */
 #titleText {
     font-family: "tachyon", sans-serif;
     font-size: 5.5vw;
@@ -278,7 +278,7 @@ body {
 }
 
 /* make the title text a column for portrait orientation */
-@media only screen and (orientation: portrait) {
+@media only screen and (orientation: portrait), (max-width: 320px) and (max-height: 360px) {
     #titleText {
         flex-flow: column nowrap;
         justify-content: center;
