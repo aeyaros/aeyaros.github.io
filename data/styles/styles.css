@@ -162,6 +162,11 @@ body {
     margin-right: 1.5px; /*when text shadow changes, give spacing to avoid the arrow changing position*/
 }
 
+/* I'm likely getting rid of this, since if the text font next to the arrow is substituted then it looks weird */
+.downarrow {
+    display: none;
+}
+
 .thearrow { /* the svg path */
     fill: var(--buttonText);
     stroke: var(--buttonText);
