@@ -150,7 +150,7 @@ body {
 
 @media only screen and (max-width: 420px) {
     .linkButton {
-        width: 100%;
+        width: 80vw;
     }
 }
 
