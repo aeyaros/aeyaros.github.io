@@ -74,8 +74,9 @@
     /* firefox scrollbar color */
     scrollbar-color: #444444 var(--backgroundColor);
 
-    /* transition for elements relying on vh */
-    --heightTransition: 1s;
+    /* transition for elements relying on vh
+    changed by the main script when adjusting styles for mobile devices */
+    --heightTransition: 0s;
 }
 
 /* disable text selection */
@@ -262,7 +263,8 @@ body {
 .titleItem {
     /* padding between items and edge  */
     padding: 0.5vh var(--edgePadding);
-    transition: padding var(--heightTransition) ease-in-out;
+    transition: padding-top var(--heightTransition) ease-in-out;
+    transition: padding-bottom var(--heightTransition) ease-in-out;
 
     /* for title and description text */
     text-shadow: 0 0.05vw 6vw var(--titleTextShadow), 0 0.1vw 3vw var(--titleTextShadow), 0 0.1vw 0.25vw var(--titleTextShadow);
@@ -316,6 +318,7 @@ body {
         align-items: center;
         padding-top: 3vh;
         transition: padding-top var(--heightTransition) ease-in-out;
+        transition: padding-bottom var(--heightTransition) ease-in-out;
     }
 
     #description span {
@@ -341,7 +344,8 @@ body {
 /* outer container for a module */
 .module {
     padding: 4vh 0;
-    transition: padding var(--heightTransition) ease-in-out;
+    transition: padding-top var(--heightTransition) ease-in-out;
+    transition: padding-bottom var(--heightTransition) ease-in-out;
 
     margin: 0;
     /*background-color: var(--backgroundColor);*/
@@ -381,7 +385,8 @@ body {
     width: 100%;
     background-color: var(--darkerColor);
     padding: 3vh 0;
-    transition: padding var(--heightTransition) ease-in-out;
+    transition: padding-top var(--heightTransition) ease-in-out;
+    transition: padding-bottom var(--heightTransition) ease-in-out;
 
     text-align: center;
     box-shadow: 0 0 5px var(--darkerColor);
