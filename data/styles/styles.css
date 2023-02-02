@@ -1,9 +1,9 @@
-/* * * * * * * * *\
+/*****************\
 * Hello world! :D *
-* * * * * * * * * *
+*******************
 * CSS designed by *
 * Andrew Yaros :) *
-\* * * * * * * * */
+\*****************/
 
 /* ===== */
 /* FONTS */
@@ -96,7 +96,7 @@ body {
 
     background-image: url("../images/trianglegrid.svg");
     background-repeat: repeat;
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-size: 64px;
     font-family: "721", sans-serif;
     font-size: 12pt;
@@ -112,7 +112,7 @@ body {
 .buttonContainer {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     padding-top: 10px;
 }
 
