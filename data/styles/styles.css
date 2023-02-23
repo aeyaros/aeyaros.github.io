@@ -9,9 +9,21 @@
 /* FONTS */
 
 @font-face {
-    /* Tachyon */
-    font-family: "tachyon";
-    src: url("../fonts/Tachyon.otf")
+    /* Title font */
+    font-family: "title";
+    src: url("../fonts/tachy.otf")
+}
+
+@font-face {
+    /* Reformation sans */
+    font-family: "reform";
+    src: url("../fonts/reformation.ttf");
+}
+
+@font-face {
+    /* Buttons */
+    font-family: "buttonfont";
+    src: url("../fonts/digitallight.otf");
 }
 
 @font-face {
@@ -22,30 +34,23 @@
 }
 
 @font-face {
-    /* Digital Light */
-    font-family: "digital";
-    src: url("../fonts/digitallight.otf");
-    font-weight: 200;
-}
-
-@font-face {
-    /* Swiss 721 light - using as regular font */
-    font-family: "721";
-    src: url("../fonts/721light.otf");
+    /* Regular body text font */
+    font-family: "bodyfont";
+    src: url("../fonts/dinreg.otf");
     font-weight: normal;
 }
 
 @font-face {
-    /* Swiss 721 bold */
-    font-family: "721";
-    src: url("../fonts/721bold.otf");
+    /* Bold body text font */
+    font-family: "bodyfont";
+    src: url("../fonts/dinbold.otf");
     font-weight: bold;
 }
 
 @font-face {
-    /* Swiss 721 thin - using as lighter font */
-    font-family: "721";
-    src: url("../fonts/721thin.otf");
+    /* Light body text font */
+    font-family: "bodyfont";
+    src: url("../fonts/dinlight.otf");
     font-weight: 200;
 }
 
@@ -98,7 +103,8 @@ body {
     background-repeat: repeat;
     background-attachment: scroll;
     background-size: 64px;
-    font-family: "721", sans-serif;
+    font-family: "bodyfont", sans-serif;
+    font-weight: 200;
     font-size: 12pt;
 }
 
@@ -119,7 +125,7 @@ body {
 .linkButton {
     color: var(--buttonText);
     text-decoration: none;
-    font-family: "digital", sans-serif;
+    font-family: "buttonfont", sans-serif;
     text-transform: uppercase;
     font-size: 13pt;
     letter-spacing: 0.1em;
@@ -272,7 +278,7 @@ body {
 
 /* contains title words */
 #titleText {
-    font-family: "tachyon", sans-serif;
+    font-family: "title", sans-serif;
     font-size: 5.5vw;
     letter-spacing: 1vw;
     text-transform: uppercase;
@@ -353,10 +359,12 @@ body {
 
 /* title text for a module */
 .moduleTitle {
-    font-family: "cmu", "Palatino Linotype", "Book Antiqua", Palatino, serif;
-    /*text-transform: capitalize;*/
-    font-size: 30pt;
-    letter-spacing: 0;
+    /*font-family: "cmu", "Palatino Linotype", "Book Antiqua", Palatino, serif;*/
+    font-family: "reform", sans-serif;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+
+    font-size: 24pt;
     text-shadow: 0 2px 20px var(--titleTextShadow), 0 1px 3px var(--titleTextShadow);
     padding: 0 var(--edgePadding);
 }
@@ -403,7 +411,7 @@ body {
 .footerLink {
     color: var(--buttonText);
     background-color: var(--darkerColor);
-    font-family: "digital", serif;
+    font-family: "buttonfont", serif;
     letter-spacing: 0.1em;
     text-decoration: none;
     text-transform: uppercase;
