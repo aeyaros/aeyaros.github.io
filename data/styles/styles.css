@@ -15,9 +15,9 @@
 }
 
 @font-face {
-    /* Reformation sans */
-    font-family: "reform";
-    src: url("../fonts/reformation.ttf");
+    /* Directive Four */
+    font-family: "dir4";
+    src: url("../fonts/dir4.ttf");
 }
 
 @font-face {
@@ -360,7 +360,7 @@ body {
 /* title text for a module */
 .moduleTitle {
     /*font-family: "cmu", "Palatino Linotype", "Book Antiqua", Palatino, serif;*/
-    font-family: "reform", sans-serif;
+    font-family: "dir4", sans-serif;
     letter-spacing: .04em;
     text-transform: uppercase;
 
