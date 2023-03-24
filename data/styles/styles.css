@@ -23,15 +23,17 @@
 @font-face {
     /* Buttons */
     font-family: "buttonfont";
-    src: url("../fonts/digitallight.otf");
+    src: url("../fonts/dinreg.otf");
 }
 
+/*
 @font-face {
-    /* Computer Modern serif */
+    /    * Computer Modern serif    *    /
     font-family: "cmu";
     src: url("../fonts/cmunrm.otf");
     font-weight: normal;
 }
+*/
 
 @font-face {
     /* Regular body text font */
@@ -60,9 +62,10 @@
 :root {
     --edgePadding: 10vw; /* padding between content and edge */
     --titleTextShadow: #000000;
-    --backgroundColor: #1e1e1e;
-    --darkerColor: #181818;
+    --backgroundColor: #1c1c1c;
+    --darkerColor: #151515;
 
+    --buttonColor: hsl(0 100% 25%);
     --buttonShadow: #000000;
     --buttonActive: #ff693c;
     --buttonActiveShadow: rgba(255, 105, 60, 0.15);
@@ -70,6 +73,7 @@
     --buttonText: #ffffff;
     --buttonInverseText: #000000;
     --buttonTransitionTime: 375ms;
+    --buttonLetterSpacing: 0.03em;
 
     --scrollbarWidth: 16px;
 
@@ -97,7 +101,7 @@ body {
     margin: 0;
 
     color: white;
-    background-color: var(--darkerColor);
+    background-color: var(--backgroundColor);
 
     background-image: url("../images/trianglegrid.svg");
     background-repeat: repeat;
@@ -128,11 +132,11 @@ body {
     font-family: "buttonfont", sans-serif;
     text-transform: uppercase;
     font-size: 13pt;
-    letter-spacing: 0.1em;
+    letter-spacing: var(--buttonLetterSpacing);
 
     display: inline-block;
     border: 0 solid transparent;
-    background-color: var(--backgroundColor);
+    background-color: var(--buttonColor);
     text-align: center;
     border-radius: 20px;
     padding: 10px 15px;
@@ -360,9 +364,10 @@ body {
 /* title text for a module */
 .moduleTitle {
     /*font-family: "cmu", "Palatino Linotype", "Book Antiqua", Palatino, serif;*/
-    font-family: "dir4", sans-serif;
+    font-family: "bodyfont", sans-serif;
+    font-weight: bold;
     letter-spacing: .04em;
-    text-transform: uppercase;
+    text-transform: none;
 
     font-size: 24pt;
     text-shadow: 0 2px 20px var(--titleTextShadow), 0 1px 3px var(--titleTextShadow);
@@ -410,9 +415,9 @@ body {
 
 .footerLink {
     color: var(--buttonText);
-    background-color: var(--darkerColor);
+    background-color: var(--buttonColor);
     font-family: "buttonfont", serif;
-    letter-spacing: 0.1em;
+    letter-spacing: var(--buttonLetterSpacing);
     text-decoration: none;
     text-transform: uppercase;
     padding: 10px 20px;
