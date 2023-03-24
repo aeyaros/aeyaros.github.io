@@ -354,8 +354,7 @@ body {
 /* outer container for a module */
 .module {
     padding: 4vh 0;
-    transition: padding-top var(--heightTransition) ease-in-out;
-    transition: padding-bottom var(--heightTransition) ease-in-out;
+    transition: padding var(--heightTransition) ease-in-out, padding-bottom var(--heightTransition) ease-in-out;
 
     margin: 0;
     /*background-color: var(--backgroundColor);*/
@@ -366,7 +365,7 @@ body {
     /*font-family: "cmu", "Palatino Linotype", "Book Antiqua", Palatino, serif;*/
     font-family: "bodyfont", sans-serif;
     font-weight: bold;
-    letter-spacing: .04em;
+    letter-spacing: .02em;
     text-transform: none;
 
     font-size: 24pt;
