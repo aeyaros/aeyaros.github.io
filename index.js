@@ -152,6 +152,8 @@ function sendEmail() {
 document.addEventListener("scroll", function () {
 	let hueScaleFactor = 10;
 	let hue = (window.scrollY / hueScaleFactor) % 360;
-	let hsl = 'hsl(' + hue + 'deg 100% 25%)';
-	document.documentElement.style.setProperty('--buttonColor', hsl);
+	let darkerColor = 'hsl(' + hue + 'deg 100% 25%)';
+	let lighterColor = 'hsl(' + hue + 'deg 100% 75%)';
+	document.documentElement.style.setProperty('--buttonColor', darkerColor);
+	document.documentElement.style.setProperty('--buttonActive', lighterColor);
 });
