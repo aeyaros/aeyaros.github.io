@@ -7,64 +7,40 @@
 
 /* ===== */
 /* FONTS */
-
 @font-face {
     /* Title font */
     font-family: "title";
     src: url("../fonts/tachy.otf")
-}
-
-@font-face {
+}  @font-face {
     /* Directive Four */
     font-family: "dir4";
     src: url("../fonts/dir4.ttf");
-}
-
-@font-face {
+}  @font-face {
     /* Buttons */
     font-family: "buttonfont";
     src: url("../fonts/dinreg.otf");
-}
-
-/*
-@font-face {
-    /    * Computer Modern serif    *    /
-    font-family: "cmu";
-    src: url("../fonts/cmunrm.otf");
-    font-weight: normal;
-}
-*/
-
-@font-face {
+}  @font-face {
     /* Regular body text font */
     font-family: "bodyfont";
     src: url("../fonts/dinreg.otf");
     font-weight: normal;
-}
-
-@font-face {
+}  @font-face {
     /* Bold body text font */
     font-family: "bodyfont";
     src: url("../fonts/dinbold.otf");
     font-weight: bold;
-}
-
-@font-face {
+}  @font-face {
     /* Light body text font */
     font-family: "bodyfont";
     src: url("../fonts/dinlight.otf");
     font-weight: 200;
-}
-
-/* =================== */
+}  /* =================== */
 /* GENERAL STYLE ITEMS */
-
 :root {
     --edgePadding: 10vw; /* padding between content and edge */
     --titleTextShadow: #000000;
     --backgroundColor: #1c1c1c;
     --darkerColor: #151515;
-
     --buttonColor: hsl(0 100% 25%);
     --buttonShadow: #000000;
     --buttonActive: #ff693c;
@@ -74,37 +50,23 @@
     --buttonInverseText: #000000;
     --buttonTransitionTime: 375ms;
     --buttonLetterSpacing: 0.03em;
-
     --scrollbarWidth: 16px;
-
     --copyrighttext: #505050;
-
-
-    /* firefox scrollbar color */
-    scrollbar-color: #444444 var(--backgroundColor);
-
+    scrollbar-color: #444444 var(--backgroundColor);  /* firefox scrollbar color */
     /* transition for elements relying on vh
     changed by the main script when adjusting styles for mobile devices */
     --heightTransition: 0s;
-
     --elementTransitionProperty: padding var(--heightTransition) ease-in-out, padding-bottom var(--heightTransition) ease-in-out;
-}
-
-/* disable text selection */
+}  /* disable text selection */
 * {
     user-select: none;
     -ms-user-select: none;
     -moz-user-select: none;
-    -khtml-user-select: none;
     -webkit-user-select: none;
-}
-
-body {
+}  body {
     margin: 0;
-
     color: white;
     background-color: var(--backgroundColor);
-
     background-image: url("../images/trianglegrid.svg");
     background-repeat: repeat;
     background-attachment: scroll;
@@ -112,30 +74,23 @@ body {
     font-family: "bodyfont", sans-serif;
     font-weight: 200;
     font-size: 12pt;
-}
-
-.fixedBackground {
+}  .fixedBackground {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-}
-
-.buttonContainer {
+}  .buttonContainer {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     padding-top: 10px;
-}
-
-.linkButton {
+}  .linkButton {
     color: var(--buttonText);
     text-decoration: none;
     font-family: "buttonfont", sans-serif;
     text-transform: uppercase;
     font-size: 13pt;
     letter-spacing: var(--buttonLetterSpacing);
-
     display: inline-block;
     border: 0 solid transparent;
     background-color: var(--buttonColor);
@@ -143,80 +98,53 @@ body {
     border-radius: 20px;
     padding: 10px 15px;
     margin: 15px;
-
     transition-duration: var(--buttonTransitionTime);
     cursor: pointer;
-
     /* if this is changed here, it must be changed in the mobile style in index.js */
     box-shadow: 0 5px 20px var(--buttonShadow);
-}
-
-.linkButton:hover {
+}  .linkButton:hover {
     text-decoration: none;
     box-shadow: 0 1px 5px var(--buttonShadow);
     color: var(--buttonInverseText);
     background-color: var(--buttonHover);
-}
-
-.linkButton:active {
+}  .linkButton:active {
     box-shadow: inset 0 5px 10px var(--buttonActiveShadow), 0 0 30px var(--buttonActiveShadow);
     color: var(--buttonInverseText);
     background-color: var(--buttonActive);
-}
-
-@media (max-width: 420px) {
+}  @media (max-width: 420px) {
     .linkButton {
         
     }
-}
-
-/* down arrow svg */
+}  /* down arrow svg */
 .downarrow { /* the svg tag */
     width: 13px;
     height: 13px;
     margin-bottom: 0;
     margin-right: 1.5px; /*when text shadow changes, give spacing to avoid the arrow changing position*/
-}
-
-/* I'm likely getting rid of this, since if the text font next to the arrow is substituted then it looks weird */
+}  /* I'm likely getting rid of this, since if the text font next to the arrow is substituted then it looks weird */
 .downarrow {
     display: none;
-}
-
-.thearrow { /* the svg path */
+}  .thearrow { /* the svg path */
     fill: var(--buttonText);
     stroke: var(--buttonText);
-
     transition-duration: var(--buttonTransitionTime);
-}
-
-.linkButton:hover .thearrow, .linkButton:active .thearrow {
+}  .linkButton:hover .thearrow, .linkButton:active .thearrow {
     fill: var(--buttonInverseText);
     stroke: var(--buttonInverseText);
-}
-
-/* ================== */
+}  /* ================== */
 /* CUSTOM SCROLL BARS */
-
 ::-webkit-scrollbar {
     width: var(--scrollbarWidth);
-}
-
-::-webkit-scrollbar-track {
+}  ::-webkit-scrollbar-track {
     background-color: var(--backgroundColor);
     box-shadow: inset 0 0 8px #000000;
     border-radius: 8px;
-}
-
-::-webkit-scrollbar-thumb {
+}  ::-webkit-scrollbar-thumb {
     border-radius: 8px;
     background-color: #444444;
     box-shadow: inset 0 -2.5px 6px #333333, inset 0 0 2px #000000;
-}
-
-/* ===================== */
+}  /* ===================== */
 /* TITLE AND DESCRIPTION */
-
 /* contains two fixed position divs:
  * an inner div with another background image,
  * and a content div with the actual text
@@ -224,64 +152,45 @@ body {
  * content div has a higher z-index so title text always shows on top of the background
  * this is necessary because inner div is hidden to provide fading effect for transition;
  * I cant put the text inside the inner div or it will get hidden when the opacity is changed
- */
-#titleBox {
+ */  #titleBox {
     width: 100%;
     height: 100vh;
     transition: height var(--heightTransition) ease-in-out;
-
     /* slideshow transition property which I would use if firefox supported it */
     /* transition: background 1.5s ease-out;*/
-
     background-color: #2a2a2a;
-}
-
-#titleBoxInner, #titleContents {
+}  #titleBoxInner, #titleContents {
     position: absolute;
     top: 0;
     left: 0;
-
     width: 100%;
     height: 100vh;
     transition: height var(--heightTransition) ease-in-out;
-}
-
-/* absolute position element inside of the title box that contains another background image.
+}  /* absolute position element inside of the title box that contains another background image.
  * used because firefox does not support transitioning of the background image
  */
 #titleBoxInner {
     z-index: 2;
-
     /* slideshow transition property */
     opacity: 0;
     transition: opacity 1.5s ease-out;
-}
-
-/* like titleboxinner, but is above it and has the title text */
+}  /* like titleboxinner, but is above it and has the title text */
 #titleContents {
     z-index: 99;
-
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: stretch; /* needs to be stretch; items inside need padding without having to be resized to 100% since this screws stuff up, so instead we stretch them using flexbox and then apply padding */
-}
-
-#titleBox, #titleBoxInner {
+}  #titleBox, #titleBoxInner {
     box-shadow: inset 0 0 1vw rgba(0, 0, 0, 1);
-}
-
-/* items inside the title flex container */
+}  /* items inside the title flex container */
 .titleItem {
     /* padding between items and edge  */
     padding: 0.5vh var(--edgePadding);
     transition: var(--elementTransitionProperty);
-
     /* for title and description text */
     text-shadow: 0 0.05vw 6vw var(--titleTextShadow), 0 0.1vw 3vw var(--titleTextShadow), 0 0.1vw 0.25vw var(--titleTextShadow);
-}
-
-/* contains title words */
+}  /* contains title words */
 #titleText {
     font-family: "title", sans-serif;
     font-size: 5.5vw;
@@ -290,14 +199,10 @@ body {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-}
-
-/* last letters of each word in the title */
+}  /* last letters of each word in the title */
 .lastLetter {
     letter-spacing: 0;
-}
-
-/* contains several description items */
+}  /* contains several description items */
 #description {
     font-family: "cmu", "Palatino Linotype", "Book Antiqua", Palatino, serif;
     font-size: 2.2vw;
@@ -306,85 +211,50 @@ body {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-}
-
-/* make the title text a column for portrait orientation */
+}  /* make the title text a column for portrait orientation */
 @media (orientation: portrait), (max-width: 320px) and (max-height: 360px) {
     #titleText {
         flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
         font-size: 9vw;
-    }
-
-    #lastName {
-        font-size: 12vw;
-    }
-
+    }  #lastName { font-size: 12vw; }
     #description {
         flex-flow: column nowrap;
-        
         line-height: 5vw;
         justify-content: center;
         align-items: center;
         padding-top: 3vh;
         transition: var(--elementTransitionProperty);
-    }
-
-    #description span {
-        padding: 1vw 0;
-    }
-    
-    #bs {
-        font-size: 5vw;
-    }
-    
-    #du {
-        font-size: 5.65vw;
-    }
-    
-    #cl {
-        font-size: 5vw;
-    }
-}
-
-/* ======================== */
+    }  #description span { padding: 1vw 0; }
+    #bs { font-size: 5vw; }
+    #du { font-size: 5.65vw; }
+    #cl { font-size: 5vw; }
+}  /* ======================== */
 /* MODULES FOR EACH PROJECT */
-
 /* outer container for a module */
 .module {
     padding: 4vh 0;
     transition: var(--elementTransitionProperty);
-
     margin: 0;
-    /*background-color: var(--backgroundColor);*/
-}
-
-/* title text for a module */
+}  /* title text for a module */
 .moduleTitle {
-    /*font-family: "cmu", "Palatino Linotype", "Book Antiqua", Palatino, serif;*/
     font-family: "bodyfont", sans-serif;
     font-weight: bold;
     letter-spacing: .02em;
     text-transform: none;
-
     font-size: 24pt;
     text-shadow: 0 2px 20px var(--titleTextShadow), 0 1px 3px var(--titleTextShadow);
     padding: 0 var(--edgePadding);
-}
-
-/* full width image for a module */
+}  /* full width image for a module */
 .moduleImage {
     width: 100%;
     height: 50vh;
     transition: height var(--heightTransition) ease-in-out;
-
     background-color: var(--darkerColor);
     margin: 24px 0;
     box-shadow: inset 0 0 5vw rgba(0, 0, 0, 0.75);
-}
-
-/* text box for a module */
+}  /* text box for a module */
 .moduleText {
     line-height: 23pt;
     padding: 0 var(--edgePadding);
@@ -392,26 +262,19 @@ body {
 
 /* ====== */
 /* FOOTER */
-
 #footer {
     width: 100%;
     background-color: var(--darkerColor);
     padding: 3vh 0;
     transition: var(--elementTransitionProperty);
-
     text-align: center;
     box-shadow: 0 0 5px var(--darkerColor);
-}
-
-#footerLinks {
+}  #footerLinks {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
     padding-bottom: 10px;
-}
-
-
-.footerLink {
+}  .footerLink {
     color: var(--buttonText);
     background-color: var(--buttonColor);
     font-family: "buttonfont", serif;
@@ -425,32 +288,22 @@ body {
 
     /* if this is changed here, it must be changed in the mobile style in index.js */
     box-shadow: 0 2px 10px var(--buttonShadow);
-
-}
-
-.footerLink:hover {
+}  .footerLink:hover {
     color: var(--buttonInverseText);
     background-color: var(--buttonHover);
     box-shadow: 0 1px 5px var(--buttonShadow);
-}
-
-.footerLink:active {
+}  .footerLink:active {
     color: var(--buttonInverseText);
     background-color: var(--buttonActive);
     box-shadow: inset 0 5px 10px var(--buttonActiveShadow), 0 0 20px var(--buttonActiveShadow);
-}
-
-#copyright {
+}  #copyright {
     text-transform: uppercase;
     font-size: 9pt;
     padding: 10px 0;
     color: var(--copyrighttext);
     margin: 10px;
-}
-
-@media (max-width: 299px) {
+}  @media (max-width: 299px) {
     #copyright {
         font-size: 4vw;
     }
-
 }
