@@ -27,16 +27,12 @@ const slideInterval = 3000;
 /* When the page is loaded: set the background image based on the current time */
 const startingSlide = (Math.floor((new Date).getTime())) % n;
 
-//counter variable starts at the second image; we already displayed the first
-var slideCounter = startingSlide + 1;
+//counter variable starts at second image; we already displayed the first
+let slideCounter = startingSlide + 1;
+let innerTitleDivHidden = true; //inner title div starts out hidden
 
-//inner title div starts out hidden
-var innerTitleDivHidden = true;
-
-//preload images
-var images = [];
-/* Start preloading at the starting slide
-Preload n images */
+let images = []; //preload images
+/* Start preloading at the starting slide; preload n images */
 for (let i = startingSlide; i < startingSlide + n; i++) {
 	let img = new Image();
 	img.src = slidesPath + slideFiles[i % n];
@@ -45,10 +41,8 @@ for (let i = startingSlide; i < startingSlide + n; i++) {
 
 //change the opacity of the inner div when transitioning to a slide.
 function setInnerTitleDivOpacity(value) {
-	let corrected = Number(value);
-	if (corrected < 0) corrected = 0;
-	else if (corrected > 1) corrected = 1;
-	document.getElementById("titleBoxInner").style.opacity = String(corrected);
+	let clamped = Math.max(0, Math.min(Number(value), 1));
+	document.getElementById("titleBoxInner").style.opacity = String(clamped);
 }
 
 //change the background image path of an element
@@ -79,31 +73,19 @@ function incrementSlide() {
 	if (innerTitleDivHidden) {
 		//change the INNER div background (so it is set before we transition to it)
 		changeSlide("titleBoxInner", pathToUse);
-
-		//set opacity of inner div to 1
-		setInnerTitleDivOpacity(1.0)
-
-		//update state variable
-		innerTitleDivHidden = false;
+		setInnerTitleDivOpacity(1.0) //set opacity of inner div to 1
+		innerTitleDivHidden = false; //update state variable
 	} else /* if the INNER div is VISIBLE */{
 		//change the OUTER div background (so it is set before we transition to it)
 		changeSlide("titleBox", pathToUse);
-
-		//set opacity of the inner div to 0
-		setInnerTitleDivOpacity(0);
-
-		//update state variable
-		innerTitleDivHidden = true;
-	}
-
-	//increment counter
-	slideCounter += 1;
+		setInnerTitleDivOpacity(0); //set opacity of the inner div to 0
+		innerTitleDivHidden = true; //update state variable
+	} slideCounter += 1; //increment counter
 }
 
 //set copyright date
 function setDate() {
-	//set starting year
-	const startYear = 2013;
+	const startYear = 2013; //set starting year
 
 	//construct date range text from initial year to current
 	const dateRange = "&nbsp;" + startYear + "&nbsp;-&nbsp;" + (new Date).getFullYear();
@@ -113,25 +95,20 @@ function setDate() {
 	let dateToPrint = String(startYear);
 	if ((new Date).getFullYear() > startYear) dateToPrint = dateRange;
 
-	//update document
-	document.getElementById("copyrightYear").innerHTML = dateToPrint;
+	document.getElementById("copyrightYear").innerHTML = dateToPrint; //update document
 }
 
 //when window is finished loading
 function start() {
 	//window.scrollTo(0, 0); //reset scroll position
 	setDate(); //set copyright date
-
-	//change the slide every few seconds
-	setInterval(incrementSlide, slideInterval);
+	setInterval(incrementSlide, slideInterval); //change the slide every few seconds
 }
 
 //when email link is clicked
 function sendEmail() {
 	//subtract 1 from a character code to get the previous character
-	function shiftDown(char) {
-		return String.fromCharCode(char.charCodeAt(0) - 1);
-	}
+	function shiftDown(char) { return String.fromCharCode(char.charCodeAt(0) - 1); }
 
 	//shift a whole word downwards
 	function shiftWord(input) {
