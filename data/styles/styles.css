@@ -37,6 +37,7 @@
 }  /* =================== */
 /* GENERAL STYLE ITEMS */
 :root {
+    color-scheme: only dark;
     --edgePadding: 10vw; /* padding between content and edge */
     --titleTextShadow: #000000;
     --backgroundColor: #1c1c1c;
