@@ -42,7 +42,7 @@
     --titleTextShadow: #000000;
     --backgroundColor: #1c1c1c;
     --darkerColor: #151515;
-    --buttonColor: hsl(0 100% 25%);
+    --buttonColor: hsl(0 25% 25%);
     --buttonShadow: #000000;
     --buttonActive: #ff693c;
     --buttonActiveShadow: rgba(0, 0, 0, 0.5);
