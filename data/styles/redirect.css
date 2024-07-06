@@ -12,7 +12,7 @@ html, body {
     font-family: "cmu", "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
-#thelink {
+.centered {
     margin: auto;
     text-align: center;
     padding: 50px;
