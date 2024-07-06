@@ -12,7 +12,7 @@ document.addEventListener('contextmenu', event => event.preventDefault());
 
 const slidesPath = "./data/images/slides/"
 const slideFiles = [
-	"bshroom-l2.jpg",
+	// "bshroom-l2.jpg",
 	"lancaster.jpg",
 	"shell.jpg",
 	"stanford.jpg",
