@@ -100,6 +100,7 @@
     padding: 10px 15px;
     margin: 15px;
     transition-duration: var(--buttonTransitionTime);
+    transition-timing-function: linear;
     cursor: pointer;
     /* if this is changed here, it must be changed in the mobile style in index.js */
     box-shadow: 0 5px 20px var(--buttonShadow);
@@ -277,7 +278,7 @@
     padding-bottom: 10px;
 }  .footerLink {
     color: var(--buttonText);
-    background-color: var(--buttonColor);
+    background-color: hsl(0 0% 15%);;
     font-family: "buttonfont", serif;
     letter-spacing: var(--buttonLetterSpacing);
     text-decoration: none;
