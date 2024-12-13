@@ -177,7 +177,7 @@
     z-index: 2;
     /* slideshow transition property */
     opacity: 0;
-    transition: opacity 1.5s ease-out;
+    transition: opacity 10s linear;
 }  /* like titleboxinner, but is above it and has the title text */
 #titleContents {
     z-index: 99;

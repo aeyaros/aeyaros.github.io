@@ -22,7 +22,7 @@ const slideFiles = [
 	"RRatrium.png"
 ];
 const n = slideFiles.length;
-const slideInterval = 3000;
+const slideInterval = 10000;
 
 /* When the page is loaded: set the background image based on the current time */
 const startingSlide = (Math.floor((new Date).getTime())) % n;
@@ -102,6 +102,7 @@ function setDate() {
 function start() {
 	//window.scrollTo(0, 0); //reset scroll position
 	setDate(); //set copyright date
+	incrementSlide();
 	setInterval(incrementSlide, slideInterval); //change the slide every few seconds
 }
 
