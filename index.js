@@ -66,8 +66,11 @@ function setInitialSlide() {
 	changeSlide("titleBox", slidesPath + slideFiles[startingSlide]);
 }
 
+//wait for a specified numebr of ms
+async function wait(ms) { return new Promise(resolve => setTimeout(resolve, ms)) }
+
 //increment to the next slide
-function incrementSlide() {
+async function incrementSlide() {
 	//path of the image we are about to transition to
 	let pathToUse = slidesPath + slideFiles[slideCounter % n];
 
@@ -83,6 +86,10 @@ function incrementSlide() {
 		setInnerTitleDivOpacity(0); //set opacity of the inner div to 0
 		innerTitleDivHidden = true; //update state variable
 	} slideCounter += 1; //increment counter
+	
+	
+	await wait(slideInterval);
+	incrementSlide();
 }
 
 //set copyright date
@@ -104,8 +111,7 @@ function setDate() {
 function start() {
 	//window.scrollTo(0, 0); //reset scroll position
 	setDate(); //set copyright date
-	incrementSlide();
-	setInterval(incrementSlide, slideInterval); //change the slide every few seconds
+	incrementSlide(); //change the slide every few seconds
 }
 
 //when email link is clicked
@@ -142,10 +148,13 @@ document.addEventListener("scroll", function () {
 
 //change button color continuously
 let buttonHue = 0;
-setInterval(() => {
+async function changeButtonColor() {
 	buttonHue = (buttonHue + 1) % 360;
 	let darkerColor = 'hsl(' + buttonHue + 'deg 25% 25%)';
 	let lighterColor = 'hsl(' + buttonHue + 'deg 25% 75%)';
 	document.documentElement.style.setProperty('--buttonColor', darkerColor);
 	document.documentElement.style.setProperty('--buttonActive', lighterColor);
-}, 375);
+	await wait(375);
+	changeButtonColor();
+}
+changeButtonColor();
