@@ -23,6 +23,9 @@ const slideFiles = [
 	'towers.jpg',
 	'isp1 slide.jpg',
 ];
+
+slideFiles.sort(() => Math.random() - 0.5);
+
 const n = slideFiles.length;
 const slideInterval = 10000;
 
