@@ -74,11 +74,19 @@ hr {
 	/*background-color: var(--altBG);*/
 	box-shadow:
 			var(--moduleShadowOffset) var(--moduleShadowOffset) var(--modulePaddingH) inset var(--altBG),
-			calc(-1* var(--moduleShadowOffset)) calc(-1 * var(--moduleShadowOffset)) var(--modulePaddingH) inset var(--altBG)
-;
+			calc(-1* var(--moduleShadowOffset)) calc(-1 * var(--moduleShadowOffset)) var(--modulePaddingH) inset var(--altBG);
 
 	margin: var(--moduleMarginV) 0;
+	line-height: 1.5em;
+}
 
+.moduleBanner {
+	max-width: 100% !important;
+	height: 256px!important;
+	margin-top: 32px;
+	user-select: none!important;
+	background-position: center;
+	background-size: cover;
 }
 
 .button {
