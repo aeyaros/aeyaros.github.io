@@ -1,0 +1,107 @@
+/* Downloads page styles... by Andrew Yaros */
+
+:root {
+	color-scheme: light dark;
+
+	--pagePadding: 50px;
+
+	--modulePaddingH: 30px;
+	--modulePaddingV: 50px;
+	--moduleMarginV: 50px;
+	--moduleShadowOffset: calc(var(--modulePaddingH) / 4);
+}
+
+@media screen and (prefers-color-scheme: light) {
+	:root {
+		--bg: #bbb;
+		--altBG: #999;
+		--color: #222;
+		--lines: #999;
+	}
+}
+
+@media screen and (prefers-color-scheme: dark) {
+	:root {
+		--bg: #232323;
+		--altBG: #121212;
+		--lines: #555;
+		--color: #ddd;
+	}
+}
+
+html {
+	margin:
+			calc(env(safe-area-inset-top, 0) + var(--pagePadding))
+			calc(env(safe-area-inset-right, 0) + var(--pagePadding))
+			calc(env(safe-area-inset-bottom, 0) + var(--pagePadding))
+			calc(env(safe-area-inset-left, 0) + var(--pagePadding)) !important;
+	color: var(--color) !important;
+}
+
+body {
+	font-family: "Helvetica", "Arial", sans-serif;
+	background-color: var(--bg);
+	margin: 0 auto;
+	max-width: 800px;
+}
+
+h1,h2,h3,h4,h5 {
+	font-family: "Helvetica Black", "Arial Black", "Helvetica", "Arial", sans-serif;
+	font-weight: 900;
+}
+
+.title {
+	padding-bottom: 0!important;
+	margin-bottom: 0!important;
+}
+
+.subtitle {
+	padding-top: 0!important;
+	margin-top: 0!important;
+}
+
+hr {
+	color: var(--lines);
+	background-color: var(--lines);
+	border-color: var(--lines);
+	border-style: solid;
+}
+
+.module {
+	padding: var(--modulePaddingV) var(--modulePaddingH);
+	border-radius: var(--modulePaddingH);
+
+	/*background-color: var(--altBG);*/
+	box-shadow:
+			var(--moduleShadowOffset) var(--moduleShadowOffset) var(--modulePaddingH) inset var(--altBG),
+			calc(-1* var(--moduleShadowOffset)) calc(-1 * var(--moduleShadowOffset)) var(--modulePaddingH) inset var(--altBG)
+;
+
+	margin: var(--moduleMarginV) 0;
+
+}
+
+.button {
+	display: inline-block !important;
+	padding: 15px;
+	background-color: var(--altBG);
+	border-color: var(--lines);
+	border-style: dotted;
+	border-width: 2px;
+	border-radius: 1.5em;
+	color: var(--color) !important;
+	text-decoration: none!important;
+	user-select: none!important;
+
+	margin-right: 10px;
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+.button:hover {
+	border-style: solid;
+}
+
+.button:active {
+	filter: invert(1);
+}
