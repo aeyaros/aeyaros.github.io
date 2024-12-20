@@ -35,15 +35,20 @@
 				}
 			}
 
-			body {
-				font-family: "Helvetica", "Arial", sans-serif;
+			html {
 				margin:
 					calc(env(safe-area-inset-top, 0) + var(--pagePadding))
 					calc(env(safe-area-inset-right, 0) + var(--pagePadding))
 					calc(env(safe-area-inset-bottom, 0) + var(--pagePadding))
-					calc(env(safe-area-inset-left, 0) + var(--pagePadding));
+					calc(env(safe-area-inset-left, 0) + var(--pagePadding)) !important;
+				color: var(--color) !important;
+			}
+
+			body {
+				font-family: "Helvetica", "Arial", sans-serif;
 				background-color: var(--bg);
-				color: var(--color);
+				margin: 0 auto;
+				max-width: 800px;
 			}
 
 			h1,h2,h3,h4,h5 {
@@ -119,6 +124,11 @@
 			<p>
 				Hosted here are files I've created for you to download to your heart's content. <u>Do not re-upload these files elsewhere or bundle them elsewhere, or redistribute them without permission.</u> Instead, link back to this page!
 			</p>
+
+			<div style="text-align:right">
+				<a class="button" href="..">Return to my homepage</a>
+			</div>
+
 		</div>
 
 		<br>
