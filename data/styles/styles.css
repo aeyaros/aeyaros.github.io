@@ -119,23 +119,7 @@
     .linkButton {
         
     }
-}  /* down arrow svg */
-.downarrow { /* the svg tag */
-    width: 13px;
-    height: 13px;
-    margin-bottom: 0;
-    margin-right: 1.5px; /*when text shadow changes, give spacing to avoid the arrow changing position*/
-}  /* I'm likely getting rid of this, since if the text font next to the arrow is substituted then it looks weird */
-.downarrow {
-    display: none;
-}  .thearrow { /* the svg path */
-    fill: var(--buttonText);
-    stroke: var(--buttonText);
-    transition-duration: var(--buttonTransitionTime);
-}  .linkButton:hover .thearrow, .linkButton:active .thearrow {
-    fill: var(--buttonInverseText);
-    stroke: var(--buttonInverseText);
-}  /* ================== */
+} /* ================== */
 /* CUSTOM SCROLL BARS */
 ::-webkit-scrollbar {
     width: var(--scrollbarWidth);
