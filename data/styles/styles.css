@@ -239,7 +239,11 @@
     height: 500px;
     /*transition: height var(--heightTransition) ease-in-out;*/
     background-color: var(--darkerColor);
-    margin: 24px 40px;
+    margin:
+        calc(24px + env(safe-area-inset-top))
+        calc(40px + env(safe-area-inset-right))
+        calc(24px + env(safe-area-inset-bottom))
+        calc(40px + env(safe-area-inset-left));
     border-radius: 30px;
     box-shadow: inset 0 0 5vw rgba(0, 0, 0, 0.75);
 }  /* text box for a module */
