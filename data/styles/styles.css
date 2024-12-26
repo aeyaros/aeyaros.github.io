@@ -236,8 +236,8 @@
     padding: 0 var(--rightMargin) 0 var(--leftMargin);
 }  /* full width image for a module */
 .moduleImage {
-    height: 50vh;
-    transition: height var(--heightTransition) ease-in-out;
+    height: 500px;
+    /*transition: height var(--heightTransition) ease-in-out;*/
     background-color: var(--darkerColor);
     margin: 24px 40px;
     border-radius: 30px;
@@ -246,6 +246,24 @@
 .moduleText {
     line-height: 23pt;
     padding: 0 var(--rightMargin) 0 var(--leftMargin);
+}
+
+@media (max-height: 820px) {
+    .moduleImage {
+        height: 250px;
+    }
+}
+
+/*@media (max-height: 333px) {
+    .moduleImage {
+        height: 100px;
+    }
+}*/
+
+@media (min-height: 2000px) {
+    .moduleImage {
+        height: 768px;
+    }
 }
 
 /* ====== */
