@@ -257,15 +257,21 @@
 
 @media (max-height: 820px) {
     .moduleImage {
-        height: 250px;
+        height: 400px;
     }
 }
 
-/*@media (max-height: 333px) {
+@media (max-height: 660px) {
     .moduleImage {
-        height: 100px;
+        height: 300px;
     }
-}*/
+}
+
+@media (max-height: 500px) {
+    .moduleImage {
+        height: 200px;
+    }
+}
 
 @media (min-height: 2000px) {
     .moduleImage {
