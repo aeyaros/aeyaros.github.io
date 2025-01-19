@@ -39,8 +39,8 @@
 :root {
     color-scheme: only dark;
     --titleTextShadow: #000000;
-    --backgroundColor: #1c1c1c;
-    --darkerColor: #151515;
+    --backgroundColor: #121212;
+    --darkerColor: rgba(0,0,0,.25);
     --buttonColor: hsl(0 25% 25%);
     --buttonShadow: #000000;
     --buttonActive: #ff693c;

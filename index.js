@@ -153,7 +153,7 @@ document.addEventListener("scroll", function () {
 let buttonHue = 0;
 async function changeButtonColor() {
 	buttonHue = (buttonHue + 1) % 360;
-	let darkerColor = 'hsl(' + buttonHue + 'deg 25% 25%)';
+	let darkerColor = 'hsl(' + buttonHue + 'deg 25% 20%)';
 	let lighterColor = 'hsl(' + buttonHue + 'deg 25% 75%)';
 	document.documentElement.style.setProperty('--buttonColor', darkerColor);
 	document.documentElement.style.setProperty('--buttonActive', lighterColor);
