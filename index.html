@@ -72,10 +72,10 @@
 		few of my projects.
 		<script>if (isMobile()) document.getElementById("useraction").innerHTML = "tap";</script>
 		<div class="buttonContainer">
-			<a class="linkButton" target="_blank" href="./data/downloads/AndrewYarosResume.pdf#view=Fit&toolbar=0&navpanes=0&scrollbar=1">R&eacute;sum&eacute;</a>
-			<a class="linkButton" href="https://art.yaros.ae/">Artwork</a>
-			<a class="linkButton" target="_blank" href="https://github.com/aeyaros/">GitHub</a>
-			<a class="linkButton" href="downloads/">Downloads</a>
+			<a class="linkButton" draggable="false" target="_blank" href="./data/downloads/AndrewYarosResume.pdf#view=Fit&toolbar=0&navpanes=0&scrollbar=1">R&eacute;sum&eacute;</a>
+			<a class="linkButton" draggable="false" href="https://art.yaros.ae/">Artwork</a>
+			<a class="linkButton" draggable="false" target="_blank" href="https://github.com/aeyaros/">GitHub</a>
+			<a class="linkButton" draggable="false" href="downloads/">Downloads</a>
 		</div>
 	</div>
 </div>
@@ -93,10 +93,10 @@
 			While it <i>works</i>, there isn't much for users to do at the moment, and there are a number of features I haven't implemented yet. Much of my focus has been getting the underlying software systems to work properly. Currently, app development is a priority, and there are several apps I have in development. Follow the linked Bluesky account to get updates as soon as I post them, or if you're old-school check out the RSS link on the supplemental info page.
 		</p>
 		<div class="buttonContainer">
-			<a class="linkButton" target="_blank" href="https://alpha.lisagui.com">Try the Alpha Version!</a>
-			<a class="linkButton" target="_blank" href="https://alpha.lisagui.com/info/">Supplemental Info</a>
-			<a class="linkButton" target="_blank" href="https://bsky.app/profile/lisagui.com">Follow on Bluesky</a>
-			<a class="linkButton" target="_blank" href="https://bsky.app/profile/did:plc:6c7u7esym7o7jlljfueczrzg/rss">RSS</a>
+			<a class="linkButton" draggable="false" target="_blank" href="https://alpha.lisagui.com">Try the Alpha Version!</a>
+			<a class="linkButton" draggable="false" target="_blank" href="https://alpha.lisagui.com/info/">Supplemental Info</a>
+			<a class="linkButton" draggable="false" target="_blank" href="https://bsky.app/profile/lisagui.com">Follow on Bluesky</a>
+			<a class="linkButton" draggable="false" target="_blank" href="https://bsky.app/profile/did:plc:6c7u7esym7o7jlljfueczrzg/rss">RSS</a>
 		</div>
 		<p>
 			Please note: obviously, this UI is not optimized for smartphones or very small displays.
@@ -118,7 +118,7 @@
 			The other component of this system is a portable editor utility. It modifies a local copy of the website which can be uploaded to any hosting provider. This editor allows individual gallery items to be created, modified, and reordered. It's based on a python script which handles file I/O and launches a GUI in a browser window.
 		</p>
 		<div class="buttonContainer">
-			<a class="linkButton" target="_blank" href="https://lorie.gallery">View the gallery</a>
+			<a class="linkButton" draggable="false" target="_blank" href="https://lorie.gallery">View the gallery</a>
 		</div>
 		<p>
 			I also created a separate instance of this gallery to host my own artwork. I do plan to eventually make this something anyone can download and personalize fairly easily, but it hasn't been a high priority for me because of the other projects I've been working on.
@@ -136,7 +136,7 @@
 	<div class="moduleText">
 		JPaint is a simple bitmap paint program in the vein of MacPaint and Microsoft Paint. It is written in Java using the Swing framework. This was a project for my GUIs class at Drexel. The image above, which I am using as a background for the JPaint website, was itself created with JPaint. You should be able to download and run the JAR file on any desktop PC with Java installed.
 		<div class="buttonContainer">
-			<a class="linkButton" href="https://paint.yaros.ae/">Learn more about JPaint</a>
+			<a class="linkButton" draggable="false" href="https://paint.yaros.ae/">Learn more about JPaint</a>
 		</div>
 	</div>
 </div>
@@ -150,7 +150,7 @@
 	<div class="moduleText">
 		This digital book is a collection of design projects from my time in Drexel's architecture program (before I switched my major to computer science). The portfolio contains six comprehensive projects documented in detail, followed by a gallery of assorted renders and drawings. Each page of the PDF is a double-page spread. This is a large file (&#8239;&asymp;&#8239;90&nbsp;MB) and may take time to download. (If you have issues opening the file in a third party application, try using Adobe Acrobat Reader.)
 		<div class="buttonContainer">
-			<a class="linkButton" target="_blank"
+			<a class="linkButton" draggable="false" target="_blank"
 			   href="./data/downloads/AndrewYarosPortfolio.pdf#page=3&view=Fit"
 			>View Portfolio Book</a>
 		</div>
@@ -160,9 +160,9 @@
 <!-- FOOTER -->
 <div id="footer">
 	<div id="footerLinks">
-		<a class="footerLink" target="_blank" href="https://www.linkedin.com/in/aey/">LinkedIn</a>
-		<span class="footerLink" onclick="sendEmail()">Email</span>
-		<!--<a class="footerLink" target="_blank" href="https://art.yaros.ae/">Artwork Gallery</a>-->
+		<a class="footerLink" draggable="false" target="_blank" href="https://www.linkedin.com/in/aey/">LinkedIn</a>
+		<span class="footerLink" draggable="false" onclick="sendEmail()">Email</span>
+		<!--<a class="footerLink" draggable="false" target="_blank" href="https://art.yaros.ae/">Artwork Gallery</a>-->
 	</div>
 	<div id="copyright">
 		&copy;<span id="copyrightYear">2020</span> Andrew&nbsp;Yaros. ALL&nbsp;RIGHTS&nbsp;RESERVED
