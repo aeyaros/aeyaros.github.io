@@ -87,15 +87,18 @@
 		  style='background-image: url("./data/images/modules/lisaguialpha.png")'></div>
 	<div class="moduleText">
 		<p>
-			LisaGUI is a full recreation of the Lisa Office System user interface created entirely from scratch in Javascript. Currently, the alpha version is available to try. It is a fully featured (but unfinished and buggy!) web-os with an IndexedDB based filesystem. Once it's finished, users will be able to open, modify, save, and delete files from a variety of built-in applications, as well as copy files between various virtual disks. LisaGUI has its own custom 1-bit graphics engine which runs entirely in software and outputs to a single HTML5 canvas on the page.
+			LisaGUI is a full recreation of the Lisa Office System user interface written from scratch in JavaScript. Currently, the alpha version is available to try. It is a fully featured (but unfinished and buggy!) web os with an IndexedDB-based filesystem. It also has its own custom 1-bit graphics engine which runs entirely in software and outputs to a single canvas element on the page.
 		</p>
 		<p>
-			While it <i>works</i>, there isn't much for users to do at the moment, and there are a number of features I haven't implemented yet. Much of my focus has been getting the underlying software systems to work properly. Currently, app development is a priority, and there are several apps I have in development. Follow the linked Bluesky account to get updates as soon as I post them, or if you're old-school check out the RSS link on the supplemental info page.
+			LisaGUI lets users create, open, and edit files using a document-oriented workflow. There are a few built in applications, the most recent of which is a fully featured word processor called "LisaType". While it still has some missing features and bugs, I view it as a big step towards making LisaGUI genuinely useful. The typesetting system it uses was written from scratch, and I'm proud of how it turned out.
+		</p>
+		<p>
+			Aside from that, and a couple of demo apps (and a recreation of the Mac's puzzle desk accessory!) there isn't much else to do other than toy with the filesystem and settings. I do have more apps, features, and bug fixes in the pipeline. Follow the linked Bluesky account to get updates as soon as I post them, or if you're old-school check out the RSS feed.
 		</p>
 		<div class="buttonContainer">
-			<a class="linkButton" draggable="false" target="_blank" href="https://alpha.lisagui.com">Try the Alpha Version!</a>
-			<a class="linkButton" draggable="false" target="_blank" href="https://lisagui.com/info.html">Supplemental Info</a>
-			<a class="linkButton" draggable="false" target="_blank" href="https://bsky.app/profile/lisagui.com">Follow on Bluesky</a>
+			<a class="linkButton" draggable="false" target="_blank" href="https://alpha.lisagui.com">Open LisaGUI!</a>
+			<a class="linkButton" draggable="false" target="_blank" href="https://lisagui.com/info.html">More Info</a>
+			<a class="linkButton" draggable="false" target="_blank" href="https://bsky.app/profile/lisagui.com">Updates on Bluesky</a>
 			<a class="linkButton" draggable="false" target="_blank" href="https://bsky.app/profile/did:plc:6c7u7esym7o7jlljfueczrzg/rss">RSS</a>
 		</div>
 		<p>
@@ -160,6 +163,7 @@
 <!-- FOOTER -->
 <div id="footer">
 	<div id="footerLinks">
+		<a class="footerLink" draggable="false" target="_blank" href="https://bsky.app/profile/lisagui.com">Bluesky</a>
 		<a class="footerLink" draggable="false" target="_blank" href="https://www.linkedin.com/in/aey/">LinkedIn</a>
 		<span class="footerLink" draggable="false" onclick="sendEmail()">Email</span>
 		<!--<a class="footerLink" draggable="false" target="_blank" href="https://art.yaros.ae/">Artwork Gallery</a>-->

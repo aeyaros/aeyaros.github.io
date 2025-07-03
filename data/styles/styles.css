@@ -247,7 +247,7 @@
     box-shadow: inset 0 0 5vw rgba(0, 0, 0, 0.75);
 }  /* text box for a module */
 .moduleText {
-    line-height: 23pt;
+    line-height: 22pt;
     padding: 0 var(--rightMargin) 0 var(--leftMargin);
 }
 
