@@ -246,6 +246,10 @@ script {
     #du { font-size: 5.65vw; }
     #cl { font-size: 5vw; }
 
+    .fixedBackground {
+        background-attachment: unset!important;
+    }
+
 }
 
 /* ======================== */
