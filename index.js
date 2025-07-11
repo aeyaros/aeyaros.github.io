@@ -161,3 +161,12 @@ async function changeButtonColor() {
 	changeButtonColor();
 }
 changeButtonColor();
+
+let hueShift = Math.floor(Math.random() * 360);
+async function shiftHue(id, ms) {
+	hueShift++;
+	document.getElementById(id).style.filter = 'hue-rotate(' + hueShift + 'deg) saturate(200%)';
+	document.getElementById(id).style.boxShadow = 'unset';
+	await wait(Math.max(1, ~~ms));
+	shiftHue(id, ms);
+}

@@ -66,25 +66,12 @@
 	</div>
 </div>
 
-<!-- Intro -->
-<div class="module">
-	<div class="moduleText" style="text-align: center">Please <span id="useraction">click</span> on a button below, or keep scrolling down to see a
-		few of my projects.
-		<script>if (isMobile()) document.getElementById("useraction").innerHTML = "tap";</script>
-		<div class="buttonContainer">
-			<a class="linkButton" draggable="false" target="_blank" href="./data/downloads/AndrewYarosResume.pdf#view=Fit&toolbar=0&navpanes=0&scrollbar=1">R&eacute;sum&eacute;</a>
-			<a class="linkButton" draggable="false" href="https://art.yaros.ae/">Artwork</a>
-			<a class="linkButton" draggable="false" target="_blank" href="https://github.com/aeyaros/">GitHub</a>
-			<a class="linkButton" draggable="false" href="downloads/">Downloads</a>
-		</div>
-	</div>
-</div>
-
 <!--LisaGUI alpha -->
 <div class="module">
 	<div class="moduleTitle">LisaGUI <span style="font-weight: 100">(Alpha Version)</span></div>
-	<div class="moduleImage fixedBackground"
+	<div class="moduleImage fixedBackground" id="lisaGUI"
 		  style='background-image: url("./data/images/modules/lisaguialpha.png")'></div>
+	<script>shiftHue('lisaGUI', 69);</script>
 	<div class="moduleText">
 		<p>
 			LisaGUI is a full recreation of the Lisa Office System user interface written from scratch in JavaScript. Currently, the alpha version is available to try. It is a fully featured (but unfinished and buggy!) web os with an IndexedDB-based filesystem. It also has its own custom 1-bit graphics engine which runs entirely in software and outputs to a single canvas element on the page.
@@ -106,6 +93,22 @@
 		</p>
 	</div>
 </div>
+
+
+<!-- Intro -->
+<div class="module">
+	<div class="moduleText" style="text-align: center">Please <span id="useraction">click</span> on a button below, or keep scrolling down to see a
+		few of my projects.
+		<script>if (isMobile()) document.getElementById("useraction").innerHTML = "tap";</script>
+		<div class="buttonContainer">
+<!--			<a class="linkButton" draggable="false" target="_blank" href="./data/downloads/AndrewYarosResume.pdf#view=Fit&toolbar=0&navpanes=0&scrollbar=1">R&eacute;sum&eacute;</a>-->
+			<a class="linkButton" draggable="false" href="https://art.yaros.ae/">Artwork</a>
+			<a class="linkButton" draggable="false" target="_blank" href="https://github.com/aeyaros/">GitHub</a>
+			<a class="linkButton" draggable="false" href="downloads/">Downloads</a>
+		</div>
+	</div>
+</div>
+
 
 <!--lorie.gallery -->
 <div class="module">
