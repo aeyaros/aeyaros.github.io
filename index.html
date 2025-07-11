@@ -73,13 +73,10 @@
 		  style='background-image: url("./data/images/modules/lisaguialpha.png")'></div>
 	<div class="moduleText">
 		<p>
-			LisaGUI is a full recreation of the Lisa Office System user interface written from scratch in JavaScript. Currently, the alpha version is available to try. It is a fully featured (but unfinished and buggy!) web os with an IndexedDB-based filesystem. It also has its own custom 1-bit graphics engine which runs entirely in software and outputs to a single canvas element on the page.
+			LisaGUI is a full recreation of the Lisa Office System user interface in the form of a "web OS" written from scratch in JavaScript. It lets users create, open, and edit files using a document-oriented workflow. There are a few built in applications, the most recent of which is a fully featured word processor called "LisaType". While it still has some bugs and missing features, I view it as a big step towards making LisaGUI genuinely useful. The typesetting system it uses was written from scratch.
 		</p>
 		<p>
-			LisaGUI lets users create, open, and edit files using a document-oriented workflow. There are a few built in applications, the most recent of which is a fully featured word processor called "LisaType". While it still has some missing features and bugs, I view it as a big step towards making LisaGUI genuinely useful. The typesetting system it uses was written from scratch, and I'm proud of how it turned out.
-		</p>
-		<p>
-			Aside from that, and a couple of demo apps (and a recreation of the Mac's puzzle desk accessory!) there isn't much else to do other than toy with the filesystem and settings. I do have more apps, features, and bug fixes in the pipeline. Follow the linked Bluesky account to get updates as soon as I post them, or if you're old-school check out the RSS feed.
+			Aside from that, a couple of demo apps, and a recreation of the Mac's puzzle desk accessory, there isn't much else to do other than toy with the filesystem and settings. I do have more apps, features, and bug fixes in the pipeline. Follow the linked Bluesky account to get updates as soon as I post them, or if you're old-school check out the RSS feed.
 		</p>
 		<div class="buttonContainer">
 			<a class="linkButton" draggable="false" target="_blank" href="https://alpha.lisagui.com">Open LisaGUI!</a>
@@ -87,9 +84,6 @@
 			<a class="linkButton" draggable="false" target="_blank" href="https://bsky.app/profile/lisagui.com">Updates on Bluesky</a>
 			<a class="linkButton" draggable="false" target="_blank" href="https://bsky.app/profile/did:plc:6c7u7esym7o7jlljfueczrzg/rss">RSS</a>
 		</div>
-		<p>
-			Please note: obviously, this UI is not optimized for smartphones or very small displays.
-		</p>
 	</div>
 </div>
 
@@ -134,7 +128,7 @@
 			The other component of this system is a portable editor utility. It modifies a local copy of the website which can be uploaded to any hosting provider. This editor allows individual gallery items to be created, modified, and reordered. It's based on a python script which handles file I/O and launches a GUI in a browser window.
 		</p>
 		<div class="buttonContainer">
-			<a class="linkButton" draggable="false" target="_blank" href="https://lorie.gallery">View the gallery</a>
+			<a class="linkButton" draggable="false" target="_blank" href="https://lorie.gallery">Explore the gallery</a>
 		</div>
 		<p>
 			I also created a separate instance of this gallery to host my own artwork. I do plan to eventually make this something anyone can download and personalize fairly easily, but it hasn't been a high priority for me because of the other projects I've been working on.
@@ -145,22 +139,47 @@
 
 <!-- Portfolio -->
 <div class="module">
-	<div class="moduleTitle">Architecture Portfolio</div>
+	<div class="moduleTitle">Architecture & Art Portfolios</div>
 	<div class="moduleImage fixedBackground"
 		 style='background-image: url("./data/images/modules/portfoliomodule.jpg")'></div>
 
 	<div class="moduleText">
-		This digital book is a collection of design projects from my time in Drexel's architecture program (before I switched my major to computer science). The portfolio contains six comprehensive projects documented in detail, followed by a gallery of assorted renders and drawings. Each page of the PDF is a double-page spread. This is a large file (&#8239;&asymp;&#8239;90&nbsp;MB) and may take time to download. (If you have issues opening the file in a third party application, try using Adobe Acrobat Reader.)
+		This section contains two portfolios of mine.
+		<br>
+		<br>
+		The first is a collection of design projects from my time in Drexel's architecture program in the form of a digital book. This was before I switched my major to computer science. The portfolio contains six comprehensive projects documented in detail, followed by a gallery of assorted renders and drawings. Each page of the PDF is a double-page spread. This is a large file (&#8239;&asymp;&#8239;90&nbsp;MB) and may take time to download. (If you have issues opening the file in a third party application, try using Adobe Acrobat Reader.)
+		<br>
+		<br>
+		The second is a gallery of my own artwork. This contains a wide selection of pieces I've created across several physical and digital mediums. This is a separate instance of the website I created for my grandmother's portfolio.
 		<div class="buttonContainer">
 			<a class="linkButton" draggable="false" target="_blank"
 			   href="./data/downloads/AndrewYarosPortfolio.pdf#page=3&view=Fit"
-			>View Portfolio Book</a>
+			>Architecture Portfolio Book</a>
+			<a class="linkButton" draggable="false"
+			   href="https://art.yaros.ae"
+			>Artwork gallery</a>
 		</div>
 	</div>
 </div>
 
-<!-- JPaint -->
 
+<!-- Downloads page -->
+<div class="module">
+	<div class="moduleTitle">Downloads</div>
+	<div class="moduleImage fixedBackground" style='background-image: url("./data/images/modules/downloads.png")'></div>
+
+	<div class="moduleText">
+		This page contains wallpapers, icons, and some other cool stuff I've created relating to my hobby of collecting and toying with vintage Macintosh computers. (The page itself is a very early prototype of LisaGUI.)
+		<div class="buttonContainer">
+			<a class="linkButton" draggable="false"
+			   href="downloads/"
+			>Visit the downloads page</a>
+		</div>
+	</div>
+</div>
+
+
+<!-- JPaint -->
 <div class="module">
 	<div class="moduleTitle">JPaint</div>
 	<div class="moduleImage fixedBackground"
@@ -177,8 +196,8 @@
 <!-- FOOTER -->
 <div id="footer">
 	<div id="footerLinks">
-		<a class="footerLink" draggable="false" href="downloads/">Downloads</a>
-		<a class="footerLink" draggable="false" target="_blank" href="https://art.yaros.ae/">Artwork</a>
+<!--		<a class="footerLink" draggable="false" href="downloads/">Downloads</a>-->
+<!--		<a class="footerLink" draggable="false" href="https://art.yaros.ae/">Artwork</a>-->
 		<a class="footerLink" draggable="false" target="_blank" href="https://github.com/aeyaros/">GitHub</a>
 		<a class="footerLink" draggable="false" target="_blank" href="https://bsky.app/profile/lisagui.com">Bluesky</a>
 		<a class="footerLink" draggable="false" target="_blank" href="https://www.linkedin.com/in/aey/">LinkedIn</a>
