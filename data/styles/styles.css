@@ -373,3 +373,18 @@ script {
         font-size: 4vw;
     }
 }
+
+@keyframes animatedScreen {
+    to {
+        filter: hue-rotate(0deg) saturate(200%);
+    }
+
+    from {
+        filter: hue-rotate(360deg) saturate(200%);
+    }
+}
+
+#lisaGUI {
+    box-shadow: none!important;
+    animation: animatedScreen infinite 30s linear!important;
+}
