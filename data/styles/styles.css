@@ -327,7 +327,14 @@ script {
     transition: var(--elementTransitionProperty);
     text-align: center;
     box-shadow: 0 0 5px var(--darkerColor);
-}  #footerLinks {
+}
+#footer > * {
+    margin:
+      calc(40px + env(safe-area-inset-right))
+      calc(40px + env(safe-area-inset-left));
+}
+
+#footerLinks {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
