@@ -286,6 +286,14 @@ script {
     padding: 0 var(--rightMargin) 0 var(--leftMargin);
 }
 
+@media (max-width: 640px) {
+    .moduleImage {
+        border-radius: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
 @media (max-height: 820px) {
     .moduleImage {
         height: 400px;
