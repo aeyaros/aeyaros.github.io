@@ -294,6 +294,12 @@ script {
     }
 }
 
+@media (max-width: 500px) {
+    .moduleImage {
+        height: 100vw!important;
+    }
+}
+
 @media (max-height: 820px) {
     .moduleImage {
         height: 400px;
