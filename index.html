@@ -96,19 +96,30 @@
 
 
 <!-- Intro -->
+
+<!--
+
+<hr>
+<hr>
+
 <div class="module">
+	&lt;!&ndash;
 	<div class="moduleText" style="text-align: center">Please <span id="useraction">click</span> on a button below, or keep scrolling down to see a
 		few of my projects.
 		<script>if (isMobile()) document.getElementById("useraction").innerHTML = "tap";</script>
-		<div class="buttonContainer">
-<!--			<a class="linkButton" draggable="false" target="_blank" href="./data/downloads/AndrewYarosResume.pdf#view=Fit&toolbar=0&navpanes=0&scrollbar=1">R&eacute;sum&eacute;</a>-->
-			<a class="linkButton" draggable="false" href="https://art.yaros.ae/">Artwork</a>
-			<a class="linkButton" draggable="false" target="_blank" href="https://github.com/aeyaros/">GitHub</a>
-			<a class="linkButton" draggable="false" href="downloads/">Downloads</a>
-		</div>
+
+	</div>
+	&ndash;&gt;
+	<div class="buttonContainer">
+&lt;!&ndash;			<a class="linkButton" draggable="false" target="_blank" href="./data/downloads/AndrewYarosResume.pdf#view=Fit&toolbar=0&navpanes=0&scrollbar=1">R&eacute;sum&eacute;</a>&ndash;&gt;
+		<a class="linkButton" draggable="false" href="https://art.yaros.ae/">Artwork</a>
+		<a class="linkButton" draggable="false" target="_blank" href="https://github.com/aeyaros/">GitHub</a>
+		<a class="linkButton" draggable="false" href="downloads/">Downloads</a>
 	</div>
 </div>
-
+<hr>
+<hr>
+-->
 
 <!--lorie.gallery -->
 <div class="module">
@@ -133,7 +144,24 @@
 	</div>
 </div>
 
+<!-- Portfolio -->
+<div class="module">
+	<div class="moduleTitle">Architecture Portfolio</div>
+	<div class="moduleImage fixedBackground"
+		 style='background-image: url("./data/images/modules/portfoliomodule.jpg")'></div>
+
+	<div class="moduleText">
+		This digital book is a collection of design projects from my time in Drexel's architecture program (before I switched my major to computer science). The portfolio contains six comprehensive projects documented in detail, followed by a gallery of assorted renders and drawings. Each page of the PDF is a double-page spread. This is a large file (&#8239;&asymp;&#8239;90&nbsp;MB) and may take time to download. (If you have issues opening the file in a third party application, try using Adobe Acrobat Reader.)
+		<div class="buttonContainer">
+			<a class="linkButton" draggable="false" target="_blank"
+			   href="./data/downloads/AndrewYarosPortfolio.pdf#page=3&view=Fit"
+			>View Portfolio Book</a>
+		</div>
+	</div>
+</div>
+
 <!-- JPaint -->
+
 <div class="module">
 	<div class="moduleTitle">JPaint</div>
 	<div class="moduleImage fixedBackground"
@@ -147,29 +175,15 @@
 	</div>
 </div>
 
-<!-- Portfolio -->
-<div class="module">
-	<div class="moduleTitle">Architecture Portfolio</div>
-	<div class="moduleImage fixedBackground"
-	     style='background-image: url("./data/images/modules/portfoliomodule.jpg")'></div>
-
-	<div class="moduleText">
-		This digital book is a collection of design projects from my time in Drexel's architecture program (before I switched my major to computer science). The portfolio contains six comprehensive projects documented in detail, followed by a gallery of assorted renders and drawings. Each page of the PDF is a double-page spread. This is a large file (&#8239;&asymp;&#8239;90&nbsp;MB) and may take time to download. (If you have issues opening the file in a third party application, try using Adobe Acrobat Reader.)
-		<div class="buttonContainer">
-			<a class="linkButton" draggable="false" target="_blank"
-			   href="./data/downloads/AndrewYarosPortfolio.pdf#page=3&view=Fit"
-			>View Portfolio Book</a>
-		</div>
-	</div>
-</div>
-
 <!-- FOOTER -->
 <div id="footer">
 	<div id="footerLinks">
+		<a class="footerLink" draggable="false" href="downloads/">Downloads</a>
+		<a class="footerLink" draggable="false" target="_blank" href="https://art.yaros.ae/">Artwork</a>
+		<a class="footerLink" draggable="false" target="_blank" href="https://github.com/aeyaros/">GitHub</a>
 		<a class="footerLink" draggable="false" target="_blank" href="https://bsky.app/profile/lisagui.com">Bluesky</a>
 		<a class="footerLink" draggable="false" target="_blank" href="https://www.linkedin.com/in/aey/">LinkedIn</a>
 		<span class="footerLink" draggable="false" onclick="sendEmail()">Email</span>
-		<!--<a class="footerLink" draggable="false" target="_blank" href="https://art.yaros.ae/">Artwork Gallery</a>-->
 	</div>
 	<div id="copyright">
 		&copy;<span id="copyrightYear">2025</span> Andrew&nbsp;Yaros. ALL&nbsp;RIGHTS&nbsp;RESERVED
