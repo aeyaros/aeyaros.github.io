@@ -381,11 +381,11 @@ script {
 }
 
 @keyframes animatedScreen {
-    to {
+    from {
         filter: hue-rotate(0deg) saturate(200%);
     }
 
-    from {
+    to {
         filter: hue-rotate(360deg) saturate(200%);
     }
 }
