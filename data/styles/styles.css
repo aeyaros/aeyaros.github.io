@@ -285,6 +285,8 @@ script {
 .moduleText {
     line-height: 22pt;
     padding: 0 var(--rightMargin) 0 var(--leftMargin);
+    margin: auto;
+    max-width: 640px;
 }
 
 @media (max-width: 640px) {
