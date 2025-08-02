@@ -160,8 +160,9 @@
 		<a class="footerLink" draggable="false" target="_blank" href="https://github.com/aeyaros/">GitHub</a>
 		<a class="footerLink" draggable="false" target="_blank" href="https://bsky.app/profile/lisagui.com">Bluesky</a>
 		<a class="footerLink" draggable="false" target="_blank" href="https://www.linkedin.com/in/aey/">LinkedIn</a>
-		<span class="footerLink" draggable="false" onclick="sendEmail()">Email</span>
+		<span class="footerLink" draggable="false" id="emailLink" style="display: none" onclick="sendEmail()">Email</span>
 	</div>
+	<script>document.getElementById('emailLink').style.display = 'unset'</script>
 	<div id="copyright">
 		&copy;&nbsp;<span id="copyrightYear">2013–2025</span> Andrew&nbsp;Yaros. ALL&nbsp;RIGHTS&nbsp;RESERVED
 	</div>
