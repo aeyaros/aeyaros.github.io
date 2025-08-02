@@ -51,11 +51,12 @@
     --buttonTransitionTime: 375ms;
     --buttonLetterSpacing: 0.03em;
     --scrollbarWidth: 16px;
+    --marginWidth: 10vw;
     --copyrighttext: #505050;
     scrollbar-color: #444444 var(--backgroundColor);  /* firefox scrollbar color */
     /* padding between content and edge */
-    --leftMargin: calc(env(safe-area-inset-left) + 10vw);
-    --rightMargin: calc(env(safe-area-inset-right) + 10vw);
+    --leftMargin: calc(env(safe-area-inset-left) + var(--marginWidth));
+    --rightMargin: calc(env(safe-area-inset-right) + var(--marginWidth));
     /* transition for elements relying on vh
     changed by the main script when adjusting styles for mobile devices */
     --heightTransition: 0s;
@@ -73,7 +74,7 @@
     -webkit-user-select: none;
 }  body {
     margin: 0;
-    color: white;
+    color: #ddd;
     background-color: var(--backgroundColor);
     font-family: "Lucida Grande", 'Helvetica', 'Helvetica Neue', "Arial", "Verdana", sans-serif;
     font-weight: normal;
