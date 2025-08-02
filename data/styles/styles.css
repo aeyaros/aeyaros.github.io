@@ -283,10 +283,18 @@ script {
     box-shadow: inset 0 0 5vw rgba(0, 0, 0, 0.75);
 }  /* text box for a module */
 .moduleText {
-    line-height: 22pt;
+    line-height: 1.75em;
     padding: 0 var(--rightMargin) 0 var(--leftMargin);
     margin: auto;
-    max-width: 640px;
+    max-width: 512px;
+}
+
+.moduleText p {
+    margin-bottom: 2em;
+}
+
+.moduleText p:last-of-type {
+    margin-bottom: 1em;
 }
 
 @media (max-width: 640px) {
