@@ -392,16 +392,19 @@ script {
 }
 
 @keyframes animatedScreen {
-    from {
-        filter: hue-rotate(0deg) saturate(200%);
+    0% {
+        filter: hue-rotate(0deg) saturate(100%);
     }
 
-    to {
-        filter: hue-rotate(360deg) saturate(200%);
+    50% {
+        filter: hue-rotate(83deg) saturate(200%);
+    }
+    100% {
+        filter: hue-rotate(0deg) saturate(100%);
     }
 }
 
 #lisaGUI {
     box-shadow: none!important;
-    animation: animatedScreen infinite 30s linear!important;
+    animation: animatedScreen infinite 30s ease-in-out!important;
 }
