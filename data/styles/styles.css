@@ -408,3 +408,22 @@ script {
     box-shadow: none!important;
     animation: animatedScreen infinite 30s ease-in-out!important;
 }
+
+
+@media (min-width: 1500px) {
+    .moduleTitle {
+        font-size: 2vw;
+    }
+    .moduleText {
+        max-width: 50vw;
+        font-size: 1vw;
+    }
+
+    .linkButton, .footerLink {
+        font-size: 1vw;
+        border-radius: 1.5vw;
+        padding: .75vw 1vw;
+        margin: 1vw;
+    }
+
+}
