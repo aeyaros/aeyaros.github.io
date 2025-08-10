@@ -513,6 +513,10 @@ script {
 
 
 @media (min-width: 1500px) {
+	:root {
+		--moduleImagePadBottom: 3vw;
+	}
+
 	.moduleTitle {
 		font-size: 2vw;
 	}
