@@ -43,7 +43,7 @@
     --darkerColor: rgba(0,0,0,.25);
     --buttonColor: hsl(0 25% 25%);
     --buttonShadow: #000000;
-    --buttonActive: #ff693c;
+    --buttonActive: hsl(0 25% 75%);
     --buttonActiveShadow: rgba(0, 0, 0, 0.5);
     --buttonHover: #ffffff;
     --buttonText: #ffffff;
@@ -62,11 +62,30 @@
     --heightTransition: 0s;
     --elementTransitionProperty: padding var(--heightTransition) ease-in-out, padding-bottom var(--heightTransition) ease-in-out;
 
+	--moduleImagePadWidth: 40px;
+	--moduleImagePadTop: 25px;
+	--moduleImagePadBottom: 50px;
+
     /* title box dims */
     --titleBoxWidth: 100%;
     /*--titleBoxHeight: 100vh;*/
     --titleBoxHeight: 100px;
-}  /* disable text selection */
+}
+@keyframes buttonColorShift {
+	0% {
+		filter: hue-rotate(0deg) saturate(100%);
+	}
+
+	50% {
+		filter: hue-rotate(180deg) saturate(100%);
+	}
+
+	100% {
+		filter: hue-rotate(360deg) saturate(100%);
+	}
+}
+
+/* disable text selection */
 * {
     user-select: none;
     -ms-user-select: none;
@@ -89,6 +108,7 @@
     flex-flow: row wrap;
     justify-content: center;
     padding-top: 10px;
+	animation: buttonColorShift infinite 60s linear!important;
 }  .linkButton {
     color: var(--buttonText);
     text-decoration: none;
@@ -275,10 +295,10 @@ script {
     /*transition: height var(--heightTransition) ease-in-out;*/
     background-color: var(--darkerColor);
     margin:
-        calc(24px + env(safe-area-inset-top))
-        calc(40px + env(safe-area-inset-right))
-        calc(24px + env(safe-area-inset-bottom))
-        calc(40px + env(safe-area-inset-left));
+        calc(var(--moduleImagePadTop) + env(safe-area-inset-top))
+        calc(var(--moduleImagePadWidth) + env(safe-area-inset-right))
+        calc(var(--moduleImagePadBottom) + env(safe-area-inset-bottom))
+        calc(var(--moduleImagePadWidth) + env(safe-area-inset-left));
     border-radius: 30px;
     box-shadow: inset 0 0 5vw rgba(0, 0, 0, 0.75);
 }  /* text box for a module */

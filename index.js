@@ -134,30 +134,3 @@ function sendEmail() {
 	//go to mailto link
 	window.location = "mailto:" + shiftWord(shifted[0]) + "@" + shiftWord(shifted[1]) + "." + shiftWord(shifted[2]);
 }
-
-//change button color as scroll position changes
-//use event listener to detect change in scroll position
-//change css variable to a color with hue determined by (scrollpos * factor ) % 360
-/*
-document.addEventListener("scroll", function () {
-	let hueScaleFactor = 10;
-	let hue = (window.scrollY / hueScaleFactor) % 360;
-	let darkerColor = 'hsl(' + hue + 'deg 25% 25%)';
-	let lighterColor = 'hsl(' + hue + 'deg 25% 75%)';
-	document.documentElement.style.setProperty('--buttonColor', darkerColor);
-	document.documentElement.style.setProperty('--buttonActive', lighterColor);
-});
-*/
-
-//change button color continuously
-let buttonHue = 0;
-async function changeButtonColor() {
-	buttonHue = (buttonHue + 1) % 360;
-	let darkerColor = 'hsl(' + buttonHue + 'deg 25% 20%)';
-	let lighterColor = 'hsl(' + buttonHue + 'deg 25% 75%)';
-	document.documentElement.style.setProperty('--buttonColor', darkerColor);
-	document.documentElement.style.setProperty('--buttonActive', lighterColor);
-	await wait(375);
-	changeButtonColor();
-}
-changeButtonColor();
