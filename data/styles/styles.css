@@ -8,69 +8,82 @@
 /* ===== */
 /* FONTS */
 @font-face {
-    /* Title font */
-    font-family: "title";
-    src: url("../fonts/tachy.otf")
-}  @font-face {
-    /* Directive Four */
-    font-family: "dir4";
-    src: url("../fonts/dir4.ttf");
-}  @font-face {
-    /* Buttons */
-    font-family: "buttonfont";
-    src: url("../fonts/dinreg.otf");
-}  @font-face {
-    /* Regular body text font */
-    font-family: "bodyfont";
-    src: url("../fonts/dinreg.otf");
-    font-weight: normal;
-}  @font-face {
-    /* Bold body text font */
-    font-family: "bodyfont";
-    src: url("../fonts/dinbold.otf");
-    font-weight: bold;
-}  @font-face {
-    /* Light body text font */
-    font-family: "bodyfont";
-    src: url("../fonts/dinlight.otf");
-    font-weight: 200;
-}  /* =================== */
+	/* Title font */
+	font-family: "title";
+	src: url("../fonts/tachy.otf")
+}
+
+@font-face {
+	/* Directive Four */
+	font-family: "dir4";
+	src: url("../fonts/dir4.ttf");
+}
+
+@font-face {
+	/* Buttons */
+	font-family: "buttonfont";
+	src: url("../fonts/dinreg.otf");
+}
+
+@font-face {
+	/* Regular body text font */
+	font-family: "bodyfont";
+	src: url("../fonts/dinreg.otf");
+	font-weight: normal;
+}
+
+@font-face {
+	/* Bold body text font */
+	font-family: "bodyfont";
+	src: url("../fonts/dinbold.otf");
+	font-weight: bold;
+}
+
+@font-face {
+	/* Light body text font */
+	font-family: "bodyfont";
+	src: url("../fonts/dinlight.otf");
+	font-weight: 200;
+}
+
+/* =================== */
 /* GENERAL STYLE ITEMS */
 :root {
-    color-scheme: only dark;
-    --titleTextShadow: #000000;
-    --backgroundColor: #121212;
-    --darkerColor: rgba(0,0,0,.25);
-    --buttonColor: hsl(0 25% 25%);
-    --buttonShadow: #000000;
-    --buttonActive: hsl(0 25% 75%);
-    --buttonActiveShadow: rgba(0, 0, 0, 0.5);
-    --buttonHover: #ffffff;
-    --buttonText: #ffffff;
-    --buttonInverseText: #000000;
-    --buttonTransitionTime: 375ms;
-    --buttonLetterSpacing: 0.03em;
-    --scrollbarWidth: 16px;
-    --marginWidth: 10vw;
-    --copyrighttext: #505050;
-    scrollbar-color: #444444 var(--backgroundColor);  /* firefox scrollbar color */
-    /* padding between content and edge */
-    --leftMargin: calc(env(safe-area-inset-left) + var(--marginWidth));
-    --rightMargin: calc(env(safe-area-inset-right) + var(--marginWidth));
-    /* transition for elements relying on vh
-    changed by the main script when adjusting styles for mobile devices */
-    --heightTransition: 0s;
-    --elementTransitionProperty: padding var(--heightTransition) ease-in-out, padding-bottom var(--heightTransition) ease-in-out;
+	color-scheme: only dark;
+	--titleTextShadow: #000000;
+	--backgroundColor: #121212;
+	--darkerColor: rgba(0, 0, 0, .25);
+	--buttonColor: hsl(0 25% 25%);
+	--buttonShadow: #000000;
+	--buttonActive: hsl(0 25% 75%);
+	--buttonActiveShadow: rgba(0, 0, 0, 0.5);
+	--buttonHover: #ffffff;
+	--buttonText: #ffffff;
+	--buttonInverseText: #000000;
+	--buttonTransitionTime: 375ms;
+	--buttonLetterSpacing: 0.03em;
+	--scrollbarWidth: 16px;
+	--marginWidth: 10vw;
+	--copyrighttext: #505050;
+	scrollbar-color: #444444 var(--backgroundColor); /* firefox scrollbar color */
+	/* padding between content and edge */
+	--leftMargin: calc(env(safe-area-inset-left) + var(--marginWidth));
+	--rightMargin: calc(env(safe-area-inset-right) + var(--marginWidth));
+	/* transition for elements relying on vh
+	changed by the main script when adjusting styles for mobile devices */
+	--heightTransition: 0s;
+	--elementTransitionProperty: padding var(--heightTransition) ease-in-out, padding-bottom var(--heightTransition) ease-in-out;
 
 	--moduleImagePadWidth: 40px;
 	--moduleImagePadTop: 25px;
 	--moduleImagePadBottom: 50px;
 
-    /* title box dims */
-    --titleBoxWidth: 100%;
-    /*--titleBoxHeight: 100vh;*/
-    --titleBoxHeight: 100px;
+	/* title box dims */
+	--titleBoxWidth: 100%;
+	/*--titleBoxHeight: 100vh;*/
+	--titleBoxHeight: 100px;
 }
+
 @keyframes buttonColorShift {
 	0% {
 		filter: hue-rotate(0deg) saturate(100%);
@@ -87,73 +100,95 @@
 
 /* disable text selection */
 * {
-    user-select: none;
-    -ms-user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-}  body {
-    margin: 0;
-    color: #ddd;
-    background-color: var(--backgroundColor);
-    font-family: "Lucida Grande", 'Helvetica', 'Helvetica Neue', "Arial", "Verdana", sans-serif;
-    font-weight: normal;
-    font-size: 10pt;
-}  .fixedBackground {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}  .buttonContainer {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    padding-top: 10px;
-	animation: buttonColorShift infinite 60s linear!important;
-}  .linkButton {
-    color: var(--buttonText);
-    text-decoration: none;
-    font-family: "buttonfont", sans-serif;
-    text-transform: uppercase;
-    font-size: 13pt;
-    letter-spacing: var(--buttonLetterSpacing);
-    display: inline-block;
-    border: 0 solid transparent;
-    background-color: var(--buttonColor);
-    text-align: center;
-    border-radius: 20px;
-    padding: 10px 15px;
-    margin: 15px;
-    transition-duration: var(--buttonTransitionTime);
-    transition-timing-function: linear;
-    cursor: pointer;
-    /* if this is changed here, it must be changed in the mobile style in index.js */
-    box-shadow: 0 5px 20px var(--buttonShadow);
-}  .linkButton:hover {
-    text-decoration: none;
-    box-shadow: 0 1px 5px var(--buttonShadow);
-    color: var(--buttonInverseText);
-    background-color: var(--buttonHover);
-}  .linkButton:active {
-    box-shadow: inset 0 5px 10px var(--buttonActiveShadow), 0 0 30px var(--buttonActiveShadow);
-    color: var(--buttonInverseText);
-    background-color: var(--buttonActive);
-}  @media (max-width: 420px) {
-    .linkButton {
-        
-    }
-} /* ================== */
+	user-select: none;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+
+body {
+	margin: 0;
+	color: #ddd;
+	background-color: var(--backgroundColor);
+	font-family: "Lucida Grande", 'Helvetica', 'Helvetica Neue', "Arial", "Verdana", sans-serif;
+	font-weight: normal;
+	font-size: 10pt;
+}
+
+.fixedBackground {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.buttonContainer {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	padding-top: 10px;
+	animation: buttonColorShift infinite 60s linear !important;
+}
+
+.linkButton {
+	color: var(--buttonText);
+	text-decoration: none;
+	font-family: "buttonfont", sans-serif;
+	text-transform: uppercase;
+	font-size: 13pt;
+	letter-spacing: var(--buttonLetterSpacing);
+	display: inline-block;
+	border: 0 solid transparent;
+	background-color: var(--buttonColor);
+	text-align: center;
+	border-radius: 20px;
+	padding: 10px 15px;
+	margin: 15px;
+	transition-duration: var(--buttonTransitionTime);
+	transition-timing-function: linear;
+	cursor: pointer;
+	/* if this is changed here, it must be changed in the mobile style in index.js */
+	box-shadow: 0 5px 20px var(--buttonShadow);
+}
+
+.linkButton:hover {
+	text-decoration: none;
+	box-shadow: 0 1px 5px var(--buttonShadow);
+	color: var(--buttonInverseText);
+	background-color: var(--buttonHover);
+}
+
+.linkButton:active {
+	box-shadow: inset 0 5px 10px var(--buttonActiveShadow), 0 0 30px var(--buttonActiveShadow);
+	color: var(--buttonInverseText);
+	background-color: var(--buttonActive);
+}
+
+@media (max-width: 420px) {
+	.linkButton {
+
+	}
+}
+
+/* ================== */
 /* CUSTOM SCROLL BARS */
 ::-webkit-scrollbar {
-    width: var(--scrollbarWidth);
-}  ::-webkit-scrollbar-track {
-    background-color: var(--backgroundColor);
-    box-shadow: inset 0 0 8px #000000;
-    border-radius: 8px;
-}  ::-webkit-scrollbar-thumb {
-    border-radius: 8px;
-    background-color: #444444;
-    box-shadow: inset 0 -2.5px 6px #333333, inset 0 0 2px #000000;
-}  /* ===================== */
+	width: var(--scrollbarWidth);
+}
+
+::-webkit-scrollbar-track {
+	background-color: var(--backgroundColor);
+	box-shadow: inset 0 0 8px #000000;
+	border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 8px;
+	background-color: #444444;
+	box-shadow: inset 0 -2.5px 6px #333333, inset 0 0 2px #000000;
+}
+
+/* ===================== */
 /* TITLE AND DESCRIPTION */
 /* contains two fixed position divs:
  * an inner div with another background image,
@@ -162,114 +197,150 @@
  * content div has a higher z-index so title text always shows on top of the background
  * this is necessary because inner div is hidden to provide fading effect for transition;
  * I cant put the text inside the inner div or it will get hidden when the opacity is changed
- */  #titleBox {
-    width: var(--titleBoxWidth);
-    height: var(--titleBoxHeight);
-    transition: height var(--heightTransition) ease-in-out;
-    /* slideshow transition property which I would use if firefox supported it */
-    /* transition: background 1.5s ease-out;*/
-    background-color: #2a2a2a;
-}  #titleBoxInner, #titleContents {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: var(--titleBoxWidth);
-    height: var(--titleBoxHeight);
-    transition: height var(--heightTransition) ease-in-out;
-}  /* absolute position element inside of the title box that contains another background image.
- * used because firefox does not support transitioning of the background image
  */
+#titleBox {
+	width: var(--titleBoxWidth);
+	height: var(--titleBoxHeight);
+	transition: height var(--heightTransition) ease-in-out;
+	/* slideshow transition property which I would use if firefox supported it */
+	/* transition: background 1.5s ease-out;*/
+	background-color: #2a2a2a;
+}
+
+#titleBoxInner, #titleContents {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: var(--titleBoxWidth);
+	height: var(--titleBoxHeight);
+	transition: height var(--heightTransition) ease-in-out;
+}
+
+/* absolute position element inside of the title box that contains another background image.
+* used because firefox does not support transitioning of the background image
+*/
 #titleBoxInner {
-    z-index: 2;
-    /* slideshow transition property */
-    opacity: 0;
-    transition: opacity 10s linear;
-}  /* like titleboxinner, but is above it and has the title text */
+	z-index: 2;
+	/* slideshow transition property */
+	opacity: 0;
+	transition: opacity 10s linear;
+}
+
+/* like titleboxinner, but is above it and has the title text */
 #titleContents {
-    z-index: 99;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: stretch; /* needs to be stretch; items inside need padding without having to be resized to 100% since this screws stuff up, so instead we stretch them using flexbox and then apply padding */
-}  #titleBox, #titleBoxInner {
-    box-shadow: inset 0 0 1vw rgba(0, 0, 0, 1);
-}  /* items inside the title flex container */
+	z-index: 99;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: stretch; /* needs to be stretch; items inside need padding without having to be resized to 100% since this screws stuff up, so instead we stretch them using flexbox and then apply padding */
+}
+
+#titleBox, #titleBoxInner {
+	box-shadow: inset 0 0 1vw rgba(0, 0, 0, 1);
+}
+
+/* items inside the title flex container */
 
 script {
-    display: none!important;
-    visibility: hidden!important;
-    position: fixed!important;
-    top: 0!important;
-    left: 0!important;
+	display: none !important;
+	visibility: hidden !important;
+	position: fixed !important;
+	top: 0 !important;
+	left: 0 !important;
 }
+
 .titleItem {
-    /* padding between items and edge  */
-    padding: 0.5vh var(--rightMargin) 0.5vh var(--leftMargin);
-    transition: var(--elementTransitionProperty);
-    /* for title and description text */
-    text-shadow: 0 0.05vw 6vw var(--titleTextShadow), 0 0.1vw 3vw var(--titleTextShadow), 0 0.1vw 0.5vw var(--titleTextShadow);
-    padding-top: .25em;
-}  /* contains title words */
-#titleText {
-    font-family: "title", sans-serif;
-    font-size: 44px;
-    letter-spacing: 1vw;
-    text-transform: uppercase;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
+	/* padding between items and edge  */
+	padding: 0.5vh var(--rightMargin) 0.5vh var(--leftMargin);
+	transition: var(--elementTransitionProperty);
+	/* for title and description text */
+	text-shadow: 0 0.05vw 6vw var(--titleTextShadow), 0 0.1vw 3vw var(--titleTextShadow), 0 0.1vw 0.5vw var(--titleTextShadow);
+	padding-top: .25em;
 }
+
+/* contains title words */
+#titleText {
+	font-family: "title", sans-serif;
+	font-size: 44px;
+	letter-spacing: 1vw;
+	text-transform: uppercase;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+}
+
 /* last letters of each word in the title */
 .lastLetter {
-    letter-spacing: 0;
+	letter-spacing: 0;
 }
+
 #titleText > span:last-of-type {
-    margin-left: 1em;
+	margin-left: 1em;
 }
+
 /* contains several description items */
 #description {
-    font-family: "cmu", "Palatino Linotype", "Book Antiqua", Palatino, serif;
-    font-size: 2.2vw;
-    letter-spacing: 0.1vw;
-    text-transform: uppercase;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-}  /* make the title text a column for portrait orientation */
+	font-family: "cmu", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 2.2vw;
+	letter-spacing: 0.1vw;
+	text-transform: uppercase;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+}
+
+/* make the title text a column for portrait orientation */
 /* screw it, always use portrait style... make that title big and bold, baby! */
 @media (orientation: portrait), (max-width: 750px) /* and (max-height: 360px)*/ {
-    .titleItem {
-        padding-top: .5em;
-    }
-    #titleText {
-        flex-flow: column nowrap;
-        justify-content: center;
-        align-items: center;
-        /*font-size: 9vw;*/
-        font-size: 27px;
-    }
-    #lastName {
-        /*font-size: 12vw; */
-        font-size: 36px;
-    }
-    #titleText > span:last-of-type {
-        margin-left: unset!important;
-    }
-    #description {
-        flex-flow: column nowrap;
-        line-height: 5vw;
-        justify-content: center;
-        align-items: center;
-        padding-top: 3vh;
-        transition: var(--elementTransitionProperty);
-    }  #description span { padding: 1vw 0; }
-    #bs { font-size: 5vw; }
-    #du { font-size: 5.65vw; }
-    #cl { font-size: 5vw; }
+	.titleItem {
+		padding-top: .5em;
+	}
 
-    .fixedBackground {
-        background-attachment: unset!important;
-    }
+	#titleText {
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-items: center;
+		/*font-size: 9vw;*/
+		font-size: 27px;
+	}
+
+	#lastName {
+		/*font-size: 12vw; */
+		font-size: 36px;
+	}
+
+	#titleText > span:last-of-type {
+		margin-left: unset !important;
+	}
+
+	#description {
+		flex-flow: column nowrap;
+		line-height: 5vw;
+		justify-content: center;
+		align-items: center;
+		padding-top: 3vh;
+		transition: var(--elementTransitionProperty);
+	}
+
+	#description span {
+		padding: 1vw 0;
+	}
+
+	#bs {
+		font-size: 5vw;
+	}
+
+	#du {
+		font-size: 5.65vw;
+	}
+
+	#cl {
+		font-size: 5vw;
+	}
+
+	.fixedBackground {
+		background-attachment: unset !important;
+	}
 
 }
 
@@ -277,173 +348,185 @@ script {
 /* MODULES FOR EACH PROJECT */
 /* outer container for a module */
 .module {
-    padding: 4vh 0;
-    transition: var(--elementTransitionProperty);
-    margin: 0;
-}  /* title text for a module */
+	padding: 4vh 0;
+	transition: var(--elementTransitionProperty);
+	margin: 0;
+}
+
+/* title text for a module */
 .moduleTitle {
-    font-family: "bodyfont", sans-serif;
-    font-weight: bold;
-    letter-spacing: .02em;
-    text-transform: none;
-    font-size: 24pt;
-    text-shadow: 0 2px 20px var(--titleTextShadow), 0 1px 3px var(--titleTextShadow);
-    padding: 0 var(--rightMargin) 0 var(--leftMargin);
-}  /* full width image for a module */
+	font-family: "bodyfont", sans-serif;
+	font-weight: bold;
+	letter-spacing: .02em;
+	text-transform: none;
+	font-size: 24pt;
+	text-shadow: 0 2px 20px var(--titleTextShadow), 0 1px 3px var(--titleTextShadow);
+	padding: 0 var(--rightMargin) 0 var(--leftMargin);
+}
+
+/* full width image for a module */
 .moduleImage {
-    height: 500px;
-    /*transition: height var(--heightTransition) ease-in-out;*/
-    background-color: var(--darkerColor);
-    margin:
-        calc(var(--moduleImagePadTop) + env(safe-area-inset-top))
-        calc(var(--moduleImagePadWidth) + env(safe-area-inset-right))
-        calc(var(--moduleImagePadBottom) + env(safe-area-inset-bottom))
-        calc(var(--moduleImagePadWidth) + env(safe-area-inset-left));
-    border-radius: 30px;
-    box-shadow: inset 0 0 5vw rgba(0, 0, 0, 0.75);
-}  /* text box for a module */
+	height: 500px;
+	/*transition: height var(--heightTransition) ease-in-out;*/
+	background-color: var(--darkerColor);
+	margin: calc(var(--moduleImagePadTop) + env(safe-area-inset-top)) calc(var(--moduleImagePadWidth) + env(safe-area-inset-right)) calc(var(--moduleImagePadBottom) + env(safe-area-inset-bottom)) calc(var(--moduleImagePadWidth) + env(safe-area-inset-left));
+	border-radius: 30px;
+	box-shadow: inset 0 0 5vw rgba(0, 0, 0, 0.75);
+}
+
+/* text box for a module */
 .moduleText {
-    line-height: 1.8em;
-    padding: 0 var(--rightMargin) 0 var(--leftMargin);
-    margin: auto;
-    max-width: 512px;
+	line-height: 1.8em;
+	padding: 0 var(--rightMargin) 0 var(--leftMargin);
+	margin: auto;
+	max-width: 512px;
 }
 
 .moduleText p {
-    margin-bottom: 2em;
+	margin-bottom: 2em;
 }
 
 .moduleText p:last-of-type {
-    margin-bottom: 1em;
+	margin-bottom: 1em;
 }
 
 @media (max-width: 640px) {
-    .moduleImage {
-        border-radius: 0;
-        margin-left: 0;
-        margin-right: 0;
-    }
+	.moduleImage {
+		border-radius: 0;
+		margin-left: 0;
+		margin-right: 0;
+	}
 }
 
 @media (max-width: 500px) {
-    .moduleImage {
-        height: 100vw!important;
-    }
+	.moduleImage {
+		height: 100vw !important;
+	}
 }
 
 @media (max-height: 820px) {
-    .moduleImage {
-        height: 400px;
-    }
+	.moduleImage {
+		height: 400px;
+	}
 }
 
 @media (max-height: 660px) {
-    .moduleImage {
-        height: 300px;
-    }
+	.moduleImage {
+		height: 300px;
+	}
 }
 
 @media (max-height: 500px) {
-    .moduleImage {
-        height: 200px;
-    }
+	.moduleImage {
+		height: 200px;
+	}
 }
 
 @media (min-height: 2000px) {
-    .moduleImage {
-        height: 768px;
-    }
+	.moduleImage {
+		height: 768px;
+	}
 }
 
 /* ====== */
 /* FOOTER */
 #footer {
-    width: 100%;
-    background-color: var(--darkerColor);
-    padding: 3vh 0;
-    transition: var(--elementTransitionProperty);
-    text-align: center;
-    box-shadow: 0 0 5px var(--darkerColor);
+	width: 100%;
+	background-color: var(--darkerColor);
+	padding: 3vh 0;
+	transition: var(--elementTransitionProperty);
+	text-align: center;
+	box-shadow: 0 0 5px var(--darkerColor);
 }
+
 #footer > * {
-    margin:
-      calc(40px + env(safe-area-inset-right))
-      calc(40px + env(safe-area-inset-left));
+	margin: calc(40px + env(safe-area-inset-right)) calc(40px + env(safe-area-inset-left));
 }
 
 #footerLinks {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    padding-bottom: 10px;
-}  .footerLink {
-    color: var(--buttonText);
-    background-color: hsl(0 0% 15%);;
-    font-family: "buttonfont", serif;
-    letter-spacing: var(--buttonLetterSpacing);
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 10px 20px;
-    border-radius: 20px;
-    margin: 10px;
-    cursor: pointer;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+	padding-bottom: 10px;
+}
 
-    /* if this is changed here, it must be changed in the mobile style in index.js */
-    box-shadow: 0 2px 10px var(--buttonShadow);
-}  .footerLink:hover {
-    color: var(--buttonInverseText);
-    background-color: var(--buttonHover);
-    box-shadow: 0 1px 5px var(--buttonShadow);
-}  .footerLink:active {
-    color: var(--buttonInverseText);
-    background-color: var(--buttonActive);
-    box-shadow: inset 0 5px 10px var(--buttonActiveShadow), 0 0 20px var(--buttonActiveShadow);
-}  #copyright {
-    text-transform: uppercase;
-    font-size: 9pt;
-    padding: 10px 0;
-    color: var(--copyrighttext);
-    margin-top: 10px;
-    margin-bottom: 10px;
-}  @media (max-width: 299px) {
-    #copyright {
-        font-size: 4vw;
-    }
+.footerLink {
+	color: var(--buttonText);
+	background-color: hsl(0 0% 15%);;
+	font-family: "buttonfont", serif;
+	letter-spacing: var(--buttonLetterSpacing);
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 10px 20px;
+	border-radius: 20px;
+	margin: 10px;
+	cursor: pointer;
+
+	/* if this is changed here, it must be changed in the mobile style in index.js */
+	box-shadow: 0 2px 10px var(--buttonShadow);
+}
+
+.footerLink:hover {
+	color: var(--buttonInverseText);
+	background-color: var(--buttonHover);
+	box-shadow: 0 1px 5px var(--buttonShadow);
+}
+
+.footerLink:active {
+	color: var(--buttonInverseText);
+	background-color: var(--buttonActive);
+	box-shadow: inset 0 5px 10px var(--buttonActiveShadow), 0 0 20px var(--buttonActiveShadow);
+}
+
+#copyright {
+	text-transform: uppercase;
+	font-size: 9pt;
+	padding: 10px 0;
+	color: var(--copyrighttext);
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+@media (max-width: 299px) {
+	#copyright {
+		font-size: 4vw;
+	}
 }
 
 @keyframes animatedScreen {
-    0% {
-        filter: hue-rotate(0deg) saturate(100%);
-    }
+	0% {
+		filter: hue-rotate(0deg) saturate(100%);
+	}
 
-    50% {
-        filter: hue-rotate(83deg) saturate(200%);
-    }
-    100% {
-        filter: hue-rotate(0deg) saturate(100%);
-    }
+	50% {
+		filter: hue-rotate(83deg) saturate(200%);
+	}
+	100% {
+		filter: hue-rotate(0deg) saturate(100%);
+	}
 }
 
 #lisaGUI {
-    box-shadow: none!important;
-    animation: animatedScreen infinite 30s ease-in-out!important;
+	box-shadow: none !important;
+	animation: animatedScreen infinite 30s ease-in-out !important;
 }
 
 
 @media (min-width: 1500px) {
-    .moduleTitle {
-        font-size: 2vw;
-    }
-    .moduleText {
-        max-width: 50vw;
-        font-size: 1vw;
-    }
+	.moduleTitle {
+		font-size: 2vw;
+	}
 
-    .linkButton, .footerLink {
-        font-size: 1vw;
-        border-radius: 1.5vw;
-        padding: .75vw 1vw;
-        margin: 1vw;
-    }
+	.moduleText {
+		max-width: 50vw;
+		font-size: 1vw;
+	}
+
+	.linkButton, .footerLink {
+		font-size: 1vw;
+		border-radius: 1.5vw;
+		padding: .75vw 1vw;
+		margin: 1vw;
+	}
 
 }

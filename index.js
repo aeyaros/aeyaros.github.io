@@ -38,7 +38,7 @@ let innerTitleDivHidden = true; //inner title div starts out hidden
 
 let images = []; //preload images
 /* Start preloading at the starting slide; preload n images */
-for (let i = startingSlide; i < startingSlide + n; i++) {
+for(let i = startingSlide; i < startingSlide + n; i++) {
 	let img = new Image();
 	img.src = slidesPath + slideFiles[i % n];
 	images.push(img)
@@ -58,13 +58,13 @@ function changeSlide(elementID, path) {
 //set the initial slide
 function setInitialSlide() {
 	/* detect and adjust for mobile devices by testing whether there is a touchscreen */
-	if (isMobile()) {
+	if(isMobile()) {
 		console.log("Detected mobile touch event. Adjusting styles.")
 		let mobileStyle = document.createElement("style");
 		mobileStyle.innerText = `:root { --heightTransition: 0s; } .fixedBackground, body { background-attachment: scroll; } body { font-size: 14pt; } @media only screen and (orientation: portrait) { .moduleImage { height: 25vh; } .buttonContainer { flex-flow: column nowrap; align-items: stretch; } } .linkButton:hover, .linkButton:active { color: var(--buttonText); background-color: var(--backgroundColor); box-shadow: 0 5px 20px var(--buttonShadow); } .footerLink:hover, .footerLink:active { color: var(--buttonText); background-color: var(--darkerColor); box-shadow: 0 2px 10px var(--buttonShadow); } .linkButton:hover .thearrow, .linkButton:active .thearrow { fill: var(--buttonText); stroke: var(--buttonText); }`;
 		document.head.appendChild(mobileStyle);
 	}
-
+	
 	//change background of the inner slide to the starting slide
 	changeSlide("titleBox", slidesPath + slideFiles[startingSlide]);
 }
@@ -76,9 +76,9 @@ async function wait(ms) { return new Promise(resolve => setTimeout(resolve, ms))
 async function incrementSlide() {
 	//path of the image we are about to transition to
 	let pathToUse = slidesPath + slideFiles[slideCounter % n];
-
+	
 	//if the INNER div is HIDDEN
-	if (innerTitleDivHidden) {
+	if(innerTitleDivHidden) {
 		//change the INNER div background (so it is set before we transition to it)
 		changeSlide("titleBoxInner", pathToUse);
 		setInnerTitleDivOpacity(1.0) //set opacity of inner div to 1
@@ -88,7 +88,8 @@ async function incrementSlide() {
 		changeSlide("titleBox", pathToUse);
 		setInnerTitleDivOpacity(0); //set opacity of the inner div to 0
 		innerTitleDivHidden = true; //update state variable
-	} slideCounter += 1; //increment counter
+	}
+	slideCounter += 1; //increment counter
 	
 	
 	await wait(slideInterval);
@@ -98,15 +99,15 @@ async function incrementSlide() {
 //set copyright date
 function setDate() {
 	const startYear = 2013; //set starting year
-
+	
 	//construct date range text from initial year to current
 	const dateRange = startYear + "–" + (new Date).getFullYear();
-
+	
 	//determine whether to print starting year or date range
 	//print the range only if current year is after starting year
 	let dateToPrint = String(startYear);
-	if ((new Date).getFullYear() > startYear) dateToPrint = dateRange;
-
+	if((new Date).getFullYear() > startYear) dateToPrint = dateRange;
+	
 	document.getElementById("copyrightYear").innerHTML = dateToPrint; //update document
 }
 
@@ -121,15 +122,15 @@ function start() {
 function sendEmail() {
 	//subtract 1 from a character code to get the previous character
 	function shiftDown(char) { return String.fromCharCode(char.charCodeAt(0) - 1); }
-
+	
 	//shift a whole word downwards
 	function shiftWord(input) {
 		let output = "";
 		//shift each character in the word
-		for (let i = 0; i < input.length; i++) output += (shiftDown(input[i]));
+		for(let i = 0; i < input.length; i++) output += (shiftDown(input[i]));
 		return output;
 	}
-
+	
 	let shifted = ["boesfx", "zbspt", "bf"];
 	//go to mailto link
 	window.location = "mailto:" + shiftWord(shifted[0]) + "@" + shiftWord(shifted[1]) + "." + shiftWord(shifted[2]);
