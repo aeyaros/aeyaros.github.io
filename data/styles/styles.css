@@ -446,7 +446,7 @@ script {
 #footerLinks {
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-evenly;
+	justify-content: center;
 	padding-bottom: 10px;
 }
 
@@ -464,12 +464,26 @@ script {
 
 	/* if this is changed here, it must be changed in the mobile style in index.js */
 	box-shadow: 0 2px 10px var(--buttonShadow);
+
+	display: flex!important;
+	justify-content: center!important;
+	align-items: center!important;
+	min-width: 50px;
+	min-height: 50px;
+}
+
+.footerLink img {
+	height: 32px!important;
 }
 
 .footerLink:hover {
 	color: var(--buttonInverseText);
 	background-color: var(--buttonHover);
 	box-shadow: 0 1px 5px var(--buttonShadow);
+}
+
+.footerLink:hover img,.footerLink:active img {
+	filter: invert(1);
 }
 
 .footerLink:active {
