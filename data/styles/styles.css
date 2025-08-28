@@ -547,4 +547,12 @@ script {
 		margin: 1vw;
 	}
 
+	.footerLink {
+		min-width: 3vw;
+		min-height: 3vw;
+	}
+
+	.footerLink img {
+		height: 2vw!important;
+	}
 }
