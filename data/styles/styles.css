@@ -127,6 +127,9 @@ body {
 	flex-flow: row wrap;
 	justify-content: center;
 	padding-top: 10px;
+}
+
+.buttonContainer, .footerLink {
 	animation: buttonColorShift infinite 60s linear !important;
 }
 
