@@ -113,6 +113,7 @@ body {
 	font-family: "Lucida Grande", 'Helvetica', 'Helvetica Neue', "Arial", "Verdana", sans-serif;
 	font-weight: normal;
 	font-size: 10pt;
+	text-wrap: pretty!important;
 }
 
 .fixedBackground {
