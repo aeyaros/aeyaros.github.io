@@ -143,6 +143,10 @@
 	-webkit-user-select: none;
 }
 
+html {
+	background-color: var(--alternateBGColor);
+}
+
 body {
 	margin: 0;
 	color: var(--pageText);
