@@ -121,7 +121,7 @@
 	}
 }
 
-@keyframes buttonColorShift {
+@keyframes loopingColorShift {
 	0% {
 		filter: hue-rotate(0deg) saturate(100%);
 	}
@@ -172,8 +172,8 @@ body {
 	padding-top: 10px;
 }
 
-.buttonContainer, .footerLink {
-	animation: buttonColorShift infinite 60s linear !important;
+.buttonContainer, .footerLink, #downloadsPage {
+	animation: loopingColorShift infinite 60s linear !important;
 }
 
 .linkButton {
@@ -258,6 +258,7 @@ body {
 	/* transition: background 1.5s ease-out;*/
 	background-color: #2a2a2a;
 	border-bottom: var(--mainBorder);
+	pointer-events: none;
 }
 
 #titleBoxInner, #titleContents {
@@ -586,21 +587,6 @@ script {
 	box-shadow: none !important;
 	animation: animatedScreen infinite 30s ease-in-out !important;
 }
-
-@keyframes downloadsPage {
-	0% {
-		filter: hue-rotate(0deg) saturate(100%);
-	}
-	
-	100% {
-		filter: hue-rotate(360deg) saturate(100%);
-	}
-}
-
-#downloadsPage {
-	animation: downloadsPage infinite 60s linear !important;
-}
-
 
 @media (min-width: 1500px) {
 	:root {
