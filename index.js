@@ -79,22 +79,24 @@ function setInitialSlide() {
 				align-items: stretch;
 			}
 		}
+		
+		/* old button styles (refactored) */
 		/*
-		.linkButton:hover, .linkButton:active {
+		.coloredButton:hover, .coloredButton:active {
 			color: var(--buttonText);
 			background-color: var(--backgroundColor);
 			box-shadow: 0 5px 20px var(--buttonShadow);
 		}
-		.footerLink:hover, .footerLink:active {
+		.footerButton:hover, .footerButton:active {
 			color: var(--buttonText);
 			background-color: var(--darkerColor);
 			box-shadow: 0 2px 10px var(--buttonShadow);
 		}
-		.linkButton:hover .thearrow, .linkButton:active .thearrow {
+		.coloredButton:hover .thearrow, .coloredButton:active .thearrow {
 			fill: var(--buttonText);
 			stroke: var(--buttonText);
 		}
-		.footerLink:hover img,.footerLink:active img {
+		.footerButton:hover img,.footerButton:active img {
 			filter: unset!important;
 		}
 		*/
