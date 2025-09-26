@@ -59,14 +59,14 @@
 	/*--mainBorder: 1px solid #c0d0e7;*/
 	--mainBorder: 1px solid black;
 	
-	--buttonColor: hsl(0 25% 25%);
+	--buttonColor: hsl(210 25% 25%);
 	--buttonShadow: #000000;
 	--buttonActive: hsl(0 25% 75%);
 	--buttonActiveShadow: rgba(0, 0, 0, 0.5);
 	--buttonHover: #ffffff;
 	--buttonText: #ffffff;
 	--buttonInverseText: #000000;
-	--buttonTransitionTime: 375ms;
+	--buttonTransitionTime: 123ms;
 	--buttonLetterSpacing: 0.03em;
 	--scrollbarWidth: 16px;
 	--marginWidth: 10vw;
@@ -151,7 +151,7 @@ body {
 	text-transform: uppercase;
 	font-size: 13pt;
 	letter-spacing: var(--buttonLetterSpacing);
-	/*background-color: var(--buttonColor);*/
+	background-color: var(--buttonColor);
 	text-align: center;
 	border-radius: 20px;
 	padding: 10px 15px;
@@ -483,6 +483,8 @@ script {
 	align-items: center!important;
 	min-width: 50px;
 	min-height: 50px;
+	
+	transition-duration: var(--buttonTransitionTime);
 }
 
 .footerLink img {
@@ -591,19 +593,29 @@ script {
 .aqua, .aqua * {
 	user-select: none!important;
 	cursor: pointer;
+	image-rendering: smooth;
+}
+
+.aqua * {
+	pointer-events: none;
 }
 
 .aqua {
 	color: var(--buttonText);
+	text-shadow: 0 1px black;
 	background-image: linear-gradient(to bottom, hsl(215 0% 27% / 5%), hsl(203 100% 80% / 5%) 100%);
 	/*box-shadow: 0 -5px 7px hsl(215 0% 40% / 40%) inset, 0 -1px 3px hsl(0 0% 0% / 40%) inset;*/
 	box-shadow: 0 -5px 10px hsl(215 0% 0% / 10%) inset, 0 -1px 3px hsl(0 0% 0% / 40%) inset;
 	overflow: hidden;
 	
-	background-color: hsl(210 20% 30%);
+	transform-origin: center;
 	
 	/* required */
 	position: relative;
+}
+
+.footerLink {
+	box-shadow: 0 -.2em .2em hsl(215 0% 40% / 40%) inset, 0 -1px 3px hsl(0 0% 0% / 40%) inset;
 }
 
 .aqua::before {
@@ -631,4 +643,5 @@ script {
 	background-image: linear-gradient(to bottom, hsl(215 100% 27% / 95%), hsl(203 100% 80% / 95%) 100%);
 	box-shadow: 0 -5px 7px hsl(215 100% 40% / 40%) inset, 0 -1px 3px hsl(0 0% 0% / 40%) inset;
 	/*filter: drop-shadow(0 0 .25em hsl(215 100% 40%));*/
+	transform: scale(95%);
 }
