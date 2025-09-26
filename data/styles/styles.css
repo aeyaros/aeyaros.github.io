@@ -646,11 +646,17 @@ script {
 }
 
 .aqua, .aqua:hover {
+	--mainButtonShadow: 0 .125em .125em rgb(0, 0, 0, .2);
+	
 	color: var(--buttonText);
 	text-shadow: 0 1px black;
 	background-image: linear-gradient(to bottom, hsl(215 0% 27% / 5%), hsl(203 100% 80% / 5%) 100%);
-	/*box-shadow: 0 -5px 7px hsl(215 0% 40% / 40%) inset, 0 -1px 3px hsl(0 0% 0% / 40%) inset;*/
-	box-shadow: 0 -5px 10px hsl(215 0% 0% / 10%) inset, 0 -1px 3px hsl(0 0% 0% / 40%) inset;
+	/*box-shadow: 0 -5px 7px hsl(215 0% 40% / 40%) inset, 0 -1px 3px hsl(0 0% 0% / 40%) inset, var(--mainButtonShadow);*/
+	box-shadow:
+			0 -5px 10px hsl(215 0% 0% / 10%) inset,
+			0 -1px 3px hsl(0 0% 0% / 40%) inset,
+			var(--mainButtonShadow)
+	;
 	overflow: hidden;
 	
 	transform-origin: center;
@@ -660,17 +666,22 @@ script {
 }
 
 .footerLink {
-	box-shadow: 0 -.2em .2em hsl(215 0% 40% / 40%) inset, 0 -1px 3px hsl(0 0% 0% / 40%) inset;
+	box-shadow:
+			0 -.2em .2em hsl(215 0% 40% / 40%)
+			inset, 0 -1px 3px hsl(0 0% 0% / 40%) inset,
+			var(--mainButtonShadow)
+	;
 }
 
 @media (prefers-color-scheme: light) {
-	.aqua {
-		filter: drop-shadow(0 .125em .125em rgb(0, 0, 0, .5));
-	}
-	
+
 	.footerLink, .footerLink:hover {
 		background-color: hsl(210 20% 60% / 70%);
-		box-shadow: 0 -.2em .2em hsl(215 0% 40% / 20%) inset, 0 -1px 1px hsl(0 0% 0% / 30%) inset;
+		box-shadow:
+				0 -.2em .2em hsl(215 0% 40% / 20%) inset,
+				0 -1px 1px hsl(0 0% 0% / 30%) inset,
+				var(--mainButtonShadow)
+		;
 	}
 	
 	.footerLink::before  {
@@ -705,6 +716,9 @@ script {
 
 .aqua:active {
 	background-image: linear-gradient(to bottom, hsl(215 100% 27% / 95%), hsl(203 100% 80% / 95%) 100%);
-	box-shadow: 0 -5px 7px hsl(215 100% 40% / 40%) inset, 0 -1px 3px hsl(0 0% 0% / 40%) inset;
-	/*filter: drop-shadow(0 0 .25em hsl(215 100% 40%));*/
+	box-shadow:
+			0 -5px 7px hsl(215 100% 40% / 40%) inset,
+			0 -1px 3px hsl(0 0% 0% / 40%) inset,
+			var(--mainButtonShadow)
+	;
 }
