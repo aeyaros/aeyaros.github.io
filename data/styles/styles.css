@@ -600,7 +600,7 @@ script {
 	pointer-events: none;
 }
 
-.aqua {
+.aqua, .aqua:hover {
 	color: var(--buttonText);
 	text-shadow: 0 1px black;
 	background-image: linear-gradient(to bottom, hsl(215 0% 27% / 5%), hsl(203 100% 80% / 5%) 100%);
