@@ -51,14 +51,19 @@
 </head>
 <body onload="start()">
 <!-- TITLE AND DESCRIPTION -->
-<div id="titleBox" class="fixedBackground" onload="setInitialSlide()">
+<div id="titleBox" class="fixedBackground aqua" onload="setInitialSlide()">
 	<div id="titleBoxInner" class="fixedBackground"></div>
 	<div id="titleContents">
 		<div class="titleItem" id="titleText">
 			<span>Andre<span class="lastLetter">w</span></span> <span id="lastName">Yaro<span
 				class="lastLetter">s</span></span>
 		</div>
-		<script>setInitialSlide()</script>
+		<script>
+			try {
+				document.getElementById('titleBox').setAttribute('class', 'fixedBackground');
+				setInitialSlide();
+			} catch(e) {}
+		</script>
 	</div>
 </div>
 
