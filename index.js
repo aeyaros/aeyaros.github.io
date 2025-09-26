@@ -79,6 +79,7 @@ function setInitialSlide() {
 				align-items: stretch;
 			}
 		}
+		/*
 		.linkButton:hover, .linkButton:active {
 			color: var(--buttonText);
 			background-color: var(--backgroundColor);
@@ -96,6 +97,7 @@ function setInitialSlide() {
 		.footerLink:hover img,.footerLink:active img {
 			filter: unset!important;
 		}
+		*/
 		`;
 		document.head.appendChild(mobileStyle);
 	}
