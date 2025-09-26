@@ -57,7 +57,8 @@
 	/*--mainBorder: 1px solid #c0d0e7;*/
 	
 	--backgroundColor: #14191D;
-	--backgroundImage: url("../images/darkStripes.png");
+	--backgroundImage: url("../images/backgrounds/darkStripes.png");
+	--backgroundAltImage: url("../images/backgrounds/bgColorDark.png");
 	--alternateBGColor: #0E1114;
 	
 	/*--backgroundColor: #2D353B;*/
@@ -108,7 +109,8 @@
 @media (prefers-color-scheme: light) {
 	:root {
 		--backgroundColor: #C5CCD4;
-		--backgroundImage: url("../images/lightStripes.png");
+		--backgroundImage: url("../images/backgrounds/lightStripes.png");
+		--backgroundAltImage: url("../images/backgrounds/bgColorLight.png");
 		/*--alternateBGColor: white;*/
 		--alternateBGColor: #DCE1E6;
 		
@@ -144,17 +146,14 @@
 }
 
 html {
-	background-color: var(--alternateBGColor);
+	background: var(--backgroundAltImage) 256px, var(--alternateBGColor) !important;
+	image-rendering: pixelated;
 }
 
 body {
 	margin: 0;
 	color: var(--pageText);
-	background-color: var(--backgroundColor);
-	/*background-image: url("../images/pinstripes.png") !important;*/
-	background-image: var(--backgroundImage) !important;
-	background-size: 42px;
-	background-attachment: fixed;
+	background: var(--backgroundImage) 42px fixed, var(--backgroundColor) !important;
 	image-rendering: pixelated;
 	font-family: "Lucida Grande", 'Helvetica', 'Helvetica Neue', "Arial", "Verdana", sans-serif;
 	font-weight: normal;
