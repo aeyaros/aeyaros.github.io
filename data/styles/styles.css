@@ -494,7 +494,7 @@ script {
 	margin: 10px;
 	cursor: pointer;
 
-	display: flex!important;
+	display: flex;
 	justify-content: center!important;
 	align-items: center!important;
 	min-width: 50px;
@@ -659,4 +659,96 @@ script {
 			0 -1px 3px hsl(0 0% 0% / 40%) inset,
 			var(--mainButtonShadow)
 	;
+}
+
+
+@keyframes slideshowOuter {
+	0% { background-image: url('../images/slides/lancaster.jpg'); }
+	12.5% { background-image: url('../images/slides/shell.jpg'); }
+	37.5% { background-image: url('../images/slides/station.jpg'); }
+	62.5% { background-image: url('../images/slides/bshroom-l2.jpg'); }
+	
+	87.5% { background-image: url('../images/slides/lancaster.jpg'); }
+	100% { background-image: url('../images/slides/lancaster.jpg'); }
+}
+
+@keyframes slideshowInner {
+	0% {
+		opacity: 0;
+		background-image: url('../images/slides/RRatrium.jpg');
+	}
+	
+	12.5% {
+		opacity: 1;
+	}
+	
+	25% {
+		opacity: 0;
+		background-image: url('../images/slides/RRatrium.jpg');
+	}
+	
+	/* next */
+	
+	25.1% {
+		opacity: 0;
+		background-image: url('../images/slides/stanford.jpg');
+	}
+	
+	37.5% {
+		opacity: 1;
+	}
+	
+	50% {
+		opacity: 0;
+		background-image: url('../images/slides/stanford.jpg');
+	}
+	
+	/* next */
+	
+	50.1% {
+		opacity: 0;
+		background-image: url('../images/slides/wefa.jpg');
+	}
+	
+	
+	62.5% {
+		opacity: 1;
+	}
+	
+	75% {
+		opacity: 0;
+		background-image: url('../images/slides/wefa.jpg');
+	}
+	
+	/* next */
+	
+	75.1% {
+		opacity: 0;
+		background-image: url('../images/slides/gropius.jpg');
+	}
+	
+	
+	87.5% {
+		opacity: 1;
+	}
+	
+	100% {
+		opacity: 0;
+		background-image: url('../images/slides/gropius.jpg');
+	}
+	
+}
+
+.slideshow {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.slideshowOuter {
+	animation: slideshowOuter infinite 80s step-end;
+}
+
+.slideshowInner {
+	animation: slideshowInner infinite 80s linear;
 }

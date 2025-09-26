@@ -1,10 +1,38 @@
-/************************
- * JavaScript for index *
- * page by Andrew Yaros *
- ************************/
+/**********************\
+| JavaScript for index |
+| page by Andrew Yaros |
+\**********************/
 
-function isMobile() {
-	return 'ontouchstart' in document.documentElement;
+function isTouch() {
+	if(navigator && typeof navigator.maxTouchPoints === "number") return navigator.maxTouchPoints > 1;
+	else return 'ontouchstart' in window;
+}
+
+/* detect and adjust for mobile devices by testing whether there is a touchscreen */
+if(isTouch()) {
+	console.log("Adjusting style for touchscreen displays.")
+	let mobileStyle = document.createElement("style");
+	mobileStyle.innerText = `
+		:root {
+			--heightTransition: 0s;
+		}
+		.fixedBackground, body {
+			background-attachment: scroll;
+		}
+		body {
+			font-size: 14pt;
+		}
+		@media only screen and (orientation: portrait) {
+			.moduleImage {
+				height: 25vh;
+			}
+			.buttonContainer {
+				flex-flow: column nowrap;
+				align-items: stretch;
+			}
+		}
+		`;
+	document.head.appendChild(mobileStyle);
 }
 
 //disable right clicks
@@ -22,96 +50,13 @@ const slideFiles = [
 	"RRatrium.jpg",
 	'towers.jpg',
 	'isp1 slide.jpg',
-];
+], n = slideFiles.length, images = [];
 
-slideFiles.sort(() => Math.random() - 0.5);
-
-const n = slideFiles.length;
-const slideInterval = 10000;
-
-/* When the page is loaded: set the background image based on the current time */
-const startingSlide = (Math.floor((new Date).getTime())) % n;
-
-//counter variable starts at second image; we already displayed the first
-let slideCounter = startingSlide + 1;
-let innerTitleDivHidden = true; //inner title div starts out hidden
-
-let images = []; //preload images
-/* Start preloading at the starting slide; preload n images */
-for(let i = startingSlide; i < startingSlide + n; i++) {
+/* Preload images */
+for(let i = 0; i < n; i++) {
 	let img = new Image();
 	img.src = slidesPath + slideFiles[i % n];
 	images.push(img)
-}
-
-//change the opacity of the inner div when transitioning to a slide.
-function setInnerTitleDivOpacity(value) {
-	let clamped = Math.max(0, Math.min(Number(value), 1));
-	document.getElementById("titleBoxInner").style.opacity = String(clamped);
-}
-
-//change the background image path of an element
-function changeSlide(elementID, path) {
-	document.getElementById(elementID).style.backgroundImage = "url('" + path + "')";
-}
-
-//set the initial slide
-function setInitialSlide() {
-	/* detect and adjust for mobile devices by testing whether there is a touchscreen */
-	if(isMobile()) {
-		console.log("Detected mobile touch event. Adjusting styles.")
-		let mobileStyle = document.createElement("style");
-		mobileStyle.innerText = `
-		:root {
-			--heightTransition: 0s;
-		}
-		.fixedBackground, body {
-			background-attachment: scroll;
-		}
-		body {
-			font-size: 14pt;
-		}
-		@media only screen and (orientation: portrait) {
-			.moduleImage {
-				height: 25vh;
-			} .buttonContainer {
-				flex-flow: column nowrap;
-				align-items: stretch;
-			}
-		}
-		`;
-		document.head.appendChild(mobileStyle);
-	}
-	
-	//change background of the inner slide to the starting slide
-	changeSlide("titleBox", slidesPath + slideFiles[startingSlide]);
-}
-
-//wait for a specified numebr of ms
-async function wait(ms) { return new Promise(resolve => setTimeout(resolve, ms)) }
-
-//increment to the next slide
-async function incrementSlide() {
-	//path of the image we are about to transition to
-	let pathToUse = slidesPath + slideFiles[slideCounter % n];
-	
-	//if the INNER div is HIDDEN
-	if(innerTitleDivHidden) {
-		//change the INNER div background (so it is set before we transition to it)
-		changeSlide("titleBoxInner", pathToUse);
-		setInnerTitleDivOpacity(1.0) //set opacity of inner div to 1
-		innerTitleDivHidden = false; //update state variable
-	} else /* if the INNER div is VISIBLE */{
-		//change the OUTER div background (so it is set before we transition to it)
-		changeSlide("titleBox", pathToUse);
-		setInnerTitleDivOpacity(0); //set opacity of the inner div to 0
-		innerTitleDivHidden = true; //update state variable
-	}
-	slideCounter += 1; //increment counter
-	
-	
-	await wait(slideInterval);
-	incrementSlide();
 }
 
 //set copyright date
@@ -131,10 +76,11 @@ function setDate() {
 
 //when window is finished loading
 function start() {
-	//window.scrollTo(0, 0); //reset scroll position
 	setDate(); //set copyright date
-	incrementSlide(); //change the slide every few seconds
+	document.getElementById('emailLink').style.display = 'flex';
 }
+
+window.addEventListener('load', start);
 
 //when email link is clicked
 function sendEmail() {

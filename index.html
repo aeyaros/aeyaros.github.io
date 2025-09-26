@@ -49,21 +49,15 @@
 	<meta property="og:image" content="https://yaros.ae/data/images/social/socialmediaimagepreview.jpg">
 
 </head>
-<body onload="start()">
+<body>
 <!-- TITLE AND DESCRIPTION -->
-<div id="titleBox" class="fixedBackground aqua" onload="setInitialSlide()">
-	<div id="titleBoxInner" class="fixedBackground"></div>
+<div id="titleBox" class="slideshowOuter slideshow">
+	<div id="titleBoxInner" class="slideshowInner slideshow"></div>
 	<div id="titleContents">
 		<div class="titleItem" id="titleText">
 			<span>Andre<span class="lastLetter">w</span></span> <span id="lastName">Yaro<span
 				class="lastLetter">s</span></span>
 		</div>
-		<script>
-			try {
-				document.getElementById('titleBox').setAttribute('class', 'fixedBackground');
-				setInitialSlide();
-			} catch(e) {}
-		</script>
 	</div>
 </div>
 
@@ -187,7 +181,6 @@
 			<img draggable="false" src="/data/images/social/icons/kofi.svg" alt="Ko-fi" />
 		</a>
 	</div>
-	<script>document.getElementById('emailLink').style.display = 'unset'</script>
 	<div id="copyright">
 		&copy;&nbsp;<span id="copyrightYear">2013–2025</span> Andrew&nbsp;Yaros. ALL&nbsp;RIGHTS&nbsp;RESERVED
 	</div>
