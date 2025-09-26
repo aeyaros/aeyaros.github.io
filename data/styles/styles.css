@@ -49,29 +49,44 @@
 /* =================== */
 /* GENERAL STYLE ITEMS */
 :root {
-	color-scheme: only dark;
-	--titleTextShadow: #000000;
+	color-scheme: dark;
+	
+	
 	/*--backgroundColor: #121212;*/
 	/*--darkerColor: rgba(0, 0, 0, .25);*/
-	
-	--backgroundColor: #13161A;
-	--darkerColor: #0E1114;
 	/*--mainBorder: 1px solid #c0d0e7;*/
-	--mainBorder: 1px solid black;
 	
+	--backgroundColor: #14191D;
+	--backgroundImage: url("../images/darkStripes.png");
+	--alternateBGColor: #0E1114;
+	
+	/*--backgroundColor: #2D353B;*/
+	/*--backgroundImage: url("../images/darkStripes.png");*/
+	
+	--pageText: #ddd;
+	--titleTextShadow: #000000;
 	--buttonColor: hsl(210 25% 25%);
-	--buttonShadow: #000000;
-	--buttonActive: hsl(0 25% 75%);
-	--buttonActiveShadow: rgba(0, 0, 0, 0.5);
-	--buttonHover: #ffffff;
+	--copyrighttext: #505050;
+	--borderColor: black;
+	--scrollbarThumb: #384652;
+	
+	scrollbar-color: var(--scrollbarThumb) var(--backgroundColor); /* firefox scrollbar color */
 	--buttonText: #ffffff;
 	--buttonInverseText: #000000;
+	--buttonActiveShadow: rgba(0, 0, 0, 0.5);
+	
+	/* older style */
+	/*
+	--buttonShadow: #000000;
+	--buttonHover: #ffffff;
+	--buttonActive: hsl(0 25% 75%);
+	*/
+	
+	--mainBorder: 1px solid var(--borderColor);
 	--buttonTransitionTime: 123ms;
 	--buttonLetterSpacing: 0.03em;
 	--scrollbarWidth: 16px;
 	--marginWidth: 10vw;
-	--copyrighttext: #505050;
-	scrollbar-color: #444444 var(--backgroundColor); /* firefox scrollbar color */
 	/* padding between content and edge */
 	--leftMargin: calc(env(safe-area-inset-left) + var(--marginWidth));
 	--rightMargin: calc(env(safe-area-inset-right) + var(--marginWidth));
@@ -88,6 +103,22 @@
 	--titleBoxWidth: 100%;
 	/*--titleBoxHeight: 100vh;*/
 	--titleBoxHeight: 100px;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--backgroundColor: #C5CCD4;
+		--backgroundImage: url("../images/lightStripes.png");
+		/*--alternateBGColor: white;*/
+		--alternateBGColor: #DCE1E6;
+		
+		--pageText: #222;
+		--titleTextShadow: rgb(0, 0, 0, .125);
+		--buttonColor: hsl(210 100% 40%);
+		--copyrighttext: #999;
+		--scrollbarThumb: #a3aeb9;
+		--borderColor: #ACACAC;
+	}
 }
 
 @keyframes buttonColorShift {
@@ -114,10 +145,11 @@
 
 body {
 	margin: 0;
-	color: #ddd;
+	color: var(--pageText);
 	background-color: var(--backgroundColor);
-	background-image: url("../images/pinstripes.png") !important;
-	background-size: 7px;
+	/*background-image: url("../images/pinstripes.png") !important;*/
+	background-image: var(--backgroundImage) !important;
+	background-size: 42px;
 	background-attachment: fixed;
 	image-rendering: pixelated;
 	font-family: "Lucida Grande", 'Helvetica', 'Helvetica Neue', "Arial", "Verdana", sans-serif;
@@ -145,13 +177,13 @@ body {
 }
 
 .linkButton {
-	/*color: var(--buttonText);*/
+	background-color: var(--buttonColor);
+	
 	text-decoration: none;
 	font-family: "buttonfont", sans-serif;
 	text-transform: uppercase;
 	font-size: 13pt;
 	letter-spacing: var(--buttonLetterSpacing);
-	background-color: var(--buttonColor);
 	text-align: center;
 	border-radius: 20px;
 	padding: 10px 15px;
@@ -159,24 +191,35 @@ body {
 	transition-duration: var(--buttonTransitionTime);
 	transition-timing-function: linear;
 	cursor: pointer;
-	/* if this is changed here, it must be changed in the mobile style in index.js */
-	/*box-shadow: 0 5px 20px var(--buttonShadow);*/
 }
 
+.linkButton:active {
+	text-shadow: 0 0 .75em var(--buttonText) !important;
+}
+
+/* older linkButton styles are refactored into this class */
 /*
-.linkButton:hover {
+.coloredButton {
+	color: var(--buttonText);
+	background-color: var(--buttonColor);
+	
+	 !*if this is changed here, it must be changed in the mobile style in index.js *!
+	box-shadow: 0 5px 20px var(--buttonShadow);
+}
+.coloredButton:hover {
 	text-decoration: none;
 	box-shadow: 0 1px 5px var(--buttonShadow);
 	color: var(--buttonInverseText);
 	background-color: var(--buttonHover);
 }
 
-.linkButton:active {
+.coloredButton:active {
 	box-shadow: inset 0 5px 10px var(--buttonActiveShadow), 0 0 30px var(--buttonActiveShadow);
 	color: var(--buttonInverseText);
 	background-color: var(--buttonActive);
 }
 */
+
 
 /* ================== */
 /* CUSTOM SCROLL BARS */
@@ -186,14 +229,14 @@ body {
 
 ::-webkit-scrollbar-track {
 	background-color: var(--backgroundColor);
-	box-shadow: inset 0 0 8px #000000;
+	box-shadow: inset 0 0 8px rgb(0, 0, 0, .25);
 	border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
 	border-radius: 8px;
-	background-color: #444444;
-	box-shadow: inset 0 -2.5px 6px #333333, inset 0 0 2px #000000;
+	background-color: var(--scrollbarThumb);
+	box-shadow: inset 0 -2.5px 6px rgb(0, 0, 0, .5), inset 0 0 2px rgb(0,0,0,.7);
 }
 
 /* ===================== */
@@ -207,6 +250,7 @@ body {
  * I cant put the text inside the inner div or it will get hidden when the opacity is changed
  */
 #titleBox {
+	color: white;
 	width: var(--titleBoxWidth);
 	height: var(--titleBoxHeight);
 	transition: height var(--heightTransition) ease-in-out;
@@ -377,7 +421,7 @@ script {
 .moduleImage {
 	height: 500px;
 	/*transition: height var(--heightTransition) ease-in-out;*/
-	background-color: var(--darkerColor);
+	background-color: var(--alternateBGColor);
 	margin: calc(var(--moduleImagePadTop) + env(safe-area-inset-top)) calc(var(--moduleImagePadWidth) + env(safe-area-inset-right)) calc(var(--moduleImagePadBottom) + env(safe-area-inset-bottom)) calc(var(--moduleImagePadWidth) + env(safe-area-inset-left));
 	border-radius: 30px;
 	box-shadow: inset 0 0 5vw rgba(0, 0, 0, 0.75);
@@ -444,11 +488,11 @@ script {
 /* FOOTER */
 #footer {
 	width: 100%;
-	background-color: var(--darkerColor);
+	background-color: var(--alternateBGColor);
 	padding: 3vh 0;
 	transition: var(--elementTransitionProperty);
 	text-align: center;
-	box-shadow: 0 0 5px var(--darkerColor);
+	box-shadow: 0 0 5px rgb(0,0,0,.125);
 	border-top: var(--mainBorder);
 }
 
@@ -464,8 +508,6 @@ script {
 }
 
 .footerLink {
-	/*color: var(--buttonText);*/
-	/*background-color: hsl(0 0% 15%);*/
 	font-family: "buttonfont", serif;
 	letter-spacing: var(--buttonLetterSpacing);
 	text-decoration: none;
@@ -474,9 +516,6 @@ script {
 	border-radius: 20px;
 	margin: 10px;
 	cursor: pointer;
-
-	/* if this is changed here, it must be changed in the mobile style in index.js */
-	box-shadow: 0 2px 10px var(--buttonShadow);
 
 	display: flex!important;
 	justify-content: center!important;
@@ -491,18 +530,24 @@ script {
 	height: 32px!important;
 }
 
+/* older footerLink styles are refactored into this class */
 /*
-.footerLink:hover {
+.footerButton {
+	color: var(--buttonText);
+	background-color: hsl(0 0% 15%);
+	
+	!* if this is changed here, it must be changed in the mobile style in index.js *!
+	box-shadow: 0 2px 10px var(--buttonShadow);
+}
+.footerButton:hover {
 	color: var(--buttonInverseText);
 	background-color: var(--buttonHover);
 	box-shadow: 0 1px 5px var(--buttonShadow);
 }
-
-.footerLink:hover img,.footerLink:active img {
+.footerButton:hover img,.footerButton:active img {
 	filter: invert(1);
 }
-
-.footerLink:active {
+.footerButton:active {
 	color: var(--buttonInverseText);
 	background-color: var(--buttonActive);
 	box-shadow: inset 0 5px 10px var(--buttonActiveShadow), 0 0 20px var(--buttonActiveShadow);
@@ -618,12 +663,31 @@ script {
 	box-shadow: 0 -.2em .2em hsl(215 0% 40% / 40%) inset, 0 -1px 3px hsl(0 0% 0% / 40%) inset;
 }
 
+@media (prefers-color-scheme: light) {
+	.aqua {
+		filter: drop-shadow(0 .125em .125em rgb(0, 0, 0, .5));
+	}
+	
+	.footerLink, .footerLink:hover {
+		background-color: hsl(210 20% 60% / 70%);
+		box-shadow: 0 -.2em .2em hsl(215 0% 40% / 20%) inset, 0 -1px 1px hsl(0 0% 0% / 30%) inset;
+	}
+	
+	.footerLink::before  {
+		background-image: linear-gradient(to bottom, hsl(0 0% 100% / 100%) 50%, hsl(0 0% 100% / 20%) 100%);
+	}
+	
+	.footerLink > img {
+		filter: invert(1) !important;
+	}
+}
+
 .aqua::before {
 	/* required */
 	position: absolute;
 	
 	content: '';
-	background-image: linear-gradient(to bottom, hsl(0 0% 100% / 50%) 50%, hsl(0 0% 100% / 4%) 100%);
+	background-image: linear-gradient(to bottom, hsl(0 0% 100% / 50%) 50%, hsl(0 0% 100% / 7%) 100%);
 	
 	border-radius: 100%;
 	
@@ -643,5 +707,4 @@ script {
 	background-image: linear-gradient(to bottom, hsl(215 100% 27% / 95%), hsl(203 100% 80% / 95%) 100%);
 	box-shadow: 0 -5px 7px hsl(215 100% 40% / 40%) inset, 0 -1px 3px hsl(0 0% 0% / 40%) inset;
 	/*filter: drop-shadow(0 0 .25em hsl(215 100% 40%));*/
-	transform: scale(95%);
 }
