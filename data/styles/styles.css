@@ -175,7 +175,7 @@ body {
 	padding-top: 10px;
 }
 
-.buttonContainer, .footerLink, #downloadsPage {
+.buttonContainer, .footerLink {
 	animation: loopingColorShift infinite 60s linear !important;
 }
 
