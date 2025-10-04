@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>TV Remote Pointing Test</title>
+	<meta name='author' content='Andrew Yaros'>
+	
+	<meta name="title" content="TV Remote Pointing Test">
+	<meta name="viewport"
+	      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover">
+	<meta name="description"
+	      content="A simple game to test skills using a TV remote.">
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=5">
+	
+	<!-- Mobile app properties -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="apple-mobile-web-app-title" content="TV Remote test">
+	<meta name="application-name" content="TV Remote test">
+	<style>
+		
+		html, body {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			font-family: sans-serif;
+			cursor: not-allowed;
+			transition-property: background-color;
+			transition-duration: 250ms;
+			transition-timing-function: linear;
+		}
+		
+		.dot {
+			position: fixed;
+			border-radius: 100%;
+			box-shadow: 0 10px 20px rgb(0 0 0 / 50%);
+			cursor: pointer!important;
+			z-index: 10;
+		}
+		
+		#intro {
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: 1000000;
+			
+			font-size: 4vw;
+			font-weight: 900;
+			text-align: center;
+			
+			color: white!important;
+			background-color: black!important;
+			user-select: none;
+			cursor: pointer!important;
+		}
+		
+		#scoreBox {
+			position: fixed;
+			top: 10px;
+			left: 10px;
+			font-weight: bold;
+			font-size: 40px;
+		}
+		
+		#scoreBox, #scoreBox * {
+			user-select: none!important;
+			z-index: 10000;
+		}
+	</style>
+	<script>
+		
+		const px = 'px';
+		const BORDERPADDING = 50;
+		
+		const minWidth = 16, maxWidth = 300;
+		
+		let currentAverageWidth = maxWidth;
+		
+		let score = 0;
+		
+		function createDot(diameter) {
+			
+			const dot = document.createElement('div');
+			dot.setAttribute('class', 'dot');
+			
+			dot.style.width = diameter + px;
+			dot.style.height = diameter + px;
+			dot.style.backgroundColor = `hsl(${Math.random() * 360} 100% 50%)`;
+			
+			return dot;
+		}
+		
+		function makeRandomDot() {
+			//determine diameter
+			const diameter = ~~(currentAverageWidth + (Math.random() * (currentAverageWidth / 2)));
+			//decrement the width for next time, but not smaller than the minimum
+			currentAverageWidth = Math.max(currentAverageWidth - 5, minWidth);
+			
+			const dot = createDot(diameter);
+			
+			const bounds = document.body.getBoundingClientRect(),
+				width = parseInt(bounds.width),
+				height = parseInt(bounds.height),
+				/* the range is the width/height, minus all the border padding, minus the diameter of the circle */
+				rangeX = width - (BORDERPADDING*2) - diameter,
+				rangeY = height - (BORDERPADDING*2) - diameter;
+			
+			const left = BORDERPADDING + ~~(Math.random() * rangeX);
+			const top = BORDERPADDING + ~~(Math.random() * rangeY);
+			
+			dot.style.left = left + px;
+			dot.style.top = top + px;
+			console.log(diameter, width, height, rangeX, rangeY, top, left)
+			dot.onclick = () => {
+				document.body.removeChild(dot);
+				makeRandomDot();
+				
+				document.getElementById('score').innerText = ++score;
+			}
+			document.body.append(dot);
+			document.body.style.backgroundColor = `hsl(${Math.random() * 360} 100% 90%)`;
+		}
+		
+		function start() {
+			document.body.removeChild(document.getElementById('intro'));
+			makeRandomDot();
+		}
+		
+	</script>
+</head>
+<body>
+	<div id="intro" onclick="start()">
+		Press on each dot using your remote!<br>
+		(Press anywhere to continue)
+		
+	</div>
+
+	<div id="scoreBox">
+		Score:
+		<span id="score">0</span>
+		
+	</div>
+
+</body>
+</html>
