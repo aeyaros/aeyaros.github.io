@@ -11,8 +11,9 @@
 	<meta name="description"
 	      content="A simple game to test skills using a TV remote.">
 	
-	<link rel="shortcut icon" href="/favicon.ico">
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=5">
+	<link rel="icon" sizes="16x16" href="remote16.png">
+	<link rel="icon" sizes="32x32" href="remote32.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="remotetesticon.png?v=5">
 	
 	<!-- Mobile app properties -->
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -20,12 +21,15 @@
 	<meta name="application-name" content="TV Remote test">
 	<style>
 		
+		* {
+			cursor: default!important;
+		}
 		html, body {
 			width: 100%;
 			height: 100%;
 			margin: 0;
 			font-family: sans-serif;
-			cursor: not-allowed;
+			/*cursor: not-allowed;*/
 			transition-property: background-color;
 			transition-duration: 250ms;
 			transition-timing-function: linear;
@@ -35,7 +39,7 @@
 			position: fixed;
 			border-radius: 100%;
 			box-shadow: 0 10px 20px rgb(0 0 0 / 50%);
-			cursor: pointer!important;
+			/*cursor: pointer!important;*/
 			z-index: 10;
 		}
 		
@@ -55,7 +59,7 @@
 			color: white!important;
 			background-color: black!important;
 			user-select: none;
-			cursor: pointer!important;
+			/*cursor: pointer!important;*/
 		}
 		
 		#scoreBox {
