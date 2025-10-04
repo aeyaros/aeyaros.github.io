@@ -76,7 +76,7 @@
 		const px = 'px';
 		const BORDERPADDING = 50;
 		
-		const minWidth = 16, maxWidth = 300;
+		const minWidth = 96, maxWidth = 400, averageWidthDecrement = 3;
 		
 		let currentAverageWidth = maxWidth;
 		
@@ -98,7 +98,7 @@
 			//determine diameter
 			const diameter = ~~(currentAverageWidth + (Math.random() * (currentAverageWidth / 2)));
 			//decrement the width for next time, but not smaller than the minimum
-			currentAverageWidth = Math.max(currentAverageWidth - 5, minWidth);
+			currentAverageWidth = Math.max(currentAverageWidth - averageWidthDecrement, minWidth);
 			
 			const dot = createDot(diameter);
 			
