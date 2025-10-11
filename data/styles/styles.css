@@ -175,13 +175,21 @@ body {
 	padding-top: 10px;
 }
 
-.buttonContainer, .footerLink {
+.opaqueButton, .clearButton {
 	animation: loopingColorShift infinite 60s linear !important;
 }
 
-.linkButton {
+.opaqueButton {
 	background-color: var(--buttonColor);
-	
+	transition-duration: var(--buttonTransitionTime);
+	transition-timing-function: linear;
+}
+
+.opaqueButton:active {
+	text-shadow: 0 0 .75em var(--buttonText) !important;
+}
+
+.linkButton {
 	text-decoration: none;
 	font-family: "buttonfont", sans-serif;
 	text-transform: uppercase;
@@ -191,14 +199,9 @@ body {
 	border-radius: 20px;
 	padding: 10px 15px;
 	margin: 15px;
-	transition-duration: var(--buttonTransitionTime);
-	transition-timing-function: linear;
 	cursor: pointer;
 }
 
-.linkButton:active {
-	text-shadow: 0 0 .75em var(--buttonText) !important;
-}
 
 /* ================== */
 /* CUSTOM SCROLL BARS */
@@ -309,6 +312,15 @@ script {
 
 #titleText > span:last-of-type {
 	margin-left: 1em;
+}
+
+
+#headerLinks {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	background-color: var(--alternateBGColor);
+	border-bottom: var(--mainBorder);
 }
 
 /* contains several description items */
@@ -606,7 +618,7 @@ script {
 	position: relative;
 }
 
-.footerLink {
+.clearButton {
 	box-shadow:
 			0 -.2em .2em hsl(215 0% 40% / 40%)
 			inset, 0 -1px 3px hsl(0 0% 0% / 40%) inset,
@@ -616,7 +628,7 @@ script {
 
 @media (prefers-color-scheme: light) {
 
-	.footerLink, .footerLink:hover {
+	.clearButton, .clearButton:hover {
 		background-color: hsl(210 20% 60% / 70%);
 		box-shadow:
 				0 -.2em .2em hsl(215 0% 40% / 20%) inset,
@@ -625,11 +637,11 @@ script {
 		;
 	}
 	
-	.footerLink::before  {
+	.clearButton::before  {
 		background-image: linear-gradient(to bottom, hsl(0 0% 100% / 100%) 50%, hsl(0 0% 100% / 20%) 100%);
 	}
 	
-	.footerLink > img {
+	.clearButton > img {
 		filter: invert(1) !important;
 	}
 }
