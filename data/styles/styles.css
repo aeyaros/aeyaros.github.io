@@ -88,6 +88,7 @@
 	--buttonLetterSpacing: 0.03em;
 	--scrollbarWidth: 16px;
 	--marginWidth: 10vw;
+	--footerMargin: 40px;
 	/* padding between content and edge */
 	--leftMargin: calc(env(safe-area-inset-left) + var(--marginWidth));
 	--rightMargin: calc(env(safe-area-inset-right) + var(--marginWidth));
@@ -193,7 +194,7 @@ body {
 	text-decoration: none;
 	font-family: "buttonfont", sans-serif;
 	text-transform: uppercase;
-	font-size: 13pt;
+	font-size: 12pt;
 	letter-spacing: var(--buttonLetterSpacing);
 	text-align: center;
 	border-radius: 20px;
@@ -321,6 +322,13 @@ script {
 	justify-content: center;
 	background-color: var(--alternateBGColor);
 	border-bottom: var(--mainBorder);
+	padding: 10px;
+}
+
+#headerLinks > * {
+	margin: 10px;
+	padding-left: 1.5em;
+	padding-right: 1.5em;
 }
 
 /* contains several description items */
@@ -489,7 +497,7 @@ script {
 }
 
 #footer > * {
-	margin: calc(40px + env(safe-area-inset-right)) calc(40px + env(safe-area-inset-left));
+	margin: calc(var(--footerMargin) + env(safe-area-inset-right)) calc(var(--footerMargin) + env(safe-area-inset-left));
 }
 
 #footerLinks {
@@ -532,8 +540,37 @@ script {
 }
 
 @media (max-width: 299px) {
+	:root {
+		--footerMargin: 10px;
+	}
+	
+	#titleText {
+		font-size: 11vw!important;
+	}
+	
+	#lastName {
+		font-size: 15vw;
+	}
+	
+	.moduleTitle {
+		font-size: 10vw;
+	}
+	
 	#copyright {
 		font-size: 4vw;
+	}
+	
+	.footerLink {
+		min-width: 30px;
+	}
+	
+	.footerLink img {
+		height: 20px!important;
+	}
+	
+	.linkButton {
+		font-size: 6.5vw;
+		line-height: 1.25em;
 	}
 }
 
