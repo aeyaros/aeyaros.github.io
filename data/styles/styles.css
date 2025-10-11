@@ -329,6 +329,14 @@ script {
 	margin: 10px;
 	padding-left: 1.5em;
 	padding-right: 1.5em;
+	color: white;
+}
+
+#headerLinks a span {
+	display: block;
+	position: relative;
+	z-index: 100;
+	user-select: none!important;
 }
 
 /* contains several description items */
@@ -685,6 +693,11 @@ script {
 	
 	.clearButton > img {
 		filter: invert(1) !important;
+	}
+	
+	#headerLinks > * {
+		color: black;
+		text-shadow: none;
 	}
 }
 
