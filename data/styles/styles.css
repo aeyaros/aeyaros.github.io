@@ -558,8 +558,13 @@ script {
 @media (min-width: 1500px) {
 	:root {
 		--moduleImagePadBottom: 3vw;
+		--titleBoxHeight: max(100px, 5vw);
 	}
-
+	
+	#titleText {
+		font-size: max(2.5vw, 44px);
+	}
+	
 	.moduleTitle {
 		font-size: 2vw;
 	}
