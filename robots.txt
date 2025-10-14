@@ -111,8 +111,6 @@ User-agent: Echobot Bot
 User-agent: EchoboxBot
 User-agent: Facebookbot
 User-agent: FacebookBot
-User-agent: facebookexternalhit
-User-agent: FacebookExternalHit
 User-agent: Factset_spyderbot
 User-agent: Falcon
 User-agent: Firecrawl
@@ -166,7 +164,6 @@ User-agent: Kangaroo Bot
 User-agent: Keyword Density AI
 User-agent: Knowledge
 User-agent: KomoBot
-User-agent: LinkedInBot
 User-agent: LLaMA
 User-agent: LLMs
 User-agent: magpie-crawler
@@ -289,7 +286,6 @@ User-agent: WriterZen
 User-agent: Writescope
 User-agent: Writesonic
 User-agent: xAI
-User-agent: xBot
 User-agent: YandexAdditional
 User-agent: YandexAdditionalBot
 User-agent: Youbot
