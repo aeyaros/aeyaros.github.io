@@ -75,6 +75,8 @@
 	--buttonText: #ffffff;
 	--buttonInverseText: #000000;
 	--buttonActiveShadow: rgba(0, 0, 0, 0.5);
+	--footerGradientColor: rgb(0,0,0,.25);
+	--footerGradient: linear-gradient(to top, var(--footerGradientColor), transparent);
 	
 	/* older style */
 	/*
@@ -89,6 +91,7 @@
 	--scrollbarWidth: 16px;
 	--marginWidth: 10vw;
 	--footerMargin: 40px;
+	
 	/* padding between content and edge */
 	--leftMargin: calc(env(safe-area-inset-left) + var(--marginWidth));
 	--rightMargin: calc(env(safe-area-inset-right) + var(--marginWidth));
@@ -121,6 +124,7 @@
 		--copyrighttext: #999;
 		--scrollbarThumb: #a3aeb9;
 		--borderColor: #ACACAC;
+		--footerGradientColor: rgb(0,0,0,.1);
 	}
 }
 
@@ -323,6 +327,8 @@ script {
 	background-color: var(--alternateBGColor);
 	border-bottom: var(--mainBorder);
 	padding: 10px;
+	
+	background-image: var(--footerGradient);
 }
 
 #headerLinks > * {
@@ -501,6 +507,7 @@ script {
 	transition: var(--elementTransitionProperty);
 	text-align: center;
 	box-shadow: 0 0 5px rgb(0,0,0,.125);
+	background-image: var(--footerGradient);
 	border-top: var(--mainBorder);
 }
 
