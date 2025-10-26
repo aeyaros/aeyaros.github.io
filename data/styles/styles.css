@@ -154,6 +154,7 @@
 html {
 	background: var(--backgroundAltImage) 256px, var(--alternateBGColor) !important;
 	image-rendering: pixelated;
+	scroll-behavior: smooth;
 }
 
 body {

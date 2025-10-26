@@ -77,7 +77,44 @@ function setDate() {
 //when window is finished loading
 function start() {
 	setDate(); //set copyright date
+	
+	//display email link
 	document.getElementById('emailLink').style.display = 'flex';
+	
+	//swap social links/up buttons with ones that don't use anchor links
+	const
+		socialButton = document.getElementById('socialButton'),
+		newSocialButton = document.createElement('span'),
+		footerLinks = document.getElementById('footerLinks'),
+		upButton = document.getElementById('upButton'),
+		newUpButton = document.createElement('span'),
+		upImg = document.createElement('img');
+	
+	newSocialButton.setAttribute('class', 'linkButton clearButton aqua');
+	newSocialButton.setAttribute('draggable', 'false');
+	newSocialButton.innerText = 'Social Links';
+	newSocialButton.addEventListener('click', () => window.scrollTo({
+		left: 0,
+		top: footerLinks.getBoundingClientRect().top,
+		behavior: 'smooth',
+	}));
+	
+	upImg.setAttribute('src', '/data/images/social/icons/up.svg');
+	upImg.setAttribute('alt', 'Top of page');
+	upImg.setAttribute('draggable', 'false');
+	
+	newUpButton.setAttribute('class', 'footerLink clearButton aqua');
+	newUpButton.setAttribute('draggable', 'false');
+	newUpButton.addEventListener('click', () => window.scrollTo({
+		left: 0,
+		top: 0,
+		behavior: 'smooth',
+	}));
+	
+	newUpButton.appendChild(upImg);
+	
+	socialButton.replaceWith(newSocialButton);
+	upButton.replaceWith(newUpButton);
 }
 
 window.addEventListener('load', start);
