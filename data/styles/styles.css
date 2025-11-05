@@ -75,7 +75,7 @@
 	--buttonText: #ffffff;
 	--buttonInverseText: #000000;
 	--buttonActiveShadow: rgba(0, 0, 0, 0.5);
-	--headerGradient: linear-gradient(to top, rgb(0,0,0,.125), transparent);
+	--headerGradient: linear-gradient(to bottom, rgb(0,0,0,.125), transparent);
 	--footerGradient: linear-gradient(to top, rgb(0,0,0,.5), transparent);
 	
 	/* older style */
