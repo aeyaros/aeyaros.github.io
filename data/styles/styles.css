@@ -75,8 +75,8 @@
 	--buttonText: #ffffff;
 	--buttonInverseText: #000000;
 	--buttonActiveShadow: rgba(0, 0, 0, 0.5);
+	--headerGradient: linear-gradient(to top, rgb(0,0,0,.125), transparent);
 	--footerGradient: linear-gradient(to top, rgb(0,0,0,.5), transparent);
-	
 	
 	/* older style */
 	/*
@@ -124,8 +124,9 @@
 		--copyrighttext: #999;
 		--scrollbarThumb: #a3aeb9;
 		--borderColor: #ACACAC;
+		--headerGradient: linear-gradient(to top, rgb(0,0,0,.1), transparent);
 		--footerGradient: linear-gradient(to top, rgb(0,0,0,.1), transparent);
-		
+
 	}
 }
 
@@ -330,7 +331,7 @@ script {
 	border-bottom: var(--mainBorder);
 	padding: 10px;
 	
-	background-image: var(--footerGradient);
+	background-image: var(--headerGradient);
 }
 
 #headerLinks > * {
