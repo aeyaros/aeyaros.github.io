@@ -108,6 +108,8 @@
 	--titleBoxWidth: 100%;
 	/*--titleBoxHeight: 100vh;*/
 	--titleBoxHeight: 100px;
+	
+	--lisaguiShadow: none;
 }
 
 @media (prefers-color-scheme: light) {
@@ -126,7 +128,8 @@
 		--borderColor: #ACACAC;
 		--headerGradient: linear-gradient(to top, rgb(0,0,0,.1), transparent);
 		--footerGradient: linear-gradient(to top, rgb(0,0,0,.1), transparent);
-
+		
+		--lisaguiShadow: inset 0 0 1vw rgba(0, 0, 0, 0.75);
 	}
 }
 
@@ -606,7 +609,7 @@ script {
 }
 
 #lisaGUI {
-	box-shadow: none !important;
+	box-shadow: var(--lisaguiShadow);
 	animation: animatedScreen infinite 30s ease-in-out !important;
 }
 
