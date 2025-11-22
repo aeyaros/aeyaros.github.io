@@ -731,16 +731,16 @@ script {
 	left: calc(-1 * var(--offset));
 }
 
-.aqua:active > * {
-	filter: drop-shadow(0 0 .5em var(--buttonText));
+.aqua:active > *, .highlightedAqua * {
+	filter: drop-shadow(0 0 .5em var(--buttonText)) !important;
 }
 
-.aqua:active {
-	background-image: linear-gradient(to bottom, hsl(215 100% 27% / 95%), hsl(203 100% 80% / 95%) 100%);
+.aqua:active, .highlightedAqua {
+	background-image: linear-gradient(to bottom, hsl(215 100% 27% / 95%), hsl(203 100% 80% / 95%) 100%) !important;
 	box-shadow:
 			0 -5px 7px hsl(215 100% 40% / 40%) inset,
 			0 -1px 3px hsl(0 0% 0% / 40%) inset,
-			var(--mainButtonShadow)
+			var(--mainButtonShadow) !important
 	;
 }
 
