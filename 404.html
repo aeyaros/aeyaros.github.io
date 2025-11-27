@@ -1,34 +1,105 @@
 <html lang="en"> <!-- Created by Andrew Yaros -->
 <head>
-	<title>Andrew Yaros | 404 - Page not found</title>
+	<title>Andrew Yaros | 404 - File not found</title>
 	<meta name="description" content="">
-	<link type="text/css" rel="stylesheet" href="https://yaros.ae/data/styles/redirect.css?ver=1.0" media="all">
-	
+	<meta name="viewport"
+	      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover">
+	<!--
 	<script>window.location = 'https://yaros.ae/';</script>
-
 	<meta http-equiv="refresh" content="0; url=https://yaros.ae"/>
-
+	-->
+	
 	<!-- Google webmaster tools -->
 	<meta name="google-site-verification" content="bwSTxxkBuYuXig_yEctBdAmvMnA61ULkgSke_r_Yjpg"/>
 	<!-- Microsoft webmaster tools -->
 	<meta name="msvalidate.01" content="AA7E5B5FE7C20FE49F696D7949C5444C"/>
+	<style>
+		* {
+			-webkit-text-size-adjust: 100% !important;
+		}
+		
+		:root {
+			--bg: #2067B2;
+			--text: ffffff;
+		}
+		
+		html, body, a {
+			background-color: var(--bg) !important;
+			color: var(--text) !important;
+			font-family: 'Segoe UI Light', 'Segoe UI', 'Segoe', sans-serif !important;
+			font-weight: 100!important;
+		}
+		
+		body {
+			width: 100%;
+			height: 100%;
+			margin: 0!important;
+			padding: 0!important;
+			display: flex;
+			flex-flow: column nowrap;
+		}
+		
+		#container {
+			padding:
+				calc(env(safe-area-inset-top) + 15pt)
+				calc(env(safe-area-inset-right) + 10%)
+				calc(env(safe-area-inset-bottom) + 15pt)
+				calc(env(safe-area-inset-left) + 20%)
+			;
+			margin: auto;
+		}
+		
+		#emoticon {
+			font-size: min(max(12vw, 98pt), 250pt);
+		}
+		
+		#message {
+			display: block!important;
+			margin: 1em 0;
+			font-size: min(max(2vw, 15pt), 45pt);
+			line-height: 1.5em;
+			text-decoration-style: dotted;
+			text-decoration-thickness: .25px!important;
+			/*letter-spacing: .025em;*/
+		}
+		
+		#message:hover {
+			background-color: var(--text) !important;
+			color: var(--bg) !important;
+		}
+		
+		#smallPrint {
+			font-size: min(max(1.25vw, 10pt), 30pt);
+			line-height: 1.25em;
+		}
+		
+		@media (max-height: 530px) and (orientation: landscape), (max-height: 720px) and (min-width: 2560px) {
+			#emoticon {
+				font-size: 25vh;
+			}
+			
+			#message {
+				font-size: 6.5vh;
+			}
+			
+			#smallPrint {
+				font-size: 4.5vh;
+			}
+		}
+	</style>
 </head>
 <body>
-<div id="fourzerofourcontainer">
-	<div id="fourzerofour">
-		404 | Page not found
-		<div class="centered"><a href="https://yaros.ae" draggable="false">
-			Please <span id="action">click</span> here if this page does not redirect you.
-		</a></div>
-	</div>
 
+<div id="container">
+	<div id="emoticon">:(</div>
+	
+	<a id="message" href="./">This website ran into a problem and needs to restart. <span id="action">Click</span> here to return to the homepage. We're just collecting some error info. (404% complete)</a>
+	
+	<div id="smallPrint">If you'd like to know more, you can search online later for this error: 404_FILE_NOT_FOUND</div>
 </div>
 <script>
-	function isMobile() {
-		return 'ontouchstart' in document.documentElement;
-	}
-
-	if (isMobile()) document.getElementById("action").innerHTML = "tap";
+	function isMobile() { return 'ontouchstart' in document.documentElement; }
+	if (isMobile()) document.getElementById("action").innerHTML = "Tap";
 </script>
 </body>
 </html>
