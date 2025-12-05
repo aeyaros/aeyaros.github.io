@@ -36,7 +36,7 @@ if(isTouch()) {
 }
 
 //disable right clicks
-document.addEventListener('contextmenu', event => event.preventDefault());
+// document.addEventListener('contextmenu', event => event.preventDefault());
 
 /*
 const slidesPath = "./data/images/slides/"

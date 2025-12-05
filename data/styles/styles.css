@@ -148,12 +148,20 @@
 }
 
 /* disable text selection */
+/*
 * {
 	user-select: none;
 	-ms-user-select: none;
 	-moz-user-select: none;
 	-webkit-user-select: none;
 }
+*/
+
+::selection {
+	background-color: var(--pageText) !important;
+	color: var(--backgroundColor) !important;
+}
+
 
 html {
 	background: var(--backgroundAltImage) 256px, var(--alternateBGColor) !important;
