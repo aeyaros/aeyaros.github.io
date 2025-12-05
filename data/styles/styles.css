@@ -309,7 +309,8 @@ script {
 	padding: 0.5vh var(--rightMargin) 0.5vh var(--leftMargin);
 	transition: var(--elementTransitionProperty);
 	/* for title and description text */
-	text-shadow: 0 0 1vw var(--titleTextShadow);
+	filter: drop-shadow(0 0 1vw var(--titleTextShadow));
+	/*text-shadow: 0 0 1vw var(--titleTextShadow);*/
 	padding-top: .25em;
 }
 
