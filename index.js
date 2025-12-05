@@ -38,6 +38,7 @@ if(isTouch()) {
 //disable right clicks
 document.addEventListener('contextmenu', event => event.preventDefault());
 
+/*
 const slidesPath = "./data/images/slides/"
 const slideFiles = [
 	// "bshroom-l2.jpg",
@@ -51,13 +52,17 @@ const slideFiles = [
 	'towers.jpg',
 	'isp1 slide.jpg',
 ], n = slideFiles.length, images = [];
+*/
 
 /* Preload images */
+/*
 for(let i = 0; i < n; i++) {
 	let img = new Image();
 	img.src = slidesPath + slideFiles[i % n];
 	images.push(img)
 }
+*/
+
 
 //set copyright date
 function setDate() {
