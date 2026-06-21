@@ -776,6 +776,13 @@ script {
 	}
 }
 
+/* the dark-theme header buttons need more contrast with the background */
+@media (prefers-color-scheme: dark) {
+	#headerLinks .linkButton.clearButton, #headerLinks .linkButton.clearButton:hover {
+		background-color: hsl(210 10% 25% / 70%);
+	}
+}
+
 .aqua::before {
 	/* required */
 	position: absolute;
