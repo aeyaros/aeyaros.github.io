@@ -172,7 +172,7 @@ html {
 body {
 	margin: 0;
 	color: var(--pageText);
-	background: var(--backgroundImage) 42px fixed, var(--backgroundColor) !important;
+	background: var(--backgroundImage) 42px scroll, var(--backgroundColor) !important;
 	image-rendering: pixelated;
 	font-family: "Lucida Grande", 'Helvetica', 'Helvetica Neue', "Arial", "Verdana", sans-serif;
 	font-weight: normal;
