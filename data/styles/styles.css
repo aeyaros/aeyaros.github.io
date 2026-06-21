@@ -423,7 +423,6 @@ script {
 	.fixedBackground {
 		background-attachment: unset !important;
 	}
-
 }
 
 /* ======================== */
@@ -487,6 +486,10 @@ script {
 	.moduleImage {
 		height: 100vw !important;
 	}
+    
+    .zoomIfScrolled {
+        background-size: 150%;
+    }
 }
 
 @media (max-height: 820px) {
