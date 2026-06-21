@@ -59,7 +59,7 @@
 	--backgroundColor: #14191D;
 	--backgroundImage: url("../images/backgrounds/darkStripes.png");
 	--backgroundAltImage: url("../images/backgrounds/bgColorDark.png");
-	--alternateBGColor: #0E1114;
+	--alternateBGColor: #1f262b;
 	
 	/*--backgroundColor: #2D353B;*/
 	/*--backgroundImage: url("../images/darkStripes.png");*/
@@ -67,7 +67,7 @@
 	--pageText: #ddd;
 	--titleTextShadow: #000000;
 	--buttonColor: hsl(210 25% 25%);
-	--copyrighttext: #505050;
+	--copyrighttext: #616672;
 	--borderColor: black;
 	--scrollbarThumb: #384652;
 	
@@ -75,8 +75,8 @@
 	--buttonText: #ffffff;
 	--buttonInverseText: #000000;
 	--buttonActiveShadow: rgba(0, 0, 0, 0.5);
-	--headerGradient: linear-gradient(to bottom, rgb(0,0,0,.125), transparent);
-	--footerGradient: linear-gradient(to top, rgb(0,0,0,.5), transparent);
+	--headerGradient: linear-gradient(to top, rgb(0,0,0,.35), transparent);
+	--footerGradient: linear-gradient(to bottom, rgb(0,0,0,.35), transparent);
 	
 	/* older style */
 	/*
