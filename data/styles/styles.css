@@ -390,7 +390,7 @@ script {
 	}
 }
 
-@media (min-width: 570px) {
+@media (min-width: 575px) and (max-width: 585px) {
 	.headerLinkButtonSquareLeft, .headerLinkButtonSquareRight {
 		transition-duration: 0s!important;
 	}
@@ -424,7 +424,7 @@ script {
 	}
 }
 
-@media (min-width: 970px) {
+@media (min-width: 975px) and (max-width: 985px) {
 	.footerLinkButtonSquareLeft, .footerLinkButtonSquareRight {
 		transition-duration: 0s!important;
 	}
