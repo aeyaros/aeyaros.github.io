@@ -360,21 +360,37 @@ script {
 	user-select: none!important;
 }
 
-@media (min-width: 580px) {
+/* header and footer buttons are combined at large widths*/
 
+@media (min-width: 580px) {
 	.headerLinkButtonSquareLeft {
-		border-bottom-left-radius: 0;
-		border-top-left-radius: 0;
+		border-bottom-left-radius: 0!important;
+		border-top-left-radius: 0!important;
 		margin-left: 0!important;
 	}
 
 	.headerLinkButtonSquareRight {
-		border-bottom-right-radius: 0;
-		border-top-right-radius: 0;
+		border-bottom-right-radius: 0!important;
+		border-top-right-radius: 0!important;
 		margin-right: 0!important;
 
 	}
 }
+
+@media (min-width: 980px) {
+	.footerLinkButtonSquareLeft {
+		border-bottom-left-radius: 0!important;
+		border-top-left-radius: 0!important;
+		margin-left: 0!important;
+	}
+
+	.footerLinkButtonSquareRight {
+		border-bottom-right-radius: 0!important;
+		border-top-right-radius: 0!important;
+		margin-right: 0!important;
+	}
+}
+
 
 /* contains several description items */
 #description {
