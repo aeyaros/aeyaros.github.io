@@ -52,19 +52,19 @@
 	</div>
 </div>
 <div id="headerLinks">
-	<a class="linkButton clearButton aqua highlightedAqua" draggable="false" href="javascript:;">
+	<a class="linkButton clearButton aqua highlightedAqua headerLinkButtonSquareRight" draggable="false" href="javascript:;">
 		<span>Home</span>
 	</a>
 	
-	<a class="linkButton clearButton aqua" draggable="false" href="downloads/">
+	<a class="linkButton clearButton aqua headerLinkButtonSquareLeft headerLinkButtonSquareRight" draggable="false" href="downloads/">
 		<span>Downloads</span>
 	</a>
 	
-	<a class="linkButton clearButton aqua" draggable="false" href="https://blog.yaros.ae/">
+	<a class="linkButton clearButton aqua headerLinkButtonSquareLeft headerLinkButtonSquareRight" draggable="false" href="https://blog.yaros.ae/">
 		<span>Web-Log</span>
 	</a>
 	
-	<a class="linkButton clearButton aqua" id="socialButton" draggable="false" href="#footerLinks">
+	<a class="linkButton clearButton aqua headerLinkButtonSquareLeft" id="socialButton" draggable="false" href="#footerLinks">
 		<span>Social&nbsp;Links</span>
 	</a>
 	
@@ -280,7 +280,7 @@
 			newUpButton = document.createElement('span'),
 			upImg = document.createElement('img');
 		
-		newSocialButton.setAttribute('class', 'linkButton clearButton aqua');
+		newSocialButton.setAttribute('class', 'linkButton clearButton aqua headerLinkButtonSquareLeft');
 		newSocialButton.setAttribute('draggable', 'false');
 		newSocialButton.innerText = 'Social Links';
 		newSocialButton.addEventListener('click', () => window.scrollTo({
