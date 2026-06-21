@@ -373,7 +373,20 @@ script {
 		border-bottom-right-radius: 0!important;
 		border-top-right-radius: 0!important;
 		margin-right: 0!important;
+	}
 
+	#headerLinks .aqua::before {
+		border-radius: 0;
+		/*bottom: 50% !important;*/
+		bottom: 45% !important;
+	}
+	#headerLinks .aqua:first-child::before {
+		border-top-left-radius: 100% !important;
+		border-bottom-left-radius: 100% !important;
+	}
+	#headerLinks .aqua:last-child::before {
+		border-top-right-radius: 100% !important;
+		border-bottom-right-radius: 100% !important;
 	}
 }
 
@@ -394,6 +407,20 @@ script {
 		border-bottom-right-radius: 0!important;
 		border-top-right-radius: 0!important;
 		margin-right: 0!important;
+	}
+
+	#footerLinks .aqua::before {
+		border-radius: 0;
+		/*bottom: 50% !important;*/
+		bottom: 45% !important;
+	}
+	#footerLinks .aqua:first-child::before {
+		border-top-left-radius: 100% !important;
+		border-bottom-left-radius: 100% !important;
+	}
+	#footerLinks .aqua:last-child::before {
+		border-top-right-radius: 100% !important;
+		border-bottom-right-radius: 100% !important;
 	}
 }
 
