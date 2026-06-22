@@ -90,7 +90,7 @@
 	--buttonLetterSpacing: 0.03em;
 	--scrollbarWidth: 16px;
 	--marginWidth: 10vw;
-	--footerMargin: 40px;
+	--footerMargin: 20px;
 	
 	/* padding between content and edge */
 	--leftMargin: calc(env(safe-area-inset-left) + var(--marginWidth));
@@ -641,7 +641,7 @@ script {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
-	padding-bottom: 10px;
+	/*padding-bottom: 10px;*/
 }
 
 .footerLink {
