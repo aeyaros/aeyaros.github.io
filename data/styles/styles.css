@@ -102,7 +102,7 @@
 
 	--moduleImagePadWidth: 40px;
 	--moduleImagePadTop: 25px;
-	--moduleImagePadBottom: 50px;
+	--moduleImagePadBottom: 20px;
 
 	/* title box dims */
 	--titleBoxWidth: 100%;
@@ -388,6 +388,14 @@ script {
 		border-top-right-radius: 100% !important;
 		border-bottom-right-radius: 100% !important;
 	}
+
+	#headerLinks {
+		background: transparent!important;
+		border: 0!important;
+		padding-bottom: 0;
+		padding-top: 20px;
+		box-shadow: none!important;
+	}
 }
 
 @media (min-width: 575px) and (max-width: 585px) {
@@ -421,6 +429,24 @@ script {
 	#footerLinks .aqua:last-child::before {
 		border-top-right-radius: 100% !important;
 		border-bottom-right-radius: 100% !important;
+	}
+
+	#footer {
+		background: transparent!important;
+		border: 0!important;
+		padding: 0!important;
+		margin: 0!important;
+		box-shadow: none!important;
+	}
+
+	#footerLinks {
+		padding: 0!important;
+		margin: 0!important;
+	}
+
+	/* get rid of spacing at the bottom; the html background color is also unnecessary without the headers and footers */
+	html {
+		background: unset!important;
 	}
 }
 
@@ -540,11 +566,10 @@ script {
 	margin: auto;
 	max-width: 512px;
 	text-align: justify;
-	/*hyphens: auto;*/
 }
 
 .moduleText p {
-	margin-bottom: 2em;
+	margin-bottom: 1.5em;
 }
 /*
 .moduleText p:last-of-type {
@@ -808,7 +833,7 @@ script {
 /* the dark-theme header buttons need more contrast with the background */
 @media (prefers-color-scheme: dark) {
 	#headerLinks .linkButton.clearButton, #headerLinks .linkButton.clearButton:hover {
-		background-color: hsl(210 10% 25% / 70%);
+		background-color: hsl(210 10% 25% / 40%);
 	}
 }
 
