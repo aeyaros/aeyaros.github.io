@@ -20,7 +20,8 @@
 		
 		:root {
 			--bg: #2067B2;
-			--text: ffffff;
+			--text: #ffffff;
+			scrollbar-color: var(--text) var(--bg)!important;
 		}
 		
 		html, body, a {
@@ -28,6 +29,11 @@
 			color: var(--text) !important;
 			font-family: 'Segoe UI Light', 'Segoe UI', 'Segoe', sans-serif !important;
 			font-weight: 100!important;
+		}
+		
+		::selection {
+			background-color: var(--text) !important;
+			color: var(--bg) !important;
 		}
 		
 		body {
@@ -51,6 +57,7 @@
 		
 		#emoticon {
 			font-size: min(max(12vw, 98pt), 250pt);
+			user-select: none!important;
 		}
 		
 		#message {
@@ -88,14 +95,14 @@
 		}
 	</style>
 </head>
-<body>
+<body draggable="false">
 
-<div id="container">
-	<div id="emoticon">:(</div>
+<div id="container" draggable="false">
+	<div id="emoticon" draggable="false">:(</div>
 	
-	<a id="message" href="./">This website ran into a problem and needs to restart. <span id="action">Click</span> here to return to the homepage. We're just collecting some error info. (404% complete)</a>
+	<a id="message" href="https://yaros.ae" draggable="false">This website ran into a problem and needs to restart. <span id="action">Click</span> here to return to the homepage. We're just collecting some error info. (404% complete)</a>
 	
-	<div id="smallPrint">If you'd like to know more, you can search online later for this error: 404_FILE_NOT_FOUND</div>
+	<div id="smallPrint" draggable="false">If you'd like to know more, you can search online later for this error: 404_FILE_NOT_FOUND</div>
 </div>
 <script>
 	function isMobile() { return 'ontouchstart' in document.documentElement; }
