@@ -360,9 +360,43 @@ script {
 	user-select: none!important;
 }
 
+/* tweaks for smaller header widths */
+
+/* combine the buttons vertically at small widths */
+@media (max-width: 300px) {
+	#headerLinks .linkButton {
+		width: 100%;
+	}
+
+	#headerLinks .linkButton:before {
+		/*border-radius: 25%;*/
+		/*bottom: 45% !important;*/
+		border-radius: 0;
+		bottom: 50% !important;
+	}
+
+	.headerLinkButtonSquareLeft {
+		border-top-left-radius: 0!important;
+		border-top-right-radius: 0!important;
+		margin-top: 0!important;
+	}
+
+	.headerLinkButtonSquareRight {
+		border-bottom-left-radius: 0!important;
+		border-bottom-right-radius: 0!important;
+		margin-bottom: 0!important;
+	}
+}
+
+@media (min-width: 530px) and (max-width: 660px) {
+	#headerLinks .linkButton {
+		min-width: 100px;
+	}
+}
+
 /* header and footer buttons are combined at large widths*/
 
-@media (min-width: 580px) {
+@media (min-width: 660px) {
 	.headerLinkButtonSquareLeft {
 		border-bottom-left-radius: 0!important;
 		border-top-left-radius: 0!important;
@@ -375,16 +409,15 @@ script {
 		margin-right: 0!important;
 	}
 
-	#headerLinks .aqua::before {
+	#headerLinks .linkButton::before {
 		border-radius: 0;
-		/*bottom: 50% !important;*/
 		bottom: 45% !important;
 	}
-	#headerLinks .aqua:first-child::before {
+	#headerLinks .linkButton:first-child::before {
 		border-top-left-radius: 100% !important;
 		border-bottom-left-radius: 100% !important;
 	}
-	#headerLinks .aqua:last-child::before {
+	#headerLinks .linkButton:last-child::before {
 		border-top-right-radius: 100% !important;
 		border-bottom-right-radius: 100% !important;
 	}
@@ -417,16 +450,16 @@ script {
 		margin-right: 0!important;
 	}
 
-	#footerLinks .aqua::before {
+	#footerLinks .footerLink::before {
 		border-radius: 0;
 		/*bottom: 50% !important;*/
 		bottom: 45% !important;
 	}
-	#footerLinks .aqua:first-child::before {
+	#footerLinks .footerLink:first-child::before {
 		border-top-left-radius: 100% !important;
 		border-bottom-left-radius: 100% !important;
 	}
-	#footerLinks .aqua:last-child::before {
+	#footerLinks .footerLink:last-child::before {
 		border-top-right-radius: 100% !important;
 		border-bottom-right-radius: 100% !important;
 	}
@@ -521,10 +554,10 @@ script {
 	}
 }
 
-@media (min-width: 750px) {
+@media (min-width: 1000px) {
 	/* elongated header buttons */
 	#headerLinks > .linkButton {
-		min-width: max(7vw,120px);
+		min-width: max(7vw,100px);
 	}
 }
 
@@ -652,20 +685,6 @@ script {
 	}
 }
 
-/* smaller margins */
-@media (max-width: 380px) {
-	.footerLink {
-		margin: 5px!important;
-	}
-}
-
-/* smaller margins */
-@media (max-width: 200px) {
-	.footerLink {
-		margin: 2px!important;
-	}
-}
-
 
 #footer > * {
 	margin: calc(var(--footerMargin) + env(safe-area-inset-right)) calc(var(--footerMargin) + env(safe-area-inset-left));
@@ -731,17 +750,77 @@ script {
 		font-size: 4vw;
 	}
 	
-	.footerLink {
-		min-width: 30px;
-	}
-	
-	.footerLink img {
-		height: 20px!important;
-	}
-	
 	.linkButton {
 		font-size: 6.5vw;
 		line-height: 1.25em;
+	}
+}
+
+/* compact footer links */
+@media (max-width: 380px) {
+
+	:root {
+		--compactFooterRadius: 45%;
+		--compactFooterWidth: 80vw;
+	}
+
+	#footer {
+		margin: 0!important;
+		width: 100%;
+	}
+
+	#footerLinks {
+		width: var(--compactFooterWidth);
+	}
+
+	.footerLink {
+		width: calc(var(--compactFooterWidth) / 3.25)!important;
+		height: calc(var(--compactFooterWidth) / 3.25)!important;
+		padding: 0!important;
+		margin: 0!important;
+
+		min-width: unset!important;
+		max-width: unset!important;
+		min-height: unset!important;
+		max-height: unset!important;
+
+		border-radius: 0!important;
+	}
+
+	.footerLink img {
+		height: 20px!important;
+	}
+
+	.footerTopL {
+		border-top-left-radius: var(--compactFooterRadius)!important;
+	}
+
+	.footerTopR {
+		border-top-right-radius: var(--compactFooterRadius)!important;
+	}
+
+	.footerBottomL {
+		border-bottom-left-radius: var(--compactFooterRadius)!important;
+	}
+
+	.footerBottomR {
+		border-bottom-right-radius: var(--compactFooterRadius)!important;
+	}
+
+
+	/* gloss contour */
+	#footerLinks .footerLink::before {
+		border-radius: 0;
+		bottom: 45% !important;
+	}
+
+}
+
+@media (max-width: 280px) {
+
+	:root {
+		--compactFooterRadius: 45%;
+		--compactFooterWidth: 95vw;
 	}
 }
 
