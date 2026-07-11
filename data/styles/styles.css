@@ -57,6 +57,7 @@
 	/*--mainBorder: 1px solid #c0d0e7;*/
 	
 	--backgroundColor: #14191D;
+	--titleBackgroundColor: #14191Dee;
 	--backgroundImage: url("../images/backgrounds/darkStripes.png");
 	--backgroundAltImage: url("../images/backgrounds/bgColorDark.png");
 	--alternateBGColor: #1f262b;
@@ -70,6 +71,9 @@
 	--copyrighttext: #616672;
 	--borderColor: black;
 	--scrollbarThumb: #384652;
+	
+	--boldText: white;
+	--boldBG: black;
 	
 	scrollbar-color: var(--scrollbarThumb) var(--backgroundColor); /* firefox scrollbar color */
 	--buttonText: #ffffff;
@@ -115,6 +119,7 @@
 @media (prefers-color-scheme: light) {
 	:root {
 		--backgroundColor: #C5CCD4;
+		--titleBackgroundColor: #C5CCD4ee;
 		--backgroundImage: url("../images/backgrounds/lightStripes.png");
 		--backgroundAltImage: url("../images/backgrounds/bgColorLight.png");
 		/*--alternateBGColor: white;*/
@@ -122,6 +127,10 @@
 		
 		--pageText: #222;
 		--titleTextShadow: rgb(0, 0, 0, .125);
+		
+		--boldText: black;
+		--boldBG: white;
+		
 		--buttonColor: hsl(210 100% 40%);
 		--copyrighttext: #999;
 		--scrollbarThumb: #a3aeb9;
@@ -578,7 +587,39 @@ script {
 	text-transform: none;
 	font-size: 24pt;
 	text-shadow: 0 2px 20px var(--titleTextShadow), 0 1px 3px var(--titleTextShadow);
-	padding: 0 var(--rightMargin) 0 var(--leftMargin);
+	padding: .5em var(--rightMargin) .6em var(--leftMargin);
+	
+	position: sticky!important;
+	top: 0;
+	
+	background-color: var(--titleBackgroundColor);
+	
+	z-index: 10000;
+	margin-top: 0!important;
+	margin-bottom: 0!important;
+}
+
+/* blurred module title, if this is supported */
+@supports (backdrop-filter: blur(40px)) {
+	.moduleTitle {
+		overflow: hidden;
+		background-color: transparent!important;
+		backdrop-filter: blur(40px)!important;
+		color: var(--boldText);
+		text-shadow:
+				0 0 3em var(--boldBG),
+				0 0 2em var(--boldBG),
+				0 0 1em var(--boldBG),
+				 .5px -.5px .5px var(--borderColor),
+				-.5px  .5px .5px var(--borderColor),
+				-.5px -.5px .5px var(--borderColor),
+				 .5px  .5px .5px var(--borderColor);
+		/*outline: .5px solid var(--backgroundColor);*/
+	}
+	
+	.moduleTitle::selection {
+		text-shadow: none;
+	}
 }
 
 /* full width image for a module */
