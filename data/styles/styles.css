@@ -642,7 +642,7 @@ script {
 	padding: 0 var(--rightMargin) 0 var(--leftMargin);
 	margin: auto;
 	max-width: 512px;
-	text-align: justify;
+	text-align: left;
 }
 
 .moduleText p {
