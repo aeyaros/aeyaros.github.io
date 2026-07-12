@@ -606,14 +606,17 @@ script {
 		background-color: transparent!important;
 		backdrop-filter: blur(40px)!important;
 		color: var(--boldText);
+		--titleStrokePos: .5px;
+		--titleStrokeNeg: calc(var(--titleStrokePos) * -1);
+		--titleStrokeBlur: 1px;
 		text-shadow:
 				0 0 3em var(--boldBG),
 				0 0 2em var(--boldBG),
 				0 0 1em var(--boldBG),
-				 .5px -.5px .5px var(--borderColor),
-				-.5px  .5px .5px var(--borderColor),
-				-.5px -.5px .5px var(--borderColor),
-				 .5px  .5px .5px var(--borderColor);
+				var(--titleStrokePos) var(--titleStrokeNeg) var(--titleStrokeBlur) var(--borderColor),
+				var(--titleStrokeNeg) var(--titleStrokePos) var(--titleStrokeBlur) var(--borderColor),
+				var(--titleStrokeNeg) var(--titleStrokeNeg) var(--titleStrokeBlur) var(--borderColor),
+				var(--titleStrokePos) var(--titleStrokePos) var(--titleStrokeBlur) var(--borderColor);
 		/*outline: .5px solid var(--backgroundColor);*/
 	}
 	
