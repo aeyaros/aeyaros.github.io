@@ -561,6 +561,10 @@ script {
 	.fixedBackground {
 		background-attachment: unset !important;
 	}
+	
+	.zoomIfScrolled {
+		background-size: 150%;
+	}
 }
 
 @media (min-width: 1000px) {
@@ -667,10 +671,8 @@ script {
 	.moduleImage {
 		height: 100vw !important;
 	}
-    
-    .zoomIfScrolled {
-        background-size: 150%;
-    }
+ 
+ 
 }
 
 @media (max-height: 820px) {
