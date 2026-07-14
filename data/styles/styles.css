@@ -56,8 +56,9 @@
 	/*--darkerColor: rgba(0, 0, 0, .25);*/
 	/*--mainBorder: 1px solid #c0d0e7;*/
 	
-	--backgroundColor: #14191D;
-	--titleBackgroundColor: #14191Dee;
+	--backgroundColor: rgb(20 25 29);
+	--titleTransparency: 93%;
+	--titleBackgroundColor: rgb(20 25 29 / var(--titleTransparency));
 	--backgroundImage: url("../images/backgrounds/darkStripes.png");
 	--backgroundAltImage: url("../images/backgrounds/bgColorDark.png");
 	--alternateBGColor: #1f262b;
@@ -118,8 +119,8 @@
 
 @media (prefers-color-scheme: light) {
 	:root {
-		--backgroundColor: #C5CCD4;
-		--titleBackgroundColor: #C5CCD4ee;
+		--backgroundColor: rgb(197 204 212);
+		--titleBackgroundColor: rgb(197 204 212 / var(--titleTransparency));
 		--backgroundImage: url("../images/backgrounds/lightStripes.png");
 		--backgroundAltImage: url("../images/backgrounds/bgColorLight.png");
 		/*--alternateBGColor: white;*/
@@ -604,24 +605,20 @@ script {
 }
 
 /* blurred module title, if this is supported */
-@supports (backdrop-filter: blur(40px)) {
+@supports (backdrop-filter: blur(30px)) {
+	
+	:root {
+		--titleTransparency: 30%!important;
+	}
+	
 	.moduleTitle {
 		overflow: hidden;
-		background-color: transparent!important;
-		backdrop-filter: blur(40px)!important;
+		backdrop-filter: blur(30px)!important;
 		color: var(--boldText);
-		--titleStrokePos: .5px;
-		--titleStrokeNeg: calc(var(--titleStrokePos) * -1);
-		--titleStrokeBlur: 1px;
 		text-shadow:
 				0 0 3em var(--boldBG),
 				0 0 2em var(--boldBG),
-				0 0 1em var(--boldBG),
-				var(--titleStrokePos) var(--titleStrokeNeg) var(--titleStrokeBlur) var(--borderColor),
-				var(--titleStrokeNeg) var(--titleStrokePos) var(--titleStrokeBlur) var(--borderColor),
-				var(--titleStrokeNeg) var(--titleStrokeNeg) var(--titleStrokeBlur) var(--borderColor),
-				var(--titleStrokePos) var(--titleStrokePos) var(--titleStrokeBlur) var(--borderColor);
-		/*outline: .5px solid var(--backgroundColor);*/
+				0 0 1em var(--boldBG);
 	}
 	
 	.moduleTitle::selection {
