@@ -190,6 +190,14 @@ body {
 	text-wrap: pretty!important;
 }
 
+a {
+	cursor: pointer;
+}
+
+a[target=_blank] {
+	cursor: alias!important;
+}
+
 .fixedBackground {
 	background-repeat: no-repeat;
 	background-size: cover;
