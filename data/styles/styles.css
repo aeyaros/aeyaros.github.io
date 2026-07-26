@@ -455,7 +455,7 @@ script {
 	}
 }
 
-@media (min-width: 980px) {
+@media (min-width: 990px) {
 	.footerLinkButtonSquareLeft {
 		border-bottom-left-radius: 0!important;
 		border-top-left-radius: 0!important;
@@ -501,7 +501,7 @@ script {
 	}
 }
 
-@media (min-width: 975px) and (max-width: 985px) {
+@media (min-width: 985px) and (max-width: 995px) {
 	.footerLinkButtonSquareLeft, .footerLinkButtonSquareRight {
 		transition-duration: 0s!important;
 	}
@@ -718,7 +718,7 @@ script {
 }
 
 /* keep the button rows of roughly equal width */
-@media (max-width: 980px) {
+@media (max-width: 990px) {
 	#footer {
 		display: flex;
 		flex-flow: column nowrap;
