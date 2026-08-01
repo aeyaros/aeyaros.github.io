@@ -302,3 +302,4 @@ Content-Usage: ai=n
 
 User-agent: *
 Disallow: /data/
+Allow: /data/images/social/
