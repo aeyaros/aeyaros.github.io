@@ -96,6 +96,12 @@
 		}
 	</style>
 	<script>
+		/* use pointer if embedded */
+		if(window.self !== window.top) {
+			const style = document.createElement('style');
+			style.innerText = '* { cursor: pointer!important; }';
+			document.head.appendChild(style);
+		}
 		
 		const px = 'px';
 		const BORDERPADDING = 50;
